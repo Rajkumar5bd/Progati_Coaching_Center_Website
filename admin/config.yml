@@ -1,0 +1,24 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "notices"
+    label: "সর্বশেষ নোটিশ ও পোস্ট"
+    folder: "_notices"
+    create: true
+    fields:
+      - { label: "তারিখ", name: "date", widget: "date", format: "YYYY-MM-DD" }
+      - { label: "নোটিশের শিরোনাম", name: "title", widget: "string" }
+      - { label: "বিস্তারিত তথ্য", name: "body", widget: "text" }
+
+  - name: "gallery"
+    label: "ফটো গ্যালারি ও কার্যক্রম"
+    folder: "_gallery"
+    create: true
+    fields:
+      - { label: "ছবি আপলোড করুন", name: "image", widget: "image" }
+      - { label: "ছবির ক্যাপশন/শিরোনাম", name: "caption", widget: "string" }
