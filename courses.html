@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progati Coaching Center - Courses</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #f4f6f9; color: #333; }
+        nav { background-color: #1e3a8a; padding: 5px 20px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
+        nav .logo { color: #fff; font-size: 24px; font-weight: bold; }
+        nav ul { display: flex; list-style: none; }
+        nav ul li { margin-left: 20px; }
+        nav ul li a { color: #fff; text-decoration: none; font-size: 16px; }
+        nav ul li a:hover, nav ul li a.active { color: #38bdf8; }
+        .page-header { background-color: #006eff; color: white; text-align: center; padding: 40px 20px; }
+        .page-header h1 {font-size: 40px; }
+        .page-header p{font-size: 22px;}
+        .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
+        .section-title { color: #1e3a8a; margin: 40px 0 20px 0; border-left: 5px solid #38bdf8; padding-left: 10px; font-size: 24px; }
+        .course-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        .card { background: white; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.06); overflow: hidden; display: flex; flex-direction: column; transition: transform 0.3s; }
+        .card:hover { transform: translateY(-5px); }
+        .card-banner { position: relative; background-color: #cbd5e1; height: 650px; }
+        .card-banner img { width: 100%; height: 100%; object-fit: cover; }
+        .teacher-tag { position: absolute; bottom: 15px; left: 15px; background: rgba(30, 58, 138, 0.9); color: white; padding: 5px 12px; font-size: 14px; border-radius: 20px; }
+        .card-body { padding: 20px; display: flex; flex-direction: column; flex-grow: 1; }
+        .class-category { color: #94a3b8; font-size: 13px; font-weight: bold; margin-bottom: 5px; text-transform: uppercase; }
+        .card-body h3 { color: #1e3a8a; margin-bottom: 10px; font-size: 20px; }
+        .card-body p { color: #64748b; line-height: 1.5; font-size: 15px; margin-bottom: 20px; flex-grow: 1; }
+        .card-footer { border-top: 1px solid #f1f5f9; padding-top: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .fee { font-size: 16px; font-weight: bold; color: #0f172a; }
+        .btn-small { background-color: #1e3a8a; color: white; padding: 8px 18px; text-decoration: none; border-radius: 6px; font-size: 14px; font-weight: bold; }
+        .btn-small:hover { background-color: #38bdf8; }
+        footer { background-color: #0f172a; color: #94a3b8; text-align: center; padding: 20px; margin-top: 50px; font-size: 14px; }
+    
+    
+    /* অনলাইন ভর্তি বাটনের মূল স্টাইল */
+.nav-btn {
+    display: inline-block;
+    background-color: #e53e3e; /* লাল ব্যাকগ্রাউন্ড */
+    color: #ffffff !important; /* লেখার রঙ সাদা */
+    padding: 8px 18px; 
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none; /* আন্ডারলাইন রিমুভ */
+    border-radius: 6px; 
+    /* স্মুথ অ্যানিমেশনের ট্রানজিশন */
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* বাটনের হোভার অ্যানিমেশন */
+.nav-btn:hover {
+    background-color: #1e3a8a; /* মাউস নিলে রাজকীয় নীল হবে */
+    color: #ffffff !important;
+    transform: translateY(-2px); /* হালকা ওপরে ভাসবে */
+    box-shadow: 0 4px 10px rgba(30, 58, 138, 0.25); /* নীলচে ছায়া */
+}
+
+
+
+/* ===================================================
+   কোর্স পেজের ফুটার ৩ কলামে পাশাপাশি আনার ফ্রেশ কোড
+=================================================== */
+
+/* ১. মূল ফুটার ব্যাকগ্রাউন্ড এবং টেক্সট অ্যালাইন */
+footer {
+    background-color: #0b1530 !important; /* গাঢ় নীল ব্যাকগ্রাউন্ড */
+    padding: 50px 0 0 0 !important;
+    text-align: left !important;         /* সব লেখা বামে নেওয়ার জন্য */
+    width: 100% !important;
+    display: block !important;
+}
+
+/* ২. ৩টি কলামকে পাশাপাশি সাজানোর আসল ফ্লেক্সবক্স ম্যাজিক */
+footer .footer-container {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 0 20px 40px 20px !important;
+    display: flex !important;             /* এটি লেখাগুলোকে পাশাপাশি নিয়ে আসবে */
+    flex-direction: row !important;       /* কলামগুলো পাশাপাশি সারিবদ্ধ থাকবে */
+    flex-wrap: wrap !important;           /* মোবাইল স্ক্রিনে যেন নিচে নামে */
+    gap: 50px !important;                 /* কলামগুলোর মাঝখানের গ্যাপ */
+    justify-content: space-between !important;
+}
+
+/* ৩. প্রতিটি কলামের নিখুঁত সাইজ */
+footer .footer-column {
+    flex: 1 !important;                   /* ৩টি বক্স সমান জায়গা পাবে */
+    min-width: 250px !important;          /* সর্বনিম্ন চওড়া */
+    text-align: left !important;
+}
+
+/* কলামের ভেতরের শিরোনাম */
+/* কলামের শিরোনাম এবং তার বাম পাশের লাল দাগ বা ৩ডি বর্ডার */
+footer .footer-column h4 {
+    font-size: 20px !important;
+    color: #ffffff !important;
+    margin-top: 0 !important;
+    margin-bottom: 20px !important;
+    font-weight: 700 !important;
+    
+    /* ---- লাল দাগ নিয়ে আসার আসল ম্যাজিক লাইনসমূহ ---- */
+    border-left: 4px solid #e53e3e !important; /* ৪ পিক্সেল মোটা লাল বর্ডার */
+    padding-left: 12px !important;              /* লাল দাগ থেকে লেখার মাঝখানের দূরত্ব */
+    line-height: 1.2 !important;                /* দাগটির উচ্চতা লেখার সমান করার জন্য */
+}
+
+
+/* কলামের সাধারণ বিবরণী লেখা */
+footer .footer-column p {
+    font-size: 15px !important;
+    line-height: 1.6 !important;
+    color: #cbd5e0 !important;
+    margin-bottom: 12px !important;
+    text-align: left !important;
+}
+
+/* ৪. কুইক লিঙ্কের লিস্টের ডট ও মার্জিন রিমুভ */
+footer .footer-column ul {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+footer .footer-column ul li {
+    margin-bottom: 12px !important;
+}
+
+footer .footer-column ul li a {
+    display: inline-block !important;
+    color: #cbd5e0 !important;
+    text-decoration: none !important;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+}
+
+/* কুইক লিঙ্কের হোভার ৩ডি অ্যানিমেশন */
+footer .footer-column ul li a:hover {
+    color: #e53e3e !important;            /* মাউস নিলে লাল হবে */
+    transform: translateX(8px) !important; /* আলতো করে ডানে সরবে */
+}
+
+/* ৫. গুগল ম্যাপ বাটন ৩ডি স্টাইল ও পালস অ্যানিমেশন */
+footer .map-link-btn {
+    display: inline-block !important;
+    background-color: #1a3175 !important;
+    color: #ffffff !important;
+    padding: 10px 18px !important;
+    border-radius: 6px !important;
+    text-decoration: none !important;
+    font-weight: bold !important;
+    font-size: 14px !important;
+    margin-top: 10px !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15) !important;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+    animation: buttonPulse 2.5s infinite ease-in-out !important;
+}
+
+footer .map-link-btn:hover {
+    background-color: #e53e3e !important;
+    transform: translateY(-4px) scale(1.02) !important; /* ওপরে ভেসে উঠবে */
+    box-shadow: 0 12px 24px rgba(229, 62, 62, 0.4) !important; /* লাল গ্লো ছায়া */
+}
+
+/* ৬. একদম নিচের কপিরাইট অংশ */
+footer .footer-bottom {
+    text-align: center !important;
+    padding: 20px 0 !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+    width: 100% !important;
+    background-color: rgba(0, 0, 0, 0.2) !important;
+}
+
+footer .footer-bottom p {
+    font-size: 14px !important;
+    color: #a0aec0 !important;
+    margin: 0 !important;
+    text-align: center !important;
+}
+
+/* গুগল ম্যাপ বাটনের গ্লো কি-ফ্রেম */
+@keyframes buttonPulse {
+    0% { box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15); }
+    50% { box-shadow: 0 0 15px 4px rgba(26, 49, 117, 0.4); }
+    100% { box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15); }
+}
+
+
+
+/* ===================================================
+   কোর্স কার্ড ও Enroll Now বাটনের ৩ডি অ্যানিমেশন স্টাইল
+=================================================== */
+
+/* ===================================================
+   কোর্স কার্ডের সাইজ ঠিক রেখে ৩ডি হোভার অ্যানিমেশন স্টাইল
+=================================================== */
+
+/* ১. মূল কোর্স কার্ডের স্টাইল (সাইজ ও প্যাডিং ছোট করে ঠিক করা হলো) */
+.course-card, .subject-card, [class*="card"] {
+    background: #ffffff !important;           /* ব্যাকগ্রাউন্ড সাদা */
+    border-radius: 12px !important;           /* কোণগুলো ১২ পিক্সেল গোল */
+    
+    /* ---- সাইজ ঠিক করার মূল ম্যাজিক লাইনসমূহ ---- */
+    padding: 14px 18px !important;            /* প্যাডিং ওপরে-নিচে ১৪px এবং ডানে-বামে ১৮px করে ছোট করা হলো */
+    width: auto !important;                   /* চওড়া যেন স্ক্রিনের বাইরে না যায় */
+    max-width: 100% !important;               /* অতিরিক্ত বড় হওয়া বন্ধ করার জন্য */
+    
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04) !important; /* শুরুতে একদম হালকা সফট ছায়া */
+    border: 1px solid #e2e8f0 !important;     /* হালকা বর্ডার */
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) !important; /* ৩ডি মুভমেন্ট মসৃণ করার ট্রানজিশন */
+}
+
+/* কোর্স কার্ডের ওপর মাউস নিলে (3D Hover Effect - সাইজ ঠিক রেখে) */
+.course-card:hover, .subject-card:hover, [class*="card"]:hover {
+    /* কার্ডটি চওড়ায় বড় না হয়ে শুধু আলতো করে ৫ পিক্সেল ওপরে ভেসে উঠবে */
+    transform: translateY(-5px) !important; 
+    /* নিচে আপনার থিমের নীল রঙের একটি চমৎকার স্লিম ৩ডি গ্লোয়িং ছায়া তৈরি হবে */
+    box-shadow: 0 15px 30px rgba(30, 58, 138, 0.1) !important; 
+    border-color: #1e3a8a !important;        /* বর্ডারের রঙ নীল হবে */
+}
+
+
+/* ২. "Enroll Now" বাটনের গর্জিয়াস ৩ডি অ্যানিমেশন */
+.enroll-btn, .btn-enroll, [class*="btn"] {
+    display: inline-block !important;
+    background-color: #1e3a8a !important;    /* শুরুতে আপনার থিমের নীল ব্যাকগ্রাউন্ড */
+    color: #ffffff !important;               /* লেখার রঙ সাদা */
+    padding: 10px 22px !important;            /* বাটনের ভেতরে আরামদায়ক স্পেস */
+    font-weight: bold !important;             /* লেখাটি মোটা করার জন্য */
+    border-radius: 6px !important;            /* কোণগুলো হালকা গোল করার জন্য */
+    text-decoration: none !important;        /* নিচের আন্ডারলাইন মুছে ফেলার জন্য */
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important; /* বোতামের ট্রানজিশন */
+    box-shadow: 0 4px 6px rgba(30, 58, 138, 0.15) !important; /* হালকা শ্যাডো */
+}
+
+/* Enroll Now বাটনের হোভার ইফেক্ট (মাউস নিলে যা হবে) */
+.enroll-btn:hover, .btn-enroll:hover, [class*="btn"]:hover {
+    background-color: #e53e3e !important;    /* মাউস নিলে খুব সুন্দরভাবে লাল হয়ে যাবে */
+    transform: translateY(-3px) !important;   /* বাটনটি ৩ পিক্সেল ওপরে উঠবে */
+    box-shadow: 0 8px 16px rgba(229, 62, 62, 0.3) !important; /* নিচে একটি চমৎকার লাল গ্লোয়িং ছায়া ছড়াবে */
+}
+
+/* বাটন ক্লিক করার মুহূর্তের ইফেক্ট (Active State) */
+.enroll-btn:active, .btn-enroll:active, [class*="btn"]:active {
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* ৩. শিক্ষকদের ইমেজ বক্সের (যেমন: Rina Mam, Asha Mam) ৩ডি হোভার ইফেক্ট */
+.teacher-image-box, .teacher-card, [class*="teacher"] {
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05) !important;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+}
+
+/* শিক্ষকের কার্ডে মাউস নিলে যা হবে */
+.teacher-image-box:hover, .teacher-card:hover, [class*="teacher"]:hover {
+    transform: translateY(-5px) rotateY(-2deg) !important; /* হালকা ৩ডি টুইস্ট বা বাঁকা হবে */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1) !important;   /* ছায়া গাঢ় হবে */
+}
+
+
+
+/* ===================================================
+   ব্যবসায় শিক্ষা বিভাগের ছবি ও ৩ডি কার্ড নিখুঁত করার কোড
+=================================================== */
+
+/* ১. মূল কার্ডের সাইজ ছিমছাম করে ৩ডি হোভার অ্যানিমেশন */
+.course-grid .card {
+    background: #ffffff !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04) !important;
+    border: 1px solid #e2e8f0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+    overflow: hidden !important; /* কার্ডের কোণগুলো যেন নিখুঁত গোল থাকে */
+}
+
+/* কার্ডের ওপর মাউস নিলে ৩ডি লিফটিং ইফেক্ট */
+.course-grid .card:hover {
+    transform: translateY(-6px) !important;
+    box-shadow: 0 15px 35px rgba(30, 58, 138, 0.12) !important;
+    border-color: #1e3a8a !important;
+}
+
+/* ২. ছবির মেইন ব্যানার বক্সের সাইজ ও গ্যাপ ফিক্স করা */
+/* ২. ছবির মেইন ব্যানার বক্সের সাইজ ও গ্যাপ ফিক্স করা (উচ্চতা সামান্য বাড়ানো হলো) */
+.card-banner {
+    position: relative !important; /* নামের ব্যাজটিকে ছবির ওপর লক করার জন্য */
+    width: 100% !important;
+    height: 360px !important;      /* উচ্চতা ৩০০ থেকে বাড়িয়ে ৩৬০px করা হলো যাতে ছবি না কাটে */
+    margin: 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+    overflow: hidden !important;   /* অতিরিক্ত অংশ কেটে সমান করার জন্য */
+}
+
+/* ৩. ছবিটিকে না কেটে সামান্য ওপরে পজিশন করার ফাইনাল কোড */
+.card-banner img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important; /* ছবি ছোট হয়ে ফ্রেমের ভেতরে থাকবে */
+    background-color: #ffffff !important; /* চারপাশের ব্যাকগ্রাউন্ড সাদা থাকবে */
+    
+    /* ---- ছবি সামান্য ওপরে তোলার মূল ম্যাজিক লাইন ---- */
+    object-position: center 35% !important; /* center এর বদলে ৩৫% করায় ছবি সামান্য ওপরে উঠবে এবং ব্যাজের গ্যাপ অ্যাডজাস্ট হবে */
+    
+    display: block !important;
+}
+
+
+/* ৪. ভাসমান নীল নামের ব্যাজটিকে ছবির একদম নিচে নিখুঁতভাবে সেঁটে দেওয়া */
+.teacher-tag {
+    position: absolute !important;    /* ছবির ওপর ভাসিয়ে সেট করার জন্য */
+    bottom: 0 !important;             /* ছবির একদম নিচের বর্ডারে লেগে থাকবে */
+    left: 0 !important;
+    width: 100% !important;           /* চওড়ায় ছবির সমান হবে */
+    margin: 0 !important;
+    padding: 8px 12px !important;
+    background-color: #1e3a8a !important; /* আপনার থিমের রাজকীয় নীল ব্যাকগ্রাউন্ড */
+    color: #ffffff !important;        /* লেখার রঙ সাদা */
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    z-index: 5 !important;            /* লেখা যেন ছবির পেছনে না যায় */
+    box-sizing: border-box !important;
+    text-align: left !important;
+}
+
+/* ৫. "Enroll Now" বাটনের ৩ডি হোভার অ্যানিমেশন */
+.btn-small {
+    display: inline-block !important;
+    background-color: #1e3a8a !important; /* নীল রঙ */
+    color: #ffffff !important;
+    padding: 8px 16px !important;
+    font-weight: bold !important;
+    border-radius: 6px !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease !important;
+}
+
+/* Enroll Now বোতামের হোভার ইফেক্ট */
+.btn-small:hover {
+    background-color: #e53e3e !important; /* মাউস নিলে লাল হবে */
+    transform: translateY(-2px) !important;
+    box-shadow: 0 5px 12px rgba(229, 62, 62, 0.3) !important;
+}
+
+/* ===================================================
+   আধুনিক ৩ডি সাইড-স্লাইড পেজ ট্রানজিশন সিএসএস
+=================================================== */
+
+/* শুরুতে পুরো পেজের বডি স্ক্রিনের বাইরে (ডান পাশে) লুকিয়ে রাখা */
+body {
+    opacity: 0;
+    /* পেজটি শুরুতে ডান পাশে ১০০ পিক্সেল দূরে থাকবে */
+    transform: translateX(100px); 
+    /* স্ক্রিনের বাইরে চলে যাওয়া অংশ যেন স্ক্রোলবার তৈরি না করে */
+    overflow-x: hidden; 
+    /* স্লাইড হওয়ার গতি ও মসৃণতা কন্ট্রোল করার ট্রানজিশন */
+    transition: opacity 0.5s cubic-bezier(0.25, 1, 0.5, 1), 
+                transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* নতুন পেজে ঢোকার সময়: ডান থেকে বামে স্লাইড হয়ে মাঝখানে আসবে (Slide In) */
+body.page-loaded {
+    opacity: 1 !important;
+    transform: translateX(0) !important;
+}
+
+/* পেজ থেকে বের হওয়ার সময়: আলতো করে বাম পাশে মাইনাস হয়ে চলে যাবে (Slide Out) */
+body.page-fade-out {
+    opacity: 0 !important;
+    transform: translateX(-100px) !important;
+}
+
+
+
+
+
+    
+    </style>
+</head>
+<body>
+    <nav>
+                <div class="logo" style="display: flex; align-items: center; gap: 10px;">
+            <img src="logo.jpg" alt="Logo" style="height: 60px; vertical-align: middle;">
+            <span style="color: #fff; font-size: 35px; font-weight: bold;">Progati Coaching Center</span>
+        </div>
+
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="courses.html" class="active">Courses</a></li>
+            <li><a href="admission.html">Admission</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="page-header">
+        <h1>আমাদের বিষয়ভিত্তিক কোর্সসমূহ</h1>
+        <p>SSC ও HSC ব্যাচের বিভাগভিত্তিক গ্রুপ সাবজেক্টের তালিকা</p>
+    </div>
+    <div class="container">
+        
+        <!-- Commerce Section -->
+        <h2 class="section-title">💼 ব্যবসায় শিক্ষা বিভাগ (Business Studies)</h2>
+        <div class="course-grid">
+            <div class="card">
+                <div class="card-banner">
+                    <img src="Ismail Pic.jpeg" alt="Teacher">
+                    <span class="teacher-tag">👨‍🏫 Md Ismail Hossain Robin</span>
+                </div>
+                <div class="card-body">
+                    <span class="class-category">SSC & HSC</span>
+                    <h3>হিসাববিজ্ঞান (Accounting)</h3>
+                    <p>সহজ টেকনিক ও বোর্ড প্রশ্ন সমাধানের মাধ্যমে হিসাববিজ্ঞানের শতভাগ প্রস্তুতি নিশ্চিতকরণ।</p>
+                    <div class="card-footer"><span class="fee">ফি: ২৫০০ ৳ / মাস</span><a href="admission.html" class="btn-small">Enroll Now</a></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-banner"><img src="https://unsplash.com" alt="Teacher"><span class="teacher-tag">👩‍🏫 Mithila Mam</span></div>
+                <div class="card-body">
+                    <span class="class-category">SSC & HSC</span>
+                    <h3>ফিন্যান্স (Finance)</h3>
+                    <p>অর্থের সময়মূল্য ও গাণিতিক সমস্যাগুলোর সহজ ও নিখুঁত সমাধান কোর্স।</p>
+                    <div class="card-footer"><span class="fee">ফি: ২৫০০ ৳ / মাস</span><a href="admission.html" class="btn-small">Enroll Now</a></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Science Section -->
+        <h2 class="section-title">🔬 বিজ্ঞান বিভাগ (Science)</h2>
+        <div class="course-grid">
+            <div class="card">
+                <div class="card-banner"><img src="https://unsplash.com" alt="Rita Mam"><span class="teacher-tag">👩‍🏫 Rita Mam</span></div>
+                <div class="card-body">
+                    <span class="class-category">SSC & HSC</span>
+                    <h3>পদার্থবিজ্ঞান ও রসায়ন</h3>
+                    <p>থিওরি এবং ম্যাথ ক্লাসের সমন্বয়ে বিজ্ঞান বিভাগের মূল বিষয়গুলোর ভয় দূর করার স্পেশাল ব্যাচ।</p>
+                    <div class="card-footer"><span class="fee">ফি: ৩০০০ ৳ / মাস</span><a href="admission.html" class="btn-small">Enroll Now</a></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Arts Section -->
+        <h2 class="section-title">🎨 মানবিক বিভাগ (Arts)</h2>
+        <div class="course-grid">
+            <div class="card">
+                <div class="card-banner"><img src="https://unsplash.com" alt="Asha Mam"><span class="teacher-tag">👩‍🏫 Asha Mam</span></div>
+                <div class="card-body">
+                    <span class="class-category">SSC & HSC</span>
+                    <h3>মানবিক গ্রুপ সাবজেক্ট</h3>
+                    <p>ইতিহাস, পৌরনীতি ও ভূগোলের সৃজনশীল লেখার বিশেষ গাইডলাইন ও নোটভিত্তিক ক্লাস।</p>
+                    <div class="card-footer"><span class="fee">ফি: ২০০০ ৳ / মাস</span><a href="admission.html" class="btn-small">Enroll Now</a></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Compulsory/ICT Section -->
+        <h2 class="section-title">💻 আবশ্যিক বিষয় (Compulsory)</h2>
+        <div class="course-grid">
+            <div class="card">
+                <div class="card-banner"><img src="https://unsplash.com" alt="Teacher"><span class="teacher-tag">👨‍🏫 Md Ismail Hossain (Robin)</span></div>
+                <div class="card-body">
+                    <span class="class-category">HSC Only</span>
+                    <h3>HSC তথ্য ও যোগাযোগ প্রযুক্তি (ICT)</h3>
+                    <p>প্রোগ্রামিং, HTML ও ডিজিটাল লজিক গেটের সহজ সৃজনশীল ও প্র্যাক্টিক্যাল সমাধান কোর্স।</p>
+                    <div class="card-footer"><span class="fee">টোটাল ফি: ৪০০০ ৳</span><a href="admission.html" class="btn-small">Enroll Now</a></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+   <!-- কোর্সেস পেজের প্রফেশনাল ৩ডি ফুটার -->
+<footer>
+    <div class="footer-container">
+        <div class="footer-column">
+            <h4>প্রগতি কোচিং সেন্টার</h4>
+            <p>সুশিক্ষার সিঁড়ি চাই, আদর্শ শিক্ষকের বিকল্প নাই। আমরা প্রতিটি শিক্ষার্থীকে মেধার সঠিক মূল্যায়ন ও পরিচর্যা নিশ্চিত করি.</p>
+        </div>
+        <div class="footer-column">
+            <h4>কুইক লিংক</h4>
+            <ul>
+                <li><a href="index.html">হোম পেজ</a></li>
+                <li><a href="courses.html">আমাদের কোর্সসমূহ</a></li>
+                <li><a href="admission.html">অনলাইন ভর্তি ফরম</a></li>
+                <li><a href="contact.html">যোগাযোগ</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h4>যোগাযোগের তথ্য</h4>
+            <p>📍 সস্তাপুর (গাবতলার মোড়), ফতুল্লাহ, নারায়ণগঞ্জ</p>
+            <p>📞 01824-868389</p>
+            <a href="https://maps.app.goo.gl/jpoS3PFLTDaztxY48" target="_blank" class="map-link-btn">🗺️ গুগল ম্যাপে আমাদের খুঁজুন</a>
+
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 Progati Coaching Center. All Rights Reserved.</p>
+    </div>
+</footer>
+
+
+<script>
+// ১. পেজ ওপেন হওয়ার সাথে সাথে ডান দিক থেকে বামে স্লাইড করার ক্লাস যোগ করা
+document.addEventListener("DOMContentLoaded", function() {
+    setTimeout(function() {
+        document.body.classList.add("page-loaded");
+    }, 50); // সামান্য ডিলে যাতে স্লাইড অ্যানিমেশনটি নিখুঁতভাবে চোখে পড়ে
+});
+
+// ২. মেনুর লিঙ্কে ক্লিক করলে বর্তমান পেজটি বামে স্লাইড হয়ে চলে যাবে
+document.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        
+        // শুধু নিজস্ব পেজের লোকাল লিঙ্ক বাদে অন্য সব পেজ লিঙ্কের জন্য এটি কাজ করবে
+        if (href && href !== '#' && !href.startsWith('#') && !this.getAttribute('target')) {
+            e.preventDefault(); // ডিফল্ট ধপ করে পেজ চেঞ্জ হওয়া বন্ধ
+            
+            document.body.classList.add('page-fade-out'); // বামে স্লাইড আউট চালু
+            
+            // অ্যানিমেশন চলাকালীন (০.৪ সেকেন্ড) অপেক্ষা করে নতুন পেজে পাঠানো
+            setTimeout(function() {
+                window.location.href = href;
+            }, 450);
+        }
+    });
+});
+</script>
+
+
+</body>
+</html>
