@@ -6,23 +6,40 @@
     <title>Progati Coaching Center - Admission</title>
     
     <style>
-        /* মোবাইল ও ছোট স্ক্রিনের জন্য হেডার রেসপনসিভ করার কোড */
-@media (max-width: 768px) {
-    /* লোগো এবং নাম যে বক্সে আছে সেটিকে উপর-নিচ করা */
-    header, .header-container { 
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-    
-    /* মেনুবারকে উপর-নিচ করে সাজানো যেন একে অপরের ওপর না ওঠে */
-    nav, .menu {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        margin-top: 15px;
-    }
+           /* মোবাইল ও ছোট স্ক্রিনের জন্য হেডার রেসপনসিভ করার মূল কোড */
+        @media (max-width: 768px) {
+            /* লোগো এবং নাম যে বক্সে আছে সেটিকে উপর-নিচ করা */
+            header, .header-container, .top-bar { 
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                text-align: center !important;
+                height: auto !important;
+            }
+            
+            /* মেনুবারকে উপর-নিচ করে সাজানো যেন একে অপরের ওপর না ওঠে */
+            nav, .menu, .nav-links {
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                gap: 10px !important;
+                margin-top: 15px !important;
+                width: 100% !important;
+            }
+
+            /* মেনুর ভেতরের লিংকগুলোর পজিশন ঠিক করা */
+            nav a, .menu a, .nav-links a {
+                display: block !important;
+                padding: 8px 0 !important;
+            }
+
+            /* বড় নামটির সাইজ মোবাইলের জন্য একটু ছোট করা */
+            h1 {
+                font-size: 22px !important;
+                line-height: 1.2 !important;
+            }
+        }
+
 
     /* বড় নামটির সাইজ মোবাইলের জন্য একটু ছোট করা */
     h1 {
