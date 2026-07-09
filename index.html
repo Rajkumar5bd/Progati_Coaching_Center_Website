@@ -6,21 +6,29 @@
     <title>Progati Coaching Center - Admission</title>
     
     <style>
-    /* বাটনগুলোকে কন্টেইনারের সব বাধা ভেঙে একদম ডানদিকের শেষ প্রান্তে নেওয়ার কোড */
+    /* বাটনগুলোকে সব কন্টেইনারের বাইরে নিয়ে একদম স্ক্রিনের ডান মাথায় ফিক্সড করার কোড */
 nav {
     display: flex !important;
-    position: relative !important; /* বাটন সরানোর জন্য মেইন বেস */
 }
 
 nav ul {
     display: flex !important;
-    position: absolute !important; /* এটি কন্টেইনারের বাধা ভেঙে বাইরে চলে যাবে */
-    right: -100px !important; /* ডান দিকে মেইন কন্টেইনার থেকে আরও ১০০ পিক্সেল বাইরে ধাক্কা দেওয়া হলো */
-    top: 50% !important;
-    transform: translateY(-50%) !important; /* মাঝ বরাবর সোজা রাখার জন্য */
+    flex-direction: row !important;
+    align-items: center !important;
     gap: 20px !important;
+    
+    /* এটি আপনার পুরো পেজের কন্টেইনারের সীমানা ভেঙে সরাসরি পিসির ডানদিকের শেষ সীমানায় বাটন লক করবে */
+    position: absolute !important; 
+    left: auto !important;
+    right: max(20px, calc((100vw - 1200px) / 2 + 20px)) !important; /* স্ক্রিনের ডান প্রান্তের সাথে মিলিয়ে সুন্দর পজিশনে রাখবে */
 }
 
+/* স্ক্রিন যখন বড় (1400px এর বেশি) হবে তখন বাটন যেন আরও সুন্দরভাবে ডানে চেপে যায় */
+@media (min-width: 1400px) {
+    nav ul {
+        right: calc((100vw - 1200px) / 2 - 40px) !important; /* বড় স্ক্রিনে বাটনকে আরও ডানে ধাক্কা দেওয়া হলো */
+    }
+}
 
 
                    
