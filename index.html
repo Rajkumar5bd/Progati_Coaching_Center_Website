@@ -6,47 +6,89 @@
     <title>Progati Coaching Center - Admission</title>
     
     <style>
-                /* মোবাইল ও ছোট স্ক্রিনের জন্য হেডার ১০০% রেসপনসিভ করার ফাইনাল কোড */
+                        /* সাদা ব্যাকগ্রাউন্ড পেজের জন্য বাটন পাশাপাশি রাখার কোড */
         @media (max-width: 768px) {
-            /* ১. টপ বার (ফোন ও ইমেইল) উপর-নিচ করা */
+            /* ১. টপ বার (ফোন ও ইমেইল) ছোট করে পাশাপাশি রাখা */
             .top-bar {
-                flex-direction: column !important;
-                gap: 5px !important;
-                text-align: center !important;
-                padding: 10px !important;
-            }
-
-            /* ২. নেভিগেশন বার উপর-নিচ করা */
-            nav {
-                flex-direction: column !important;
-                align-items: center !important;
-                padding: 15px !important;
-                height: auto !important;
-            }
-
-            /* ৩. লোগো এরিয়া উপর-নিচ করা এবং টেক্সট ছোট করা */
-            nav .logo {
-                flex-direction: column !important;
-                text-align: center !important;
+                display: flex !important;
+                flex-direction: row !important;
+                justify-content: center !important;
                 gap: 15px !important;
-                margin-bottom: 15px !important;
+                padding: 6px !important;
+                font-size: 11px !important;
             }
 
-            /* বড় নামটির সাইজ মোবাইলের জন্য ছোট করা */
-            nav .logo span {
-                font-size: 26px !important; /* ৫০ পিক্সেল থেকে কমিয়ে ২৬ করা হলো */
-                line-height: 1.2 !important;
-            }
-
-            /* ৪. মেনুবার (Home, Courses...) উপর-নিচ করে সাজানো */
-            nav ul {
+            /* ২. নেভিগেশন বার */
+            nav {
+                display: flex !important;
                 flex-direction: column !important;
                 align-items: center !important;
+                padding: 10px 5px !important;
+                height: auto !important;
+                background-color: #ffffff !important; /* ব্যাকগ্রাউন্ড সাদা রাখা হলো */
+            }
+
+            /* ৩. লোগো এবং নাম মাঝখানে সুন্দর করে সাজানো */
+            nav .logo {
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                text-align: center !important;
+                gap: 5px !important;
+                margin-bottom: 8px !important;
+            }
+
+            nav .logo img {
+                height: 50px !important;
+            }
+
+            nav .logo span {
+                font-size: 20px !important;
+                line-height: 1.2 !important;
+                color: #1f2937 !important; /* টেক্সটের কালার কালো/ডার্ক রাখা হলো */
+            }
+
+            /* ৪. মেনু বাটনগুলো পাশাপাশি (Side by Side) আনার মূল কোড */
+            nav ul {
+                display: flex !important;
+                flex-direction: row !important; /* বাটনগুলোকে পাশাপাশি আনবে */
+                justify-content: center !important;
+                flex-wrap: wrap !important; /* স্ক্রিন বেশি ছোট হলে নিজে থেকে পরের লাইনে যাবে */
                 width: 100% !important;
                 gap: 12px !important;
                 padding: 0 !important;
+                margin: 5px 0 !important;
+            }
+
+            nav ul li {
+                width: auto !important;
                 margin: 0 !important;
             }
+
+            /* সাদা ব্যাকগ্রাউন্ডে বাটনগুলোর টেক্সট কালার */
+            nav ul li a {
+                color: #4b5563 !important; /* টেক্সটের কালার হালকা কালো করা হলো যেন পরিষ্কার দেখা যায় */
+                font-size: 13px !important;
+                padding: 4px 6px !important;
+                display: inline-block !important;
+            }
+
+            /* অ্যাক্টিভ বা সিলেক্টেড পেজের বাটনের কালার */
+            nav ul li a.active {
+                color: #e11d48 !important; /* হোমপেজে থাকলে হোম লেখাটি লাল দেখাবে */
+                font-weight: bold !important;
+            }
+
+            /* অনলাইন ভর্তি বাটনটি যেন ছোট ও সুন্দর দেখায় */
+            nav ul li a.nav-btn {
+                font-size: 12px !important;
+                padding: 4px 8px !important;
+                background-color: #e11d48 !important;
+                color: #ffffff !important; /* ভেতরের লেখা সাদা */
+                border-radius: 4px !important;
+            }
+        }
+
 
             /* মেনুর ভেতরের প্রতিটি লাইন ফুল উইডথ করা */
             nav ul li {
