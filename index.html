@@ -6,9 +6,31 @@
     <title>Progati Coaching Center - Admission</title>
     
     <style>
-                        /* সাদা ব্যাকগ্রাউন্ড পেজের জন্য বাটন পাশাপাশি রাখার কোড */
+                           /* পিসিতে আগের মতো সুন্দর রেখে শুধুমাত্র মোবাইলে পাশাপাশি করার ফাইনাল কোড */
+        
+        /* ১. পিসি বা বড় স্ক্রিনের জন্য নেভিগেশন বারের সাধারণ কোড (যা আগের মতো থাকবে) */
+        nav {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            background-color: #ffffff;
+        }
+        nav ul {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            list-style: none;
+            gap: 20px;
+        }
+        nav ul li {
+            width: auto;
+        }
+
+        /* ২. শুধুমাত্র মোবাইল ও ছোট স্ক্রিনের জন্য রেসপনসিভ কোড (যা পিসিকে ডিস্টার্ব করবে না) */
         @media (max-width: 768px) {
-            /* ১. টপ বার (ফোন ও ইমেইল) ছোট করে পাশাপাশি রাখা */
+            /* টপ বার (ফোন ও ইমেইল) ছোট করে পাশাপাশি রাখা */
             .top-bar {
                 display: flex !important;
                 flex-direction: row !important;
@@ -18,17 +40,14 @@
                 font-size: 11px !important;
             }
 
-            /* ২. নেভিগেশন বার */
+            /* নেভিগেশন বার মোবাইলে উপর-নিচ হবে */
             nav {
-                display: flex !important;
                 flex-direction: column !important;
                 align-items: center !important;
                 padding: 10px 5px !important;
-                height: auto !important;
-                background-color: #ffffff !important; /* ব্যাকগ্রাউন্ড সাদা রাখা হলো */
             }
 
-            /* ৩. লোগো এবং নাম মাঝখানে সুন্দর করে সাজানো */
+            /* লোগো এবং নাম মাঝখানে সুন্দর করে সাজানো */
             nav .logo {
                 display: flex !important;
                 flex-direction: column !important;
@@ -37,6 +56,51 @@
                 gap: 5px !important;
                 margin-bottom: 8px !important;
             }
+
+            nav .logo img {
+                height: 50px !important;
+            }
+
+            nav .logo span {
+                font-size: 20px !important;
+                line-height: 1.2 !important;
+                color: #1f2937 !important;
+            }
+
+            /* মেনু বাটনগুলো মোবাইলে সুন্দরভাবে পাশাপাশি (Side by Side) থাকবে */
+            nav ul {
+                display: flex !important;
+                flex-direction: row !important; 
+                justify-content: center !important;
+                flex-wrap: wrap !important; 
+                width: 100% !important;
+                gap: 12px !important;
+                padding: 0 !important;
+                margin: 5px 0 !important;
+            }
+
+            nav ul li a {
+                color: #4b5563 !important; 
+                font-size: 13px !important;
+                padding: 4px 6px !important;
+                display: inline-block !important;
+            }
+
+            nav ul li a.active {
+                color: #e11d48 !important; 
+                font-weight: bold !important;
+            }
+
+            /* অনলাইন ভর্তি বাটনটি মোবাইলে ছোট ও সুন্দর দেখাবে */
+            nav ul li a.nav-btn {
+                font-size: 12px !important;
+                padding: 4px 8px !important;
+                background-color: #e11d48 !important;
+                color: #ffffff !important; 
+                border-radius: 4px !important;
+            }
+        }
+
 
             nav .logo img {
                 height: 50px !important;
