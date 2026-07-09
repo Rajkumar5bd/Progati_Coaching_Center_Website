@@ -5,10 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Progati Coaching Center - Admission</title>
     
-    <style>
-                       /* মোবাইলে লোগো মাঝে এবং মেনু বাটন পাশাপাশি রাখার কোড */
+    <style>        /* মোবাইলে লোগো ও ছবি ঠিক রেখে বাটন পাশাপাশি রাখার কোড */
         @media (max-width: 768px) {
-            /* ১. টপ বার (ফোন ও ইমেইল) ছোট করে পাশাপাশি রাখা */
+            /* ১. টপ বার (ফোন ও ইমেইল) */
             .top-bar {
                 display: flex !important;
                 flex-direction: row !important;
@@ -18,47 +17,72 @@
                 font-size: 11px !important;
             }
 
-            /* ২. নেভিগেশন বারের বাড়তি প্যাডিং বা ফাঁকা জায়গা কমানো */
+            /* ২. নেভিগেশন বার */
             nav {
                 display: flex !important;
-                flex-direction: column !important; /* লোগো উপরে, মেনু নিচে থাকবে */
+                flex-direction: column !important;
                 align-items: center !important;
-                padding: 10px 5px !important; /* উপর-নিচের স্পেস অনেক কমানো হলো */
+                padding: 10px 5px !important;
                 height: auto !important;
                 background-color: #1e3a8a !important;
             }
 
-            /* ৩. লোগো এবং নাম মাঝখানে সুন্দর করে সাজানো */
+            /* ৩. লোগো এরিয়া (ছবি ও নাম এবার ঠিক থাকবে) */
             nav .logo {
                 display: flex !important;
-                flex-direction: column !important; /* লোগো উপরে, নাম নিচে থাকবে */
+                flex-direction: column !important;
                 align-items: center !important;
                 text-align: center !important;
-                gap: 5px !important;
-                margin-bottom: 8px !important; /* নিচের গ্যাপ কমানো হলো */
+                gap: 8px !important;
+                margin-bottom: 8px !important;
+                width: 100% !important;
             }
 
+            /* লোগোর ছবির সাইজ অটো রাখা হলো যেন গায়েব না হয় */
             nav .logo img {
-                height: 50px !important; /* লোগো একটু ছোট করা হলো */
+                max-width: 100% !important;
+                height: 60px !important; /* এখানে হাইট একটু বাড়িয়ে ৬০ পিক্সেল করা হলো */
+                width: auto !important;
+                display: inline-block !important;
             }
 
             nav .logo span {
-                font-size: 20px !important; /* নামটির সাইজ ২০ পিক্সেল করা হলো যেন ভেঙে না যায় */
+                font-size: 20px !important;
                 line-height: 1.2 !important;
                 color: #ffffff !important;
             }
 
-            /* ৪. মেনু বাটনগুলো উপর-নিচ না করে পাশে পাশে (Side by Side) আনার মূল কোড */
+            /* ৪. মেনু বাটনগুলো পাশাপাশি রাখা */
             nav ul {
                 display: flex !important;
-                flex-direction: row !important; /* এই লাইনটি বাটনগুলোকে পাশাপাশি আনবে */
-                justify-content: center !important; /* মাঝখানে সাজিয়ে রাখবে */
-                flex-wrap: wrap !important; /* স্ক্রিন বেশি ছোট হলে নিজে থেকে পরের লাইনে যাবে */
+                flex-direction: row !important;
+                justify-content: center !important;
+                flex-wrap: wrap !important;
                 width: 100% !important;
-                gap: 12px !important; /* বাটনগুলোর পারস্পরিক দূরত্ব */
+                gap: 12px !important;
                 padding: 0 !important;
                 margin: 5px 0 !important;
             }
+
+            nav ul li {
+                width: auto !important;
+                margin: 0 !important;
+            }
+
+            nav ul li a {
+                color: #ffffff !important;
+                font-size: 13px !important;
+                padding: 4px 6px !important;
+                display: inline-block !important;
+            }
+
+            nav ul li a.nav-btn {
+                font-size: 12px !important;
+                padding: 4px 8px !important;
+                background-color: #e11d48 !important;
+                border-radius: 4px !important;
+            }
+        }
 
             nav ul li {
                 width: auto !important; /* উপর-নিচ করার ফুল উইডথ স্টাইল বাতিল করা হলো */
