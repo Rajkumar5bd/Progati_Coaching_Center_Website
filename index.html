@@ -6,22 +6,29 @@
     <title>Progati Coaching Center - Admission</title>
     
     <style>
-    /* বাটনগুলোকে সব কন্টেইনারের বাইরে নিয়ে একদম স্ক্রিনের ডান মাথায় ফিক্সড করার কোড */
+    /* বাটনগুলোকে সব বাধা ভেঙে একদম স্ক্রিনের শেষ প্রান্তে ডান দিকে নেওয়ার চূড়ান্ত কোড */
 nav {
     display: flex !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-right: 40px !important; /* এটি ডানদিকের বর্ডার থেকে মাত্র ৪০ পিক্সেল দূরত্ব রাখবে */
+}
+
+/* আপনার ইনলাইন স্টাইলের ক্ষমতা ভাঙার জন্য সরাসরি li এবং a কে ধরে ডান দিকে ধাক্কা দেওয়ার কোড */
+nav ul, nav ul li, nav ul li a {
+    float: right !important; /* পুরোনো কিন্তু সবচেয়ে শক্তিশালী ট্রিক যা সবকিছু ডানে সরায় */
 }
 
 nav ul {
     display: flex !important;
     flex-direction: row !important;
-    align-items: center !important;
+    margin-left: auto !important; /* বাম থেকে পুরো ধাক্কা দিয়ে ডানে সরাবে */
+    margin-right: 0 !important;   /* ডানদিকের সব মার্জিন জিরো করবে */
+    padding-right: 0 !important;
     gap: 20px !important;
-    
-    /* এটি আপনার পুরো পেজের কন্টেইনারের সীমানা ভেঙে সরাসরি পিসির ডানদিকের শেষ সীমানায় বাটন লক করবে */
-    position: absolute !important; 
-    left: auto !important;
-    right: max(20px, calc((100vw - 1200px) / 2 + 20px)) !important; /* স্ক্রিনের ডান প্রান্তের সাথে মিলিয়ে সুন্দর পজিশনে রাখবে */
 }
+
 
 /* স্ক্রিন যখন বড় (1400px এর বেশি) হবে তখন বাটন যেন আরও সুন্দরভাবে ডানে চেপে যায় */
 @media (min-width: 1400px) {
