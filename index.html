@@ -1624,14 +1624,15 @@ body.page-fade-out {
         <span>📞 01824-868389</span>
         <span>✉️ contact@progaticoaching.com</span>
     </div>
-                  <nav style="display: grid !important; grid-template-columns: auto 1fr auto !important; align-items: center !important; width: 100vw !important; max-width: 100vw !important; position: relative !important; left: 50% !important; transform: translateX(-50%) !important; padding: 15px 40px !important; box-sizing: border-box !important; background-color: #ffffff !important;">
-        <div class="logo" style="display: flex !important; align-items: center !important; gap: 10px !important; grid-column: 1 !important;">
+                     <nav style="display: block !important; width: 100% !important; height: 110px !important; background-color: #ffffff !important; position: relative !important; margin: 0 !important; padding: 0 !important;">
+        <!-- লোগো এবং নাম থাকবে একদম বাম পাশের শেষ সীমানায় -->
+        <div class="logo" style="display: flex !important; align-items: center !important; gap: 10px !important; position: absolute !important; left: 40px !important; top: 50% !important; transform: translateY(-50%) !important; margin: 0 !important; padding: 0 !important;">
             <img src="logo.jpg" alt="Logo" style="height: 80px !important; vertical-align: middle !important;">
             <span style="color: #1f2937 !important; font-size: 50px !important; font-weight: bold !important; white-space: nowrap !important;">Progati Coaching Center</span>
         </div>
-        <div style="grid-column: 2 !important;"></div>
         
-        <ul style="display: flex !important; align-items: center !important; gap: 25px !important; list-style: none !important; margin: 0 !important; padding: 0 !important; grid-column: 3 !important; justify-content: flex-end !important;">
+        <!-- বাটনগুলো সব বাধা ভেঙে চলে যাবে একদম ডান পাশের শেষ সীমানায় (স্ক্রলবারের কাছে) -->
+        <ul style="display: flex !important; align-items: center !important; gap: 25px !important; list-style: none !important; margin: 0 !important; padding: 0 !important; position: absolute !important; right: 40px !important; top: 50% !important; transform: translateY(-50%) !important;">
             <li><a href="index.html" class="active" style="text-decoration: none !important; color: #e11d48 !important; font-weight: bold !important; font-size: 16px !important; display: inline-block !important; transition: all 0.3s ease !important;">Home</a></li>
             <li><a href="courses.html" style="text-decoration: none !important; color: #4b5563 !important; font-weight: 500 !important; font-size: 16px !important; display: inline-block !important; transition: all 0.3s ease !important;" onmouseover="this.style.color='#e11d48'; this.style.transform='translateY(-3px)';" onmouseout="this.style.color='#4b5563'; this.style.transform='translateY(0)';">Courses</a></li>
             <li><a href="admission.html" style="text-decoration: none !important; color: #4b5563 !important; font-weight: 500 !important; font-size: 16px !important; display: inline-block !important; transition: all 0.3s ease !important;" onmouseover="this.style.color='#e11d48'; this.style.transform='translateY(-3px)';" onmouseout="this.style.color='#4b5563'; this.style.transform='translateY(0)';">Admission</a></li>
