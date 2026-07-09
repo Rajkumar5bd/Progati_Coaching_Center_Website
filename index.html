@@ -6,24 +6,29 @@
     <title>Progati Coaching Center - Admission</title>
     
     <style>
-        /* লোগো বামে এবং বাটনগুলোকে একদম ডানদিকের শেষ প্রান্তে নেওয়ার কোড */
+        /* পিসিতে বাটনগুলোকে একদম ডানদিকের শেষ প্রান্তে ফিক্সড করার কোড */
 nav {
     display: flex !important;
     flex-direction: row !important;
-    justify-content: space-between !important; /* লোগো ও বাটনকে দুই মাথায় রাখবে */
+    justify-content: space-between !important;
     align-items: center !important;
-    width: 100% !important; /* পুরো স্ক্রিন জুড়ে জায়গা নেবে */
-    max-width: 100% !important; /* কোনো বাধা থাকবে না */
-    padding: 15px 40px !important; /* দুই পাশে ৪০ পিক্সেল ফাঁকা রেখে একদম ডানে চাপাবে */
-    margin: 0 !important;
+    width: 100% !important;
+    position: relative !important; /* বাটনগুলোকে ডানে সরানোর জন্য মেইন বেস */
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
 }
 
 nav ul {
     display: flex !important;
     flex-direction: row !important;
     align-items: center !important;
-    gap: 25px !important; /* বাটনগুলোর মাঝের দূরত্ব একটু বাড়ানো হলো */
-    margin-left: auto !important; /* বাটনগুলোকে ডানদিকের শেষ মাথায় ধাক্কা দেবে */
+    gap: 25px !important; /* বাটনগুলোর মাঝের দূরত্ব */
+    
+    /* বাটনগুলোকে একদম ডান দিকে ফিক্সড করার ম্যাজিক কোড */
+    position: absolute !important;
+    right: 40px !important; /* ডানদিকের বর্ডার থেকে মাত্র ৪০ পিক্সেল বামে থাকবে, অর্থাৎ একদম ডানে চেপে যাবে */
+    top: 50% !important;
+    transform: translateY(-50%) !important; /* একদম মাঝ বরাবর সোজা রাখার জন্য */
 }
 
                    
