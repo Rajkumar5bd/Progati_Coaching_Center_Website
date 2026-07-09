@@ -6,30 +6,30 @@
     <title>Progati Coaching Center - Admission</title>
     
     <style>
-        /* পিসিতে বাটনগুলোকে একদম ডানদিকের শেষ প্রান্তে ফিক্সড করার কোড */
+       /* বাটনগুলোকে সব বাধা ভেঙে একদম ডানদিকের শেষ প্রান্তে নেওয়ার চূড়ান্ত কোড */
 nav {
     display: flex !important;
-    flex-direction: row !important;
-    justify-content: space-between !important;
-    align-items: center !important;
     width: 100% !important;
-    position: relative !important; /* বাটনগুলোকে ডানে সরানোর জন্য মেইন বেস */
-    padding-top: 15px !important;
-    padding-bottom: 15px !important;
+    max-width: 100% !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    box-sizing: border-box !important;
 }
 
 nav ul {
     display: flex !important;
     flex-direction: row !important;
     align-items: center !important;
-    gap: 25px !important; /* বাটনগুলোর মাঝের দূরত্ব */
+    gap: 25px !important;
     
-    /* বাটনগুলোকে একদম ডান দিকে ফিক্সড করার ম্যাজিক কোড */
-    position: absolute !important;
-    right: 40px !important; /* ডানদিকের বর্ডার থেকে মাত্র ৪০ পিক্সেল বামে থাকবে, অর্থাৎ একদম ডানে চেপে যাবে */
-    top: 50% !important;
-    transform: translateY(-50%) !important; /* একদম মাঝ বরাবর সোজা রাখার জন্য */
+    /* এটি আপনার আগের সব সিএসএস কোডের নিয়ম ভেঙে বাটনকে স্ক্রিনের একদম ডানে নিয়ে যাবে */
+    position: fixed !important; 
+    right: 40px !important; /* ডানদিকের বর্ডার থেকে মাত্র ৪০ পিক্সেল বামে থাকবে */
+    top: auto !important;
+    margin: 0 !important;
+    z-index: 9999 !important; /* যেন বাটনগুলো অন্য কোনো লেখার নিচে চাপা না পড়ে */
 }
+
 
                    
                       /* মোবাইল ও ছোট স্ক্রিনে বাংলা লেখা এবং বাটন নিখুঁত করার ফাইনাল কোড */
