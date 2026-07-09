@@ -1613,6 +1613,87 @@ body.page-loaded {
 body.page-fade-out {
     opacity: 0 !important;
     transform: translateX(-100px) !important;
+
+
+            /* পিসিতে লোগো বামে এবং বাটন একদম ডানে রাখার মেইন কোড */
+        .main-navbar {
+            display: flex !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            padding: 15px 40px !important;
+            box-sizing: border-box !important;
+            background-color: #ffffff !important;
+        }
+        .main-navbar .logo {
+            display: flex !important;
+            align-items: center !important;
+            gap: 10px !important;
+        }
+        .main-navbar .logo img {
+            height: 80px !important;
+        }
+        .main-navbar .logo span {
+            color: #1f2937 !important;
+            font-size: 50px !important;
+            font-weight: bold !important;
+        }
+        .main-navbar .nav-links {
+            display: flex !important;
+            align-items: center !important;
+            gap: 20px !important;
+            list-style: none !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            margin-left: auto !important; /* বাটনগুলোকে পিসিতে একদম ডানে ধাক্কা দেবে */
+        }
+        .main-navbar .nav-links a {
+            text-decoration: none !important;
+            transition: all 0.3s ease-in-out !important; /* স্মুথ ট্রানজিশন অ্যানিমেশন */
+        }
+        .main-navbar .nav-links a:hover {
+            color: #e11d48 !important; /* মাউস নিলে লাল হবে */
+            transform: translateY(-2px) !important;
+        }
+
+        /* শুধুমাত্র মোবাইল ও ছোট স্ক্রিনের জন্য ফাইনাল রেসপনসিভ কোড */
+        @media (max-width: 768px) {
+            .top-bar {
+                display: flex !important;
+                flex-direction: row !important;
+                justify-content: center !important;
+                gap: 15px !important;
+                font-size: 11px !important;
+            }
+            .main-navbar {
+                flex-direction: column !important;
+                padding: 15px 5px !important;
+            }
+            .main-navbar .logo {
+                flex-direction: column !important;
+                margin-bottom: 12px !important;
+            }
+            .main-navbar .logo img {
+                height: 55px !important;
+            }
+            .main-navbar .logo span {
+                font-size: 26px !important;
+                white-space: nowrap !important;
+            }
+            .main-navbar .nav-links {
+                flex-direction: row !important; /* মোবাইলেও বাটন এক লাইনে পাশাপাশি থাকবে */
+                justify-content: center !important;
+                width: 100% !important;
+                gap: 10px !important;
+                margin-left: 0 !important;
+            }
+            .main-navbar .nav-links a {
+                font-size: 13px !important;
+                padding: 4px 6px !important;
+            }
+        }
+
 }
 
 
@@ -1624,7 +1705,7 @@ body.page-fade-out {
         <span>📞 01824-868389</span>
         <span>✉️ contact@progaticoaching.com</span>
     </div>
-                          <nav class="main-navbar">
+                           <nav class="main-navbar">
         <div class="logo">
             <img src="logo.jpg" alt="Logo">
             <span>Progati Coaching Center</span>
@@ -1634,9 +1715,10 @@ body.page-fade-out {
             <li><a href="courses.html">Courses</a></li>
             <li><a href="admission.html">Admission</a></li>
             <li><a href="contact.html">Contact</a></li>
-            <li><a href="admission.html" class="nav-btn">অনлайн ভর্তি</a></li>
+            <li><a href="admission.html" class="nav-btn">অনলাইন ভর্তিি</a></li>
         </ul>
     </nav>
+
 
 
 
