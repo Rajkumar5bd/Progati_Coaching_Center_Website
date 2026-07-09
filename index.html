@@ -6,6 +6,31 @@
     <title>Progati Coaching Center - Admission</title>
     
     <style>
+        /* মোবাইল ও ছোট স্ক্রিনের জন্য হেডার রেসপনসিভ করার কোড */
+@media (max-width: 768px) {
+    /* লোগো এবং নাম যে বক্সে আছে সেটিকে উপর-নিচ করা */
+    header, .header-container { 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    /* মেনুবারকে উপর-নিচ করে সাজানো যেন একে অপরের ওপর না ওঠে */
+    nav, .menu {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 15px;
+    }
+
+    /* বড় নামটির সাইজ মোবাইলের জন্য একটু ছোট করা */
+    h1 {
+        font-size: 24px;
+        line-height: 1.2;
+    }
+}
+
         /* পুরো ওয়েবসাইটের বেসিক রিসেট */
         * { 
             margin: 0; 
