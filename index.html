@@ -6,6 +6,26 @@
     <title>Progati Coaching Center - Admission</title>
     
     <style>
+        /* পিসিতে লোগো বামে এবং বাটনগুলোকে একদম ডান দিকে সরানোর কোড */
+nav {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important; /* এটি লোগো ও বাটনকে দুই প্রান্তে রাখবে */
+    align-items: center !important;
+    width: 100% !important;
+    max-width: 1200px !important; /* আপনার সাইটের মেইন কন্টেইনারের সাইজ */
+    margin: 0 auto !important; /* হেডারটি মাঝে রাখার জন্য */
+    padding: 15px 20px !important; /* দুই পাশের ফাঁকা জায়গা কমিয়ে বাটন ডানে সরানো হলো */
+}
+
+nav ul {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 20px !important; /* বাটনগুলোর পারস্পরিক দূরত্ব */
+    margin-left: auto !important; /* বাটনগুলোকে জোর করে ডান দিকে ধাক্কা দেবে */
+}
+
                    
                       /* মোবাইল ও ছোট স্ক্রিনে বাংলা লেখা এবং বাটন নিখুঁত করার ফাইনাল কোড */
         @media (max-width: 768px) {
