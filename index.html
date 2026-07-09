@@ -6,17 +6,21 @@
     <title>Progati Coaching Center - Admission</title>
     
     <style>
-     /* পিসিতে মেনুবারকে ডানদিকের শেষ সীমানায় চাপানোর কোড */
+    /* বাটনগুলোকে কন্টেইনারের সব বাধা ভেঙে একদম ডানদিকের শেষ প্রান্তে নেওয়ার কোড */
 nav {
-    width: 100% !important;
-    max-width: 100% !important; /* মেইন বক্সের সব বাধা দূর করার জন্য */
-    padding-right: 20px !important; /* ডানদিকের বর্ডার থেকে একটু ফাঁকা রাখবে */
+    display: flex !important;
+    position: relative !important; /* বাটন সরানোর জন্য মেইন বেস */
 }
 
 nav ul {
-    margin-left: auto !important; /* বাম থেকে পুরো ধাক্কা দিয়ে ডানে সরাবে */
-    padding-right: 0 !important;  /* ডানদিকের বাড়তি ফাঁকা জায়গা থাকলে তা জিরো করবে */
+    display: flex !important;
+    position: absolute !important; /* এটি কন্টেইনারের বাধা ভেঙে বাইরে চলে যাবে */
+    right: -100px !important; /* ডান দিকে মেইন কন্টেইনার থেকে আরও ১০০ পিক্সেল বাইরে ধাক্কা দেওয়া হলো */
+    top: 50% !important;
+    transform: translateY(-50%) !important; /* মাঝ বরাবর সোজা রাখার জন্য */
+    gap: 20px !important;
 }
+
 
 
                    
