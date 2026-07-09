@@ -7,9 +7,30 @@
     
     <style>
                    
-        /* ২. শুধুমাত্র মোবাইল ও ছোট স্ক্রিনের জন্য রেসপনসিভ কোড (যা পিসিকে ডিস্টার্ব করবে না) */
+               /* পিসি ও মোবাইল উভয় ডিভাইসে বাটন পাশাপাশি রাখা, নাম বড় করা এবং স্মুথ ট্রানজিশন কোড */
+        
+        /* ১. পিসির জন্য সাধারণ ডিজাইন এবং ট্রানজিশন ইফেক্ট */
+        nav {
+            display: flex !important;
+            flex-direction: row !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+        }
+        nav ul {
+            display: flex !important;
+            flex-direction: row !important;
+            align-items: center !important;
+            gap: 20px !important;
+        }
+        
+        /* বাটনগুলোর ভেতরে স্মুথ ট্রানজিশন অ্যানিমেশন যোগ করা */
+        nav ul li a {
+            transition: all 0.3s ease-in-out !important; /* ০.৩ সেকেন্ড ধরে স্মুথলি কালার চেঞ্জ হবে */
+        }
+
+        /* ২. শুধুমাত্র মোবাইলের জন্য বিশেষ পরিবর্তন */
         @media (max-width: 768px) {
-            /* টপ বার (ফোন ও ইমেইল) ছোট করে পাশাপাশি রাখা */
+            /* টপ বার (ফোন ও ইমেইল) */
             .top-bar {
                 display: flex !important;
                 flex-direction: row !important;
@@ -19,22 +40,74 @@
                 font-size: 11px !important;
             }
 
-            /* নেভিগেশন বার মোবাইলে উপর-নিচ হবে */
+            /* নেভিগেশন বার */
             nav {
+                display: flex !important;
                 flex-direction: column !important;
                 align-items: center !important;
-                padding: 10px 5px !important;
+                padding: 15px 5px !important;
             }
 
-            /* লোগো এবং নাম মাঝখানে সুন্দর করে সাজানো */
+            /* লোগো ও টেক্সট এরিয়া */
             nav .logo {
                 display: flex !important;
                 flex-direction: column !important;
                 align-items: center !important;
                 text-align: center !important;
-                gap: 5px !important;
-                margin-bottom: 8px !important;
+                gap: 8px !important;
+                margin-bottom: 12px !important;
             }
+
+            nav .logo img {
+                height: 55px !important;
+            }
+
+            /* মোবাইলে ইংরেজি নামটির সাইজ বড় ও বোল্ড করা */
+            nav .logo span {
+                font-size: 26px !important;
+                font-weight: bold !important;
+                line-height: 1.2 !important;
+                white-space: nowrap !important;
+            }
+
+            /* মোবাইলেও বাটনগুলো সবসময় পাশাপাশি (Side by Side) থাকবে */
+            nav ul {
+                display: flex !important;
+                flex-direction: row !important; 
+                justify-content: center !important;
+                flex-wrap: nowrap !important; 
+                width: 100% !important;
+                gap: 10px !important; 
+                padding: 0 !important;
+                margin: 5px 0 !important;
+                overflow-x: auto !important; /* স্ক্রিন বেশি ছোট হলে পাশে স্ক্রোল করা যাবে */
+            }
+
+            nav ul li {
+                width: auto !important;
+                margin: 0 !important;
+            }
+
+            /* মোবাইলে বাটনগুলোর সাইজ */
+            nav ul li a {
+                font-size: 13px !important;
+                padding: 4px 6px !important;
+                display: inline-block !important;
+            }
+
+            nav ul li a.active {
+                color: #e11d48 !important; 
+                font-weight: bold !important;
+            }
+
+            /* অনলাইন ভর্তি বাটন */
+            nav ul li a.nav-btn {
+                font-size: 12px !important;
+                padding: 4px 8px !important;
+                border-radius: 4px !important;
+                white-space: nowrap !important;
+            }
+        }
 
             nav .logo img {
                 height: 50px !important;
