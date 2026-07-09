@@ -6,70 +6,79 @@
     <title>Progati Coaching Center - Admission</title>
     
     <style>
-                /* কোর্স পেজের জন্য বিশেষ মোবাইল রেসপনসিভ কোড */
+                       /* মোবাইলে লোগো মাঝে এবং মেনু বাটন পাশাপাশি রাখার কোড */
         @media (max-width: 768px) {
-            /* ১. টপ বার উপর-নিচ করা */
+            /* ১. টপ বার (ফোন ও ইমেইল) ছোট করে পাশাপাশি রাখা */
             .top-bar {
-                flex-direction: column !important;
-                gap: 5px !important;
-                text-align: center !important;
-                padding: 10px !important;
-            }
-
-            /* ২. নেভিগেশন বার উপর-নিচ করা */
-            nav {
-                flex-direction: column !important;
-                align-items: center !important;
-                padding: 15px !important;
-                height: auto !important;
-                background-color: #1e3a8a !important; /* ব্যাকগ্রাউন্ড নীল রাখা হলো */
-            }
-
-            /* ৩. লোগো এরিয়া উপর-নিচ করা */
-            nav .logo {
-                flex-direction: column !important;
-                text-align: center !important;
+                display: flex !important;
+                flex-direction: row !important;
+                justify-content: center !important;
                 gap: 15px !important;
-                margin-bottom: 15px !important;
+                padding: 4px !important;
+                font-size: 11px !important;
             }
 
-            /* নীল ব্যাকগ্রাউন্ডে নাম যেন সাদা দেখায় */
-            nav .logo span {
-                font-size: 26px !important;
-                line-height: 1.2 !important;
-                color: #ffffff !important; /* নাম সাদা করা হলো */
-            }
-
-            /* ৪. মেনুবার উপর-নিচ করা */
-            nav ul {
-                flex-direction: column !important;
+            /* ২. নেভিগেশন বারের বাড়তি প্যাডিং বা ফাঁকা জায়গা কমানো */
+            nav {
+                display: flex !important;
+                flex-direction: column !important; /* লোগো উপরে, মেনু নিচে থাকবে */
                 align-items: center !important;
+                padding: 10px 5px !important; /* উপর-নিচের স্পেস অনেক কমানো হলো */
+                height: auto !important;
+                background-color: #1e3a8a !important;
+            }
+
+            /* ৩. লোগো এবং নাম মাঝখানে সুন্দর করে সাজানো */
+            nav .logo {
+                display: flex !important;
+                flex-direction: column !important; /* লোগো উপরে, নাম নিচে থাকবে */
+                align-items: center !important;
+                text-align: center !important;
+                gap: 5px !important;
+                margin-bottom: 8px !important; /* নিচের গ্যাপ কমানো হলো */
+            }
+
+            nav .logo img {
+                height: 50px !important; /* লোগো একটু ছোট করা হলো */
+            }
+
+            nav .logo span {
+                font-size: 20px !important; /* নামটির সাইজ ২০ পিক্সেল করা হলো যেন ভেঙে না যায় */
+                line-height: 1.2 !important;
+                color: #ffffff !important;
+            }
+
+            /* ৪. মেনু বাটনগুলো উপর-নিচ না করে পাশে পাশে (Side by Side) আনার মূল কোড */
+            nav ul {
+                display: flex !important;
+                flex-direction: row !important; /* এই লাইনটি বাটনগুলোকে পাশাপাশি আনবে */
+                justify-content: center !important; /* মাঝখানে সাজিয়ে রাখবে */
+                flex-wrap: wrap !important; /* স্ক্রিন বেশি ছোট হলে নিজে থেকে পরের লাইনে যাবে */
                 width: 100% !important;
-                gap: 12px !important;
+                gap: 12px !important; /* বাটনগুলোর পারস্পরিক দূরত্ব */
                 padding: 0 !important;
-                margin: 0 !important;
+                margin: 5px 0 !important;
             }
 
             nav ul li {
-                width: 100% !important;
-                text-align: center !important;
+                width: auto !important; /* উপর-নিচ করার ফুল উইডথ স্টাইল বাতিল করা হলো */
                 margin: 0 !important;
             }
 
-            /* নীল ব্যাকগ্রাউন্ডে মেনুর লিংকগুলো যেন পরিষ্কার সাদা দেখায় */
+            /* বাটনগুলোর ফন্ট সাইজ এবং চারপাশের স্পেস ছোট করা */
             nav ul li a {
-                color: #ffffff !important; /* সব লিংক সাদা করা হলো */
-                display: block !important;
-                padding: 5px 0 !important;
+                color: #ffffff !important;
+                font-size: 13px !important; /* লেখা একটু ছোট করা হলো যেন পাশাপাশি জায়গা পায় */
+                padding: 4px 6px !important;
+                display: inline-block !important;
             }
 
-            /* অনলাইন ভর্তি বাটন */
+            /* অনলাইন ভর্তি বাটনটি যেন ছোট ও সুন্দর দেখায় */
             nav ul li a.nav-btn {
-                display: inline-block !important;
-                width: auto !important;
-                margin-top: 5px !important;
-                background-color: #e11d48 !important; /* লাল বাটন */
-                color: #ffffff !important;
+                font-size: 12px !important;
+                padding: 4px 8px !important;
+                background-color: #e11d48 !important;
+                border-radius: 4px !important;
             }
         }
 
