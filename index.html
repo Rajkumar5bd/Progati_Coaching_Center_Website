@@ -2,2089 +2,1167 @@
 <html lang="bn">
 <head>
     <meta charset="UTF-8">
+    <!-- এটি মোবাইল ও ট্যাবলেটে ওয়েবসাইটকে ১০০% রেসপন্সিভ রাখবে -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Progati Coaching Center - Admission</title>
+    <title>প্রগতি কোচিং সেন্টার | হোম</title>
     
     <style>
-   
-
-
-/* স্ক্রিন যখন বড় (1400px এর বেশি) হবে তখন বাটন যেন আরও সুন্দরভাবে ডানে চেপে যায় */
-@media (min-width: 1400px) {
-    nav ul {
-        right: calc((100vw - 1200px) / 2 - 40px) !important; /* বড় স্ক্রিনে বাটনকে আরও ডানে ধাক্কা দেওয়া হলো */
-    }
-}
-
-
-                   
-                      /* মোবাইল ও ছোট স্ক্রিনে বাংলা লেখা এবং বাটন নিখুঁত করার ফাইনাল কোড */
-        @media (max-width: 768px) {
-            /* ১. টপ বার (ফোন ও ইমেইল) ছোট করে পাশাপাশি রাখা */
-            .top-bar {
-                display: flex !important;
-                flex-direction: row !important;
-                justify-content: center !important;
-                gap: 15px !important;
-                padding: 6px !important;
-                font-size: 11px !important;
-            }
-
-            /* ২. নেভিগেশন বার মোবাইলে উপর-নিচ হবে */
-            nav {
-                display: flex !important;
-                flex-direction: column !important;
-                align-items: center !important;
-                padding: 15px 5px !important;
-                height: auto !important;
-            }
-
-            /* লোগো ও ইংরেজি নামের এরিয়া */
-            nav .logo {
-                display: flex !important;
-                flex-direction: column !important;
-                align-items: center !important;
-                text-align: center !important;
-                gap: 8px !important;
-                margin-bottom: 12px !important;
-                width: 100% !important;
-            }
-
-            nav .logo img {
-                height: 55px !important;
-            }
-
-            /* মোবাইলে ইংরেজি নামটির সাইজ বড় ও বোল্ড করা */
-            nav .logo span {
-                font-size: 26px !important;
-                font-weight: bold !important;
-                line-height: 1.2 !important;
-                white-space: nowrap !important;
-            }
-
-            /* ৩. বাটনগুলো সবসময় এক লাইনে পাশাপাশি (Side by Side) রাখা */
-            nav ul {
-                display: flex !important;
-                flex-direction: row !important; 
-                justify-content: center !important;
-                flex-wrap: nowrap !important; 
-                width: 100% !important;
-                gap: 10px !important; 
-                padding: 0 !important;
-                margin: 5px 0 15px 0 !important;
-            }
-
-            nav ul li {
-                width: auto !important;
-                margin: 0 !important;
-            }
-
-            /* মোবাইলে বাটনগুলোর সাইজ এবং ট্রানজিশন ঠিক রাখা */
-            nav ul li a {
-                font-size: 13px !important;
-                padding: 4px 6px !important;
-                display: inline-block !important;
-                transition: all 0.3s ease-in-out !important; 
-            }
-
-            nav ul li a.active {
-                color: #e11d48 !important; 
-                font-weight: bold !important;
-            }
-
-            /* অনলাইন ভর্তি বাটন */
-            nav ul li a.nav-btn {
-                font-size: 12px !important;
-                padding: 4px 8px !important;
-                border-radius: 4px !important;
-                white-space: nowrap !important;
-            }
-
-            /* ৪. মোবাইলে বড় বাংলা লেখাটি ছোট ও সোজা করার কোড */
-            .hero-left h1, h1 {
-                font-size: 32px !important; 
-                line-height: 1.3 !important;
-                text-align: center !important;
-                white-space: normal !important; 
-                margin-top: 10px !important;
-                display: block !important;
-                width: 100% !important;
-            }
-            
-            /* হিরো সেকশনের ভেতরের কন্টেন্ট সেন্টারে আনা */
-            .hero-left {
-                text-align: center !important;
-                display: flex !important;
-                flex-direction: column !important;
-                align-items: center !important;
-            }
-        }
-
-
-            /* মোবাইলে ইংরেজি নামটির সাইজ বড় ও বোল্ড করা */
-            nav .logo span {
-                font-size: 26px !important;
-                font-weight: bold !important;
-                line-height: 1.2 !important;
-                white-space: nowrap !important;
-            }
-
-            /* মোবাইলেও বাটনগুলো সবসময় এক লাইনে পাশাপাশি (Side by Side) থাকবে */
-            nav ul {
-                display: flex !important;
-                flex-direction: row !important; 
-                justify-content: center !important;
-                flex-wrap: nowrap !important; 
-                width: 100% !important;
-                gap: 10px !important; 
-                padding: 0 !important;
-                margin: 5px 0 !important;
-                overflow-x: auto !important; /* স্ক্রিন ছোট হলে পাশে স্ক্রোল করার সুবিধা */
-            }
-
-            nav ul li {
-                width: auto !important;
-                margin: 0 !important;
-            }
-
-            /* মোবাইলে বাটনগুলোর সাইজ */
-            nav ul li a {
-                font-size: 13px !important;
-                padding: 4px 6px !important;
-                display: inline-block !important;
-                transition: all 0.3s ease-in-out !important; /* মোবাইলেও স্মুথ ট্রানজিশন */
-            }
-
-            nav ul li a.active {
-                color: #e11d48 !important; 
-                font-weight: bold !important;
-            }
-
-            /* অনলাইন ভর্তি বাটন */
-            nav ul li a.nav-btn {
-                font-size: 12px !important;
-                padding: 4px 8px !important;
-                border-radius: 4px !important;
-                white-space: nowrap !important;
-            }
-        }
-
-
-            nav .logo img {
-                height: 55px !important;
-            }
-
-            /* মোবাইলে ইংরেজি নামটির সাইজ বড় ও বোল্ড করা */
-            nav .logo span {
-                font-size: 26px !important;
-                font-weight: bold !important;
-                line-height: 1.2 !important;
-                white-space: nowrap !important;
-            }
-
-            /* মোবাইলেও বাটনগুলো সবসময় পাশাপাশি (Side by Side) থাকবে */
-            nav ul {
-                display: flex !important;
-                flex-direction: row !important; 
-                justify-content: center !important;
-                flex-wrap: nowrap !important; 
-                width: 100% !important;
-                gap: 10px !important; 
-                padding: 0 !important;
-                margin: 5px 0 !important;
-                overflow-x: auto !important; /* স্ক্রিন বেশি ছোট হলে পাশে স্ক্রোল করা যাবে */
-            }
-
-            nav ul li {
-                width: auto !important;
-                margin: 0 !important;
-            }
-
-            /* মোবাইলে বাটনগুলোর সাইজ */
-            nav ul li a {
-                font-size: 13px !important;
-                padding: 4px 6px !important;
-                display: inline-block !important;
-            }
-
-            nav ul li a.active {
-                color: #e11d48 !important; 
-                font-weight: bold !important;
-            }
-
-            /* অনলাইন ভর্তি বাটন */
-            nav ul li a.nav-btn {
-                font-size: 12px !important;
-                padding: 4px 8px !important;
-                border-radius: 4px !important;
-                white-space: nowrap !important;
-            }
-        }
-
-            nav .logo img {
-                height: 50px !important;
-            }
-
-            nav .logo span {
-                font-size: 20px !important;
-                line-height: 1.2 !important;
-                color: #1f2937 !important;
-            }
-
-            /* মেনু বাটনগুলো মোবাইলে সুন্দরভাবে পাশাপাশি (Side by Side) থাকবে */
-            nav ul {
-                display: flex !important;
-                flex-direction: row !important; 
-                justify-content: center !important;
-                flex-wrap: wrap !important; 
-                width: 100% !important;
-                gap: 12px !important;
-                padding: 0 !important;
-                margin: 5px 0 !important;
-            }
-
-            nav ul li a {
-                color: #4b5563 !important; 
-                font-size: 13px !important;
-                padding: 4px 6px !important;
-                display: inline-block !important;
-            }
-
-            nav ul li a.active {
-                color: #e11d48 !important; 
-                font-weight: bold !important;
-            }
-
-            /* অনলাইন ভর্তি বাটনটি মোবাইলে ছোট ও সুন্দর দেখাবে */
-            nav ul li a.nav-btn {
-                font-size: 12px !important;
-                padding: 4px 8px !important;
-                background-color: #e11d48 !important;
-                color: #ffffff !important; 
-                border-radius: 4px !important;
-            }
-        }
-
-
-            nav .logo img {
-                height: 50px !important;
-            }
-
-            nav .logo span {
-                font-size: 20px !important;
-                line-height: 1.2 !important;
-                color: #1f2937 !important; /* টেক্সটের কালার কালো/ডার্ক রাখা হলো */
-            }
-
-            /* ৪. মেনু বাটনগুলো পাশাপাশি (Side by Side) আনার মূল কোড */
-            nav ul {
-                display: flex !important;
-                flex-direction: row !important; /* বাটনগুলোকে পাশাপাশি আনবে */
-                justify-content: center !important;
-                flex-wrap: wrap !important; /* স্ক্রিন বেশি ছোট হলে নিজে থেকে পরের লাইনে যাবে */
-                width: 100% !important;
-                gap: 12px !important;
-                padding: 0 !important;
-                margin: 5px 0 !important;
-            }
-
-            nav ul li {
-                width: auto !important;
-                margin: 0 !important;
-            }
-
-            /* সাদা ব্যাকগ্রাউন্ডে বাটনগুলোর টেক্সট কালার */
-            nav ul li a {
-                color: #4b5563 !important; /* টেক্সটের কালার হালকা কালো করা হলো যেন পরিষ্কার দেখা যায় */
-                font-size: 13px !important;
-                padding: 4px 6px !important;
-                display: inline-block !important;
-            }
-
-            /* অ্যাক্টিভ বা সিলেক্টেড পেজের বাটনের কালার */
-            nav ul li a.active {
-                color: #e11d48 !important; /* হোমপেজে থাকলে হোম লেখাটি লাল দেখাবে */
-                font-weight: bold !important;
-            }
-
-            /* অনলাইন ভর্তি বাটনটি যেন ছোট ও সুন্দর দেখায় */
-            nav ul li a.nav-btn {
-                font-size: 12px !important;
-                padding: 4px 8px !important;
-                background-color: #e11d48 !important;
-                color: #ffffff !important; /* ভেতরের লেখা সাদা */
-                border-radius: 4px !important;
-            }
-        }
-
-
-            /* মেনুর ভেতরের প্রতিটি লাইন ফুল উইডথ করা */
-            nav ul li {
-                width: 100% !important;
-                text-align: center !important;
-                margin: 0 !important;
-            }
-
-            /* অনলাইন ভর্তি বাটনের সাইজ মোবাইলে ঠিক করা */
-            nav ul li a.nav-btn {
-                display: inline-block !important;
-                width: auto !important;
-                margin-top: 5px !important;
-            }
-        }
-
-
-        /* পুরো ওয়েবসাইটের বেসিক রিসেট */
-        * { 
-            margin: 0; 
-            padding: 0; 
-            box-sizing: border-box; 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-        }
-
-        /* বডি সেকশন - জাস্টিফাই এবং ব্যাকগ্রাউন্ড এক সাথে */
-        body {
-            background-color: #f4f6f9; 
-            color: #333;
-            text-align: justify; 
-        }
-
-        /* ইমেজের রেসপনসিভ সাইজ */
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-
+        /* --- গ্লোবাল রিসেট এবং বেসিক লেআউট --- */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
+
         body {
-            background-color: #f9fbfd;
-            color: #333;
-            overflow-x: hidden;
-        }
-        .top-bar {
-            background-color: #e53935;
-            color: white;
-            padding: 8px 50px;
-            display: flex;
-            gap: 20px;
-            font-size: 14px;
-        }
-        nav {
             background-color: #ffffff;
-            padding: 15px 50px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            color: #2d3748;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
         }
-        nav ul {
-            display: flex;
-            list-style: none;
-            align-items: center;
-        }
-        nav ul li {
-            margin-left: 25px;
-        }
-        nav ul li a {
-            color: #4b5563;
-            text-decoration: none;
-            font-size: 16px;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        nav ul li a:hover, nav ul li a.active {
-            color: #e53935;
-        }
-        .nav-btn {
-            background-color: #e53935;
-            color: white !important;
-            padding: 8px 18px;
-            border-radius: 6px;
-            font-weight: bold;
-        }
-        /* ১. অনলাইন ভর্তি বাটনের মূল স্টাইল (আপনার HTML ক্লাসের সাথে মিল রেখে) */
-.nav-btn {
-    display: inline-block;
-    background-color: #e53e3e; /* আপনার থিমের লাল ব্যাকগ্রাউন্ড */
-    color: #ffffff !important; /* লেখার রঙ সবসময় সাদা রাখার জন্য */
-    padding: 8px 18px; /* নেভিগেশন বারের জন্য পারফেক্ট সাইজ */
-    font-size: 15px;
-    font-weight: bold;
-    text-decoration: none; /* লিঙ্কের নিচের আন্ডারলাইন মুছে ফেলার জন্য */
-    border-radius: 6px; /* কোণগুলো হালকা গোল করার জন্য */
-    
-    /* স্মুথ অ্যানিমেশনের জন্য নিচের ট্রানজিশনটি জরুরি */
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
 
-/* ২. বাটনের হোভার অ্যানিমেশন (মাউস পয়েন্টার নিলে যা হবে) */
-.nav-btn:hover {
-    background-color: #1e3a8a; /* মাউস নিলে রঙ পরিবর্তন হয়ে রাজকীয় নীল হবে */
-    color: #ffffff !important;
-    transform: translateY(-2px); /* বাটনটি হালকা ২ পিক্সেল ওপরে ভেসে উঠবে */
-    box-shadow: 0 4px 10px rgba(30, 58, 138, 0.25); /* হালকা নীলচে শ্যাডো */
-}
-
-/* ৩. বাটন ক্লিক করার মুহূর্তের অ্যানিমেশন (Active State) */
-.nav-btn:active {
-    transform: translateY(0); /* ক্লিক করলে আগের জায়গায় ফিরবে */
-    box-shadow: none;
-}
-
-        .hero-container {
-            max-width: 1200px;
-            margin: 50px auto;
-            padding: 0 20px;
-            display: flex;
-            align-items: center;
-            gap: 40px;
-            flex-wrap: wrap;
-        }
-        .hero-left {
-            flex: 1;
-            min-width: 300px;
-        }
-        .tagline {
-            color: #e53935;
-            font-weight: bold;
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 15px;
-            display: inline-block;
-        }
-        .hero-left h1 {
-            font-size: 56px;
-            color: #1f2937;
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 20px;
-        }
-        .hero-left h1 span {
-            color: #e53935;
-        }
-        .hero-left p {
-            font-size: 17px;
-            color: #6b7280;
-            line-height: 1.6;
-            margin-bottom: 30px;
-        }
-        .hero-buttons {
-            display: flex;
-            gap: 15px;
-        }
-        /* হিরো সেকশনের বাটনের কন্টেইনার */
-.hero-buttons {
-    display: flex;
-    gap: 15px;
-    align-items: center;
-    margin-top: 25px; /* আপনার প্রয়োজন অনুযায়ী পরিবর্তন করতে পারেন */
-}
-
-/* কমন বাটন স্টাইল (দুইটি বাটনের জন্যই) */
-.btn-primary, .btn-secondary {
-    display: inline-block;
-    padding: 12px 28px;
-    font-size: 16px;
-    font-weight: 600;
-    text-decoration: none; /* লিঙ্কের নিচের দাগ দূর করার জন্য */
-    border-radius: 6px;
-    text-align: center;
-    /* smooth ট্রানজিশন অ্যানিমেশনের জন্য নিচের লাইনটি আবশ্যিক */
-    transition: all 0.3s ease-in-out; 
-}
-
-/* ১. ব্রাউজ কোর্স বাটন (সলিড লাল) */
-.btn-primary {
-    background-color: #e53e3e; /* মূল লাল রঙ */
-    color: #ffffff; /* সাদা টেক্সট */
-    border: 2px solid #e53e3e;
-    box-shadow: 0 4px 6px rgba(229, 62, 62, 0.15); /* হালকা শ্যাডো */
-}
-
-/* ১. ব্রাউজ কোর্স বাটনের হোভার অ্যানিমেশন */
-.btn-primary:hover {
-    background-color: #c53030; /* হোভার করলে লাল রঙ কিছুটা গাঢ় হবে */
-    border-color: #c53030;
-    transform: translateY(-3px); /* বাটনটি হালকা ৩ পিক্সেল উপরে উঠবে */
-    box-shadow: 0 6px 12px rgba(229, 62, 62, 0.3); /* শ্যাডো আরও স্পষ্ট হবে */
-}
-
-/* ২. যোগাযোগ করুন বাটন (আউটলাইন বাটন) */
-.btn-secondary {
-    background-color: transparent; /* ব্যাকগ্রাউন্ড খালি থাকবে */
-    color: #e53e3e; /* লাল টেক্সট */
-    border: 2px solid #e53e3e; /* লাল বর্ডার */
-}
-
-/* ২. যোগাযোগ করুন বাটনের হোভার অ্যানিমেশন */
-.btn-secondary:hover {
-    background-color: #e53e3e; /* হোভার করলে ব্যাকগ্রাউন্ড লাল হবে */
-    color: #ffffff; /* টেক্সট সাদা হয়ে যাবে */
-    transform: translateY(-3px); /* এটিও হালকা ৩ পিক্সেল উপরে উঠবে */
-    box-shadow: 0 6px 12px rgba(229, 62, 62, 0.2);
-}
-
-/* বাটন ক্লিক করার মুহূর্তের অ্যানিমেশন (Active State) */
-.btn-primary:active, .btn-secondary:active {
-    transform: translateY(-1px); /* ক্লিক করলে সামান্য নিচে নামবে */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-        .btn-primary {
-            background-color: #e53935;
-            color: white;
-            padding: 14px 28px;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 6px;
-            box-shadow: 0 4px 14px rgba(229, 57, 53, 0.3);
-            transition: all 0.3s;
-        }
-        .btn-secondary {
-            border: 2px solid #e53935;
-            color: #e53935;
-            padding: 12px 26px;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 6px;
-        }
-        .hero-right {
-            flex: 1;
-            min-width: 300px;
-        }
-        .banner-box {
-            position: relative;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            background-color: #cbd5e1;
-            height: 380px;
-        }
-        .banner-box img {
+        /* ১) ওপরের টপ-বার ও হেডারের জন্য ফুল-স্ক্রিন কন্টেইনার (একদম দুই কোণায় ছড়ানোর জন্য) */
+        .header-full-container {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
+            max-width: 100%;
+            padding: 0 40px; /* একবারে কোণায় যেন লেগে না যায়, তাই হালকা একটু স্পেস */
         }
-/* ব্যানার বক্সের আগের সব ফিক্সড হাইট ও ব্যাকগ্রাউন্ড রিসেট করার জন্য */
-.banner-box {
-    background: none !important;
-    height: auto !important; /* ফিক্সড উচ্চতা তুলে দেওয়া হলো */
-    width: 100%;
-    /* ৩ডি শ্যাডো বা ছায়া যেন কেটে না যায়, সেজন্য এটিকে visible করা হলো */
-    overflow: visible; 
-    /* ৩ডি ইফেক্টের গভীরতা তৈরি করার জন্য */
-    perspective: 1000px; 
-}
 
-/* ছবিটিকে শতভাগ অক্ষত অবস্থায় দেখানোর জন্য এবং ৩ডি শ্যাডো */
-.hero-banner-img {
-    width: 100%;
-    height: auto; /* উচ্চতা ছবির রেশিও অনুযায়ী নিজে থেকেই সেট হবে */
-    display: block;
-    object-fit: contain; /* কোনো অংশই কাটবে না */
-    border-radius: 12px; /* কোণগুলো হালকা রাউন্ড করার জন্য */
-    
-    /* বাস্তবসম্মত নরম ৩ডি ছায়া (3D Shadow) */
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15), 0 5px 15px rgba(0, 0, 0, 0.1);
-    
-    /* অ্যানিমেশন মসৃণ করার জন্য */
-    transform-style: preserve-3d;
-    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
+        /* ২) নিচের সব কন্টেন্ট ও ব্যানারের জন্য ফিক্সড কন্টেইনার (দুই পাশে সুন্দর খালি জায়গা রাখার জন্য) */
+        .content-fixed-container {
+            width: 100%;
+            max-width: 1200px; /* এটি নিচের কন্টেন্টগুলোকে মাঝখানে আটকে রাখবে */
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        /* --- ৩ডি ট্রানজিশন এবং হোভার কালার চেঞ্জ ইফেক্ট --- */
+        
+        /* ক) মেনু বাটনগুলোর জন্য ৩ডি এবং কালার চেঞ্জ */
+        .menu-item {
+            text-decoration: none;
+            color: #4a5568;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 6px 12px;
+            display: inline-block;
+            /* ৩ডি অ্যানিমেশন স্মুথ করার জন্য ট্রানজিশন টাইমিং */
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), color 0.3s ease;
+        }
 
-/* মাউস নিলে গর্জিয়াস ৩ডি অ্যানিমেশন ও গ্লো শ্যাডো ইফেক্ট */
-.banner-box:hover .hero-banner-img {
-    /* ছবিটিকে অক্ষত রেখে সামান্য ওপরে তুলবে এবং ৩ডি কোণে বাঁকা করবে */
-    transform: translateY(-8px) rotateX(4deg) rotateY(-2deg) scale(1.01);
-    
-    /* হোভার করলে ছায়াটি আরও ছড়িয়ে যাবে এবং নীল-লাল কালারের ৩ডি গ্লো তৈরি করবে */
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2), 
-                0 0 30px rgba(30, 58, 138, 0.15),  /* নীল গ্লো */
-                0 0 30px rgba(229, 62, 62, 0.1);  /* লাল গ্লো */
-}
+        /* মেনু বাটনগুলোতে মাউস নিলে ৩ডি পুশ-আপ হয়ে লাল হবে */
+        .menu-item:hover {
+            color: #d92323 !important; 
+            transform: translateY(-3px) scale(1.05); /* ৩ডি এলিভেশন */
+        }
+        
+        .menu-item.active {
+            color: #d92323;
+            border-bottom: 2px solid #d92323;
+        }
+        /* খ) সকল অ্যাকশন বাটন এবং ব্যানার পিকচারের ৩ডি ও হোভার কালার চেঞ্জ */
+        .animated-btn {
+            display: inline-block;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            text-align: center;
+            /* ৩ডি অ্যানিমেশন এবং হোভার কালার চেঞ্জ ট্রানজিশন */
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 0.3s ease, box-shadow 0.3s ease;
+        }
 
+        /* বাটন ও পিকচারে মাউস নিলে ৩ডি পুশ-আপ এবং শ্যাডো তৈরি হবে */
+        .animated-btn:hover {
+            transform: translateY(-5px) scale(1.03) rotateX(1deg); /* ৩ডি লিফট ইফেক্ট */
+            box-shadow: 0 12px 20px rgba(229, 30, 68, 0.2); 
+        }
 
-
-
-        .play-badge {
-            position: absolute;
-            bottom: 20px;
-            left: 20px;
-            background: rgba(0, 0, 0, 0.7);
+        /* অনলাইন ভর্তি বাটন: মাউস নিলে লাল থেকে গাঢ় ম্যারুন হবে */
+        .online-adm-btn {
+            background-color: #e51e44;
             color: white;
             padding: 10px 20px;
-            border-radius: 30px;
-            font-size: 15px;
-            font-weight: 500;
         }
-        .content-container {
-            max-width: 1200px;
-            margin: 60px auto;
-            padding: 0 20px;
+        .online-adm-btn:hover {
+            background-color: #9b0f27 !important; 
+        }
+
+        /* ব্রাউজ কোর্স বাটন: মাউস নিলে লাল থেকে ডার্ক রেড হবে */
+        .btn-browse {
+            background-color: #e51e44;
+            color: white;
+            padding: 14px 32px;
+            font-size: 16px;
+        }
+        .btn-browse:hover {
+            background-color: #b31230 !important; 
+        }
+
+        /* যোগাযোগ বাটন: মাউস নিলে ব্যাকগ্রাউন্ড লাল ও টেক্সট সাদা হবে */
+        .btn-contact {
+            background-color: transparent;
+            color: #e51e44;
+            border: 2px solid #e51e44;
+            padding: 12px 30px;
+            font-size: 16px;
+        }
+        .btn-contact:hover {
+            background-color: #e51e44 !important; 
+            color: white !important; 
+            box-shadow: 0 12px 20px rgba(229, 30, 68, 0.15);
+        }
+        /* --- লাল টপ-বার স্টাইল (ফুল স্ক্রিন জুড়ে থাকবে) --- */
+        .top-bar {
+            background-color: #d92323; 
+            color: white;
+            padding: 12px 0;
+            font-size: 14px;
+            font-weight: bold;
+            width: 100%;
+        }
+        .top-bar-content {
             display: flex;
+            justify-content: flex-start;
             gap: 30px;
             flex-wrap: wrap;
         }
-        /* পরিচালকের সেকশনের মূল স্টাইল */
-.director-section {
-    background-color: #ffffff;
-    padding: 60px 20px;
-    margin-top: 50px;
-    border-top: 1px solid #eeeeee;
-}
 
-.director-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    gap: 50px;
-    flex-wrap: wrap; /* মোবাইল স্ক্রিনের জন্য রেসপনসিভ */
-}
+        /* --- হেডার ও নেভিগেশন বার (একদম বামে এবং ডানে ছড়ানোর সিএসএস) --- */
+        .main-header {
+            background-color: #ffffff;
+            padding: 20px 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+        }
+        .header-grid {
+            display: flex;
+            justify-content: space-between; /* লোগোকে একদম বাম কোণায় এবং মেনুকে একদম ডান কোণায় ঠেলে দেবে */
+            align-items: center;
+            width: 100%;
+        }
+        .logo-box {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-align: left;
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            list-style: none;
+        }
 
-/* বাম পাশের কার্ড স্টাইল */
-.director-card {
-    flex: 1;
-    min-width: 300px;
-    background: #ffffff;
-    padding: 30px;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* হালকা সুন্দর শ্যাডো */
-    border-bottom: 4px solid #e53e3e; /* আপনার থিমের লাল বর্ডার */
-}
+        /* মোবাইল এবং ট্যাবলেটের জন্য ১০০% রেসপন্সিভ মিডিয়া কোয়েরি */
+        @media screen and (max-width: 992px) {
+            .hero-grid, .info-grid {
+                grid-template-columns: 1fr !important;
+                gap: 40px;
+            }
+        }
 
-.director-img-wrapper {
-    width: 200px;
-    height: 200px;
-    margin: 0 auto 20px auto;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 4px solid #e53e3e;
-    box-shadow: 0 5px 15px rgba(229, 62, 62, 0.2);
-}
-
-.director-img {
+        @media screen and (max-width: 768px) {
+            .header-full-container {
+                padding: 0 20px;
+            }
+            .header-grid {
+                flex-direction: column;
+                gap: 20px;
+                align-items: center;
+            }
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+            .top-bar-content {
+                justify-content: center;
+                font-size: 12px;
+            }
+        }
+        /* --- ১ম সেকশন (Hero Area) লেআউট এবং লেখার ৩-৪ লাইনের ফিক্স --- */
+        .hero-section {
+    padding: 80px 0;
+    background-color: #ffffff !important; /* এটি ১ম সেকশনকে একদম সাদা রাখবে */
     width: 100%;
-    height: 100%;
+}
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr; 
+            gap: 50px;
+            align-items: center;
+            width: 100%;
+        }
+        .unleash-text {
+            color: #e51e44;
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+      /* ১. পিসি বা ল্যাপটপের বড় স্ক্রিনের জন্য (এটি আপনার আসল সুন্দর সাইজটি ধরে রাখবে) */
+.main-title {
+    font-size: 48px !important;
+    white-space: normal !important; /* পিসিতে ৩-৪ লাইনের প্যারাগ্রাফের সাথে এটি স্বাভাবিক থাকবে */
+    font-weight: 800 !important;
+    color: #1e293b;
+    margin-bottom: 25px;
+    line-height: 1.2;
+}
+
+/* ২. শুধুমাত্র মোবাইল ও ছোট স্ক্রিনের জন্য আলাদা রেসপন্সিভ ফিক্স */
+@media screen and (max-width: 768px) {
+    .main-title {
+        font-size: 32px !important; /* মোবাইলে লেখাটি একদম পারফেক্ট বড় দেখাবে */
+        white-space: nowrap !important; /* দুই লাইনে ভাঙবে না, এক লাইনে থাকবে */
+        letter-spacing: -0.5px !important;
+    }
+    
+    /* মোবাইলের ছোট স্ক্রিনে যাতে লেখাটি ডানপাশে কেটে না যায়, তার জন্য কন্টেইনার ফিক্স */
+    .hero-text-area {
+        width: 100% !important;
+        overflow-x: visible !important;
+    }
+}
+
+        /* এখানে max-width ব্যবহার করে লেখাটিকে ৩ থেকে ৪ লাইনে ভাঙা হয়েছে */
+        .main-desc {
+            color: #4a5568;
+            font-size: 17px;
+            line-height: 1.8;
+            margin-bottom: 35px;
+            font-weight: 400;
+            max-width: 650px; /* এই লাইনটি লেখাটিকে ৩-৪ লাইনে সুন্দর করে রাখবে */
+        }
+        .hero-btn-group {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* ব্যানার ইমেজ বক্স এবং ৩ডি ট্রানজিশন */
+        .banner-image-box {
+            width: 100%;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+        }
+        .banner-image-box:hover {
+            transform: translateY(-8px) scale(1.02) rotateY(2deg); /* ছবির জন্য ৩ডি ইফেক্ট */
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+        }
+        .banner-image-box img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* --- পরিচিতি ও নোটিশ বোর্ড সেকশন --- */
+        .info-section {
+            padding: 40px 0;
+            width: 100%;
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 40px;
+            width: 100%;
+        }
+        .about-card {
+            background: #ffffff;
+            padding: 35px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            border-top: 5px solid #e51e44;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+        .notice-card {
+            background: #ffffff;
+            padding: 35px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            border-top: 5px solid #1e293b;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+             /* --- ২য় সেকশন: পরিচালকের বার্তা সম্পূর্ণ সংশোধিত সিএসএস --- */
+.director-section {
+    padding: 70px 0;
+    background-color: #f8f9fa !important; /* এটি ২য় সেকশনকে হালকা অফ-হোয়াইট করবে */
+    width: 100%;
+    border-top: 1px solid #f0f0f0; 
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.director-grid {
+    display: grid;
+    grid-template-columns: 0.75fr 1.25fr; 
+    gap: 50px;
+    align-items: flex-start;
+}
+
+/* আপনার স্ক্রিনশটের মতো নিচের লাল বর্ডার ও রাউন্ডেড কোণাসহ ৩ডি কার্ড */
+.director-card {
+    background: #ffffff;
+    border: 1px solid #f0f0f0;
+    border-radius: 20px; 
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05); 
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+    
+    /* কার্ডের নিচের অংশের সেই বিশেষ লাল বর্ডার */
+    border-bottom: 5px solid #e51e44 !important; 
+}
+
+/* কার্ডে মাউস নিলে ৩ডি পুশ-আপ ইফেক্ট */
+.director-card:hover {
+    transform: translateY(-8px) scale(1.01);
+    box-shadow: 0 25px 45px rgba(229, 30, 68, 0.1);
+}
+
+/* আপনার স্ক্রিনশটের মতো ছবির চারপাশের লাল ফ্রেম বর্ডার বক্স */
+.director-img-box {
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    border: 2px solid #e51e44 !important; /* ছবির চারপাশের লাল বর্ডার */
+    padding: 2px; 
+    background-color: #ffffff;
+}
+
+.director-img-box img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px; 
     object-fit: cover;
 }
 
-.director-name {
-    font-size: 22px;
-    color: #2d3748;
-    margin-bottom: 5px;
-    font-weight: 700;
-}
-
-.director-qualification {
-    font-size: 15px;
-    color: #718096;
-    margin-bottom: 8px;
-    font-style: italic;
-}
-
-.director-title {
-    font-size: 16px;
-    color: #e53e3e;
-    font-weight: 600;
-    text-transform: uppercase;
-}
-
-/* ডান পাশের শুভেচ্ছা বাণী স্টাইল */
 .director-message-box {
-    flex: 2;
-    min-width: 350px;
+    padding-top: 10px;
 }
 
-.message-heading {
+/* শিরোনাম এবং তার নিচের নিখুঁত লাল দাগের সিএসএস */
+.director-title {
     font-size: 32px;
-    color: #2d3748;
-    margin-bottom: 10px;
-    font-weight: 700;
+    color: #1e293b;
+    font-weight: 800;
+    margin-bottom: 25px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 12px; 
 }
 
-.heading-line {
-    width: 65px;
-    height: 4px;
-    background-color: #e53e3e;
-    margin-bottom: 25px;
+/* আপনার স্ক্রিনশটের মতো শিরোনামের নিচে সেই স্টাইলিশ লাল দাগ */
+.director-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 60px; 
+    height: 4px; 
+    background-color: #e51e44; 
     border-radius: 2px;
 }
 
-.message-text {
-    font-size: 17px;
-    line-height: 1.8;
+.director-text {
     color: #4a5568;
-    text-align: justify;
-    margin-bottom: 25px;
-}
-
-.director-sign {
-    border-left: 3px solid #e53e3e;
-    padding-left: 15px;
-}
-
-.sign-text {
-    font-size: 14px;
-    color: #718096;
-}
-
-.sign-name {
     font-size: 16px;
-    font-weight: 600;
+    line-height: 1.85;
+    margin-bottom: 25px;
+    text-align: justify;
+}
+
+/* ধন্যবাদান্তে লেখার বাম পাশের সেই বিশেষ লাল বর্ডার ইন্ডিকেটর */
+.director-footer-note {
+    border-left: 3px solid #e51e44;
+    padding-left: 15px;
+    margin-top: 20px;
     color: #2d3748;
-    margin-top: 2px;
+    font-size: 15px;
+    line-height: 1.6;
 }
 
-/* মোবাইল ও ট্যাবলেটের জন্য রেসপনসিভ রেডি */
-@media (max-width: 768px) {
-    .director-container {
-        flex-direction: column;
+/* মোবাইল ও ট্যাবলেটের জন্য ১০০% রেসপন্সিভ মিডিয়া কোয়েরি */
+@media screen and (max-width: 992px) {
+    .director-grid {
+        grid-template-columns: 1fr !important; 
+        gap: 40px;
     }
-    .director-message-box {
-        text-align: center;
-    }
-    .heading-line {
-        margin: 0 auto 25px auto;
-    }
-    .director-sign {
-        border-left: none;
-        border-top: 1px dashed #e53e3e;
-        padding-left: 0;
-        padding-top: 10px;
-        display: inline-block;
+    .director-card {
+        max-width: 400px;
+        margin: 0 auto; 
     }
 }
-/* ছবির বাইরের বক্সের স্টাইল (গোল থেকে চারকোণা করা হলো) */
-.director-img-wrapper {
-    width: 220px;       /* আপনার পছন্দমতো চওড়া করতে পারেন */
-    height: 280px;      /* পাসপোর্ট সাইজ লুক দেওয়ার জন্য উচ্চতা বাড়ানো হলো */
-    margin: 0 auto 20px auto;
-    border-radius: 12px; /* চারকোনা অংশগুলোকে হালকা রাউন্ড করার জন্য */
-    overflow: hidden;
-    border: 3px solid #e53e3e; /* লাল বর্ডার */
-    box-shadow: 0 5px 15px rgba(229, 62, 62, 0.15);
-}
 
-/* ছবির ভেতরের মূল স্টাইল */
-.director-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;    /* এবার পুরো বক্স জুড়ে ছবি থাকবে */
-    object-position: top; /* ছবিটিকে ওপর থেকে কাটবে, ফলে মাথা একদম অক্ষত থাকবে */
-}
+        /* === ৩য় সেকশন: সর্বশেষ আপডেট ও নোটিশ সিএসএস === */
+        .notice-section {
+            padding: 70px 0;
+            background-color: #f4f7fc !important; /* স্ক্রিনশটের মতো সুন্দর হালকা নীলচে ব্যাকগ্রাউন্ড */
+            width: 100%;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .section-title-wrapper {
+            margin-bottom: 45px;
+            position: relative;
+        }
 
+        /* আপনার স্ক্রিনশটের মতো শিরোনামের নিচের সেই নিখুঁত লাল দাগ */
+        .section-title {
+            font-size: 30px;
+            color: #1e293b;
+            font-weight: 800;
+            display: inline-block;
+            padding-bottom: 12px;
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 60px;
+            height: 4px;
+            background-color: #e51e44;
+            border-radius: 2px;
+        }
 
-        .welcome-box {
-            flex: 2;
-            min-width: 300px;
-            background: white;
-            padding: 35px;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
-            border-top: 4px solid #e53935;
-        }
-        .welcome-box h2 {
-            color: #1f2937;
-            font-size: 26px;
-            margin-bottom: 15px;
-        }
-        .welcome-box p {
-            font-size: 16px;
-            line-height: 1.7;
-            color: #4b5563;
-        }
-        .notice-box {
-            flex: 1;
-            min-width: 300px;
-            background: white;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
-            border-top: 4px solid #1f2937;
-        }
-        .notice-box h2 {
-            font-size: 20px;
-            color: #1f2937;
-            margin-bottom: 15px;
-            border-bottom: 2px solid #f3f4f6;
-            padding-bottom: 10px;
-        }
-        .notice-list {
-            list-style: none;
-            max-height: 200px;
-            overflow-y: auto;
-        }
-        .notice-item {
-            padding: 10px 0;
-            border-bottom: 1px dashed #e5e7eb;
-        }
-        .notice-date {
-            font-size: 12px;
-            color: #9ca3af;
-            display: block;
-            margin-bottom: 3px;
-        }
-        .notice-text {
-            font-size: 15px;
-            color: #374151;
-        }
-        .loading {
-            color: #9ca3af;
-            font-style: italic;
-        }
-        .slider-section {
-            background-color: #fff5f5;
-            padding: 60px 0;
-        }
-        .slider-title {
-            text-align: center;
-            margin-bottom: 40px;
-            font-size: 28px;
-            color: #1f2937;
-            font-weight: 700;
-        }
-        .slider-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+        .notice-grid, .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 20px;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            width: 100%;
         }
-        .slide-card {
-            background: white;
-            padding: 40px 20px;
-            border-radius: 18px;
+
+        /* নোটিশ কার্ডের নিখুঁত ৩ডি ডিজাইন */
+        .notice-post-card {
+            background: #ffffff;
+            border: 2px solid #1e3a8a; /* আপনার স্ক্রিনশটের সেই গাঢ় নীল বর্ডার */
+            border-radius: 12px;
+            padding: 30px 25px 25px 25px;
+            position: relative;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.01);
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+        }
+        .notice-post-card:hover {
+            transform: translateY(-6px) scale(1.01);
+            box-shadow: 0 15px 30px rgba(30, 58, 138, 0.1);
+        }
+
+        /* কার্ডের ওপরের সেই সুন্দর নীল রঙের তারিখের রিবন বক্স */
+        .notice-date-badge {
+            position: absolute;
+            top: -15px;
+            left: 25px;
+            background-color: #1e3a8a;
+            color: #ffffff;
+            padding: 5px 15px;
+            font-size: 13px;
+            font-weight: 700;
+            border-radius: 4px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        .notice-post-title {
+            font-size: 19px;
+            color: #1e293b;
+            font-weight: 800;
+            margin-top: 10px;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+        .notice-post-desc {
+            color: #4a5568;
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        .notice-action-link {
+            color: #e51e44;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 15px;
+            display: inline-block;
+            transition: color 0.2s, transform 0.2s;
+        }
+        .notice-action-link:hover {
+            color: #9b0f27;
+            transform: translateX(3px); /* মাউস নিলে তীর চিহ্নটি সামান্য ডানে সরবে */
+        }
+
+        /* মাঝখানের বড় বাটনগুলোর জন্য ৩ডি ক্লাসিং */
+        .center-btn-wrapper {
             text-align: center;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.02);
-            border: 1px solid rgba(229, 57, 53, 0.05);
-            transition: all 0.3s ease;
+            margin-top: 40px;
+            width: 100%;
         }
-        .slide-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(229, 57, 53, 0.08);
+        .btn-blue-main {
+            background-color: #1e3a8a;
+            color: #ffffff;
+            padding: 12px 30px;
+            font-size: 15px;
+            border: none;
         }
-        .slide-icon-box {
+
+        /* === ৪র্থ সেকশন: আমাদের কার্যক্রম ও গ্যালারি সিএসএস === */
+        .gallery-section {
+            padding: 70px 0;
+            background-color: #ffffff !important; /* একদম পিওর হোয়াইট ব্যাকগ্রাউন্ড */
+            width: 100%;
+        }
+        .gallery-grid {
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* ৩টি ছবি গ্রিড আকারে সাজানোর জন্য */
+            gap: 25px;
+        }
+
+        /* গ্যালারি কার্ডের ৩ডি হোভার অ্যানিমেশন */
+        .gallery-item-card {
+            background: #f8fafc;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+            border: 1px solid #e2e8f0;
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+        }
+        .gallery-item-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 35px rgba(0,0,0,0.12);
+        }
+        .gallery-img-box {
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+            background-color: #e2e8f0; /* ইমেজ লোড হওয়ার আগের প্লেসহোল্ডার কালার */
+        }
+        .gallery-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .gallery-item-title {
+            padding: 15px 20px;
+            font-size: 16px;
+            color: #1e293b;
+            font-weight: 700;
+            text-align: center;
+            background: #ffffff;
+            border-top: 1px solid #f1f5f9;
+        }
+
+        /* === লুকানো বা হাইড করা জিনিসগুলো স্মুথলি বের করে আনার মূল সিএসএস === */
+        .hidden-item {
+            display: none; /* স্বাভাবিক অবস্থায় এটি পেজে লুকিয়ে থাকবে */
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        .show-hidden-items {
+            display: block !important;
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+ /* === ৫ম সেকশন: আমাদের বিভাগসমূহ সিএসএস === */
+        .departments-section {
+            padding: 70px 0;
+            background-color: #fff8f8 !important; /* আপনার স্ক্রিনশটের সেই হালকা পিঙ্ক/অফ-হোয়াইট ব্যাকগ্রাউন্ড */
+            width: 100%;
+            border-top: 1px solid #f9e6e6;
+            border-bottom: 1px solid #f9e6e6;
+        }
+        .dept-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            width: 100%;
+        }
+        /* বিভাগ কার্ডের ৩ডি হোভার অ্যানিমেশন */
+        .dept-card {
+            background: #ffffff;
+            border: 1px solid #f1e2e2;
+            border-radius: 16px;
+            padding: 35px 20px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(229, 30, 68, 0.02);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+        }
+        .dept-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(229, 30, 68, 0.08);
+        }
+        .dept-icon-box {
             width: 70px;
             height: 70px;
+            background-color: #f8fafc;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0 auto 20px auto;
             font-size: 32px;
+            border: 1px solid #e2e8f0;
         }
-        .slide-card:nth-child(1) .slide-icon-box { background: #ffebee; color: #e53935; }
-        .slide-card:nth-child(2) .slide-icon-box { background: #e8f5e9; color: #4caf50; }
-        .slide-card:nth-child(3) .slide-icon-box { background: #e3f2fd; color: #1e88e5; }
-        .slide-card:nth-child(4) .slide-icon-box { background: #f3e5f5; color: #8e24aa; }
-        .slide-card h3 {
-            font-size: 18px;
-            color: #1f2937;
-            font-weight: 700;
-            line-height: 1.4;
+        .dept-name-bn {
+            font-size: 20px;
+            color: #1e293b;
+            font-weight: 800;
+            margin-bottom: 6px;
         }
-        .reviews-section {
-            max-width: 1200px;
-            margin: 60px auto;
-            padding: 0 20px;
-        }
-        .reviews-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
-        }
-        .review-card {
-            background: #fff;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-            border-left: 4px solid #e53935;
-        }
-        .review-text {
-            color: #4b5563;
-            font-size: 15px;
-            line-height: 1.6;
-            font-style: italic;
-            margin-bottom: 15px;
-        }
-        .review-author {
-            font-weight: bold;
-            color: #1f2937;
+        .dept-name-en {
             font-size: 14px;
+            color: #718096;
+            font-weight: 600;
         }
-        .review-author span {
-            color: #9ca3af;
-            font-size: 12px;
-            display: block;
-            font-weight: normal;
-            margin-top: 4px;
+
+        /* === ৬ষ্ঠ সেকশন: শিক্ষার্থীদের সফলতার গল্প সিএসএস === */
+        .testimonials-section {
+            padding: 70px 0;
+            background-color: #ffffff !important; /* একদম পিওর হোয়াইট ব্যাকগ্রাউন্ড */
+            width: 100%;
         }
-        .partners-bar {
-            background-color: #fff;
-            border-top: 1px solid #e5e7eb;
-            border-bottom: 1px solid #e5e7eb;
-            padding: 30px 0;
-            text-align: center;
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            width: 100%;
         }
-        .partners-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+        /* সফলতার গল্পের বক্স এবং আপনার স্ক্রিনশটের মতো বাম পাশের স্পেশাল লাল বর্ডার */
+        .testimonial-box {
+            background: #ffffff;
+            border: 1px solid #f1f5f9;
+            border-radius: 12px;
+            padding: 35px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.01);
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            
+            /* আপনার স্ক্রিনশটের সেই নিখুঁত বাম পাশের লাল বর্ডার ইন্ডিকেটর */
+            border-left: 4px solid #e51e44 !important; 
+        }
+        .testimonial-box:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+        .testimonial-quote {
+            color: #4a5568;
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 25px;
+            font-style: italic;
+        }
+        .testimonial-student-name {
+            font-size: 16px;
+            color: #1e293b;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .testimonial-student-batch {
+            font-size: 13px;
+            color: #718096;
+            font-weight: 600;
+        }
+
+        /* রেসপন্সিভ ব্রেকপয়েন্ট ফিক্স */
+        @media screen and (max-width: 992px) {
+            .dept-grid { grid-template-columns: 1fr 1fr; }
+            .testimonial-grid { grid-template-columns: 1fr; }
+        }
+        @media screen and (max-width: 768px) {
+            .dept-grid { grid-template-columns: 1fr; }
+        }
+ /* === ৭ম সেকশন: কারিকুলাম ইন্ডিকেটর বার সিএসএস === */
+        .curriculum-bar {
+            padding: 25px 0;
+            background-color: #ffffff;
+            border-top: 1px solid #e2e8f0;
+            border-bottom: 1px solid #e2e8f0;
+            width: 100%;
+        }
+        .curriculum-flex {
             display: flex;
             justify-content: space-around;
             align-items: center;
             flex-wrap: wrap;
             gap: 20px;
-            color: #9ca3af;
-            font-weight: 600;
-            font-size: 16px;
         }
-        footer {
-            background-color: #0f172a;
-            color: #94a3b8;
-            padding: 50px 20px 20px 20px;
-            font-size: 14px;
-        }
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
+        .curriculum-item {
             display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 40px;
-            margin-bottom: 40px;
-            text-align: left;
+            align-items: center;
+            gap: 10px;
+            font-size: 16px;
+            color: #4a5568;
+            font-weight: 700;
         }
-        .footer-column {
-            flex: 2;
-            min-width: 250px;
+
+        /* === ৮ম সেকশন: মেইন ডার্ক ফুটার সিএসএস === */
+        .main-dark-footer {
+            background-color: #0f172a !important; /* আপনার স্ক্রিনশটের সেই গাঢ় নেভি-ব্লু/কালো থিম */
+            color: #cbd5e1;
+            padding: 60px 0 20px 0;
+            width: 100%;
         }
-        .footer-column h4 {
-            color: white;
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr 1fr; /* ৩টি কলামের চওড়া অনুপাত */
+            gap: 50px;
+            width: 100%;
+        }
+        .footer-col-title {
+            color: #ffffff;
             font-size: 18px;
-            margin-bottom: 20px;
-            border-left: 3px solid #e53935;
-            padding-left: 10px;
-            font-size: 25px;
+            font-weight: 800;
+            margin-bottom: 25px;
+            position: relative;
+            padding-left: 15px;
         }
-        .footer-column p {
-            line-height: 1.6;
-            margin-bottom: 7px;
+        /* ফুটারের কলাম শিরোনামের বাম পাশে আপনার স্ক্রিনশটের সেই ছোট লাল দাগ ইন্ডিকেটর */
+        .footer-col-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 3px;
+            height: 16px;
+            background-color: #e51e44;
+        }
+        .footer-desc {
             font-size: 15px;
-            color:#FFFFFF;
+            line-height: 1.7;
+            color: #94a3b8;
         }
-        .footer-column ul {
+        .footer-links-list {
             list-style: none;
         }
-        .footer-column ul li {
-            margin-bottom: 10px;
+        .footer-links-list li {
+            margin-bottom: 12px;
         }
-        .footer-column ul li a {
+        .footer-link-item {
             color: #94a3b8;
             text-decoration: none;
-            font-size: 18px;
-            color: #FFFFFF;
+            font-size: 15px;
+            font-weight: 600;
+            transition: color 0.2s, padding-left 0.2s;
         }
-        .map-link-btn {
-            display: inline-block;
-            background-color: #1e293b;
-            color: white;
-            padding: 10px 15px;
+        .footer-link-item:hover {
+            color: #ffffff;
+            padding-left: 5px;
+        }
+        .footer-info-text {
+            font-size: 15px;
+            color: #cbd5e1;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        
+        /* গুগল ম্যাপ বাটন */
+        .btn-google-map {
+            background-color: #2563eb; /* নীল কালার বাটন */
+            color: #ffffff;
+            padding: 10px 20px;
+            font-size: 14px;
             border-radius: 6px;
-            text-decoration: none;
             margin-top: 10px;
-            border: 1px solid #334155;
         }
-        .footer-bottom {
-            border-top: 1px solid #1e293b;
+        .btn-google-map:hover {
+            background-color: #1d4ed8 !important;
+        }
+
+        .footer-bottom-bar {
+            margin-top: 50px;
             padding-top: 20px;
+            border-top: 1px solid #1e293b;
             text-align: center;
-            font-size: 13px;
+            font-size: 14px;
+            color: #64748b;
         }
 
-
-
-
-/* --- নোটিশ সেকশনের ডিজাইন ও অ্যানিমেশন --- */
-.admin-posts-section {
-    background-color: #f7fafc;
-    padding: 60px 0;
-}
-
-.section-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.main-title {
-    text-align: center;
-    font-size: 30px;
-    color: #1e3a8a; /* নীল রঙ */
-    font-weight: 700;
-    margin-bottom: 8px;
-}
-
-.title-underline {
-    width: 70px;
-    height: 4px;
-    background-color: #e53e3e; /* লাল রঙ */
-    margin: 0 auto 40px auto;
-    border-radius: 2px;
-}
-
-.posts-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-}
-
-.post-card {
-    flex: 1;
-    min-width: 320px;
-    background: #ffffff;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-top: 4px solid #1e3a8a;
-}
-
-.post-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(30, 58, 138, 0.12);
-}
-
-.post-date {
-    background-color: #1e3a8a;
-    color: #ffffff;
-    padding: 10px 20px;
-    font-size: 14px;
-    font-weight: 600;
-    display: inline-block;
-    align-self: flex-start;
-    border-bottom-right-radius: 8px;
-}
-
-.post-date span {
-    font-size: 18px;
-    font-weight: 700;
-}
-
-.post-content {
-    padding: 25px;
-    flex-grow: 1;
-}
-
-.post-content h3 {
-    font-size: 20px;
-    color: #2d3748;
-    margin-bottom: 12px;
-    line-height: 1.4;
-}
-
-.post-content p {
-    font-size: 15px;
-    color: #4a5568;
-    line-height: 1.7;
-    margin-bottom: 20px;
-}
-
-.read-more-btn {
-    color: #e53e3e;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 15px;
-    transition: color 0.2s;
-}
-
-.read-more-btn:hover {
-    color: #1e3a8a;
-}
-
-/* শুরুতে অতিরিক্ত পোস্টগুলো হাইড রাখার জন্য */
-.post-card.hide-post {
-    display: none;
-    opacity: 0;
-    transform: translateY(-20px);
-}
-
-/* বাটন ক্লিক করলে এই ক্লাসের মাধ্যমে অ্যানিমেশন চালু হবে */
-.post-card.show-active {
-    display: flex !important;
-    animation: slideInFade 0.5s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
-}
-
-/* মসৃণ এন্ট্রি অ্যানিমেশন */
-@keyframes slideInFade {
-    0% {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* বাটন স্টাইল */
-.view-all-container {
-    text-align: center;
-    margin-top: 40px;
-}
-
-.view-all-btn {
-    background-color: #1e3a8a;
-    color: #ffffff;
-    padding: 12px 35px;
-    font-size: 16px;
-    font-weight: bold;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    box-shadow: 0 5px 15px rgba(30, 58, 138, 0.2);
-    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
-.view-all-btn:hover {
-    background-color: #e53e3e;
-    transform: translateY(-4px) scale(1.03);
-    box-shadow: 0 10px 25px rgba(229, 62, 62, 0.35);
-}
-
-
-/* ===================================================
-   ফটো গ্যালারি সেকশনের মূল স্টাইল ও ডিজাইন 
-=================================================== */
-
-/* পুরো গ্যালারি সেকশনের ব্যাকগ্রাউন্ড ও প্যাডিং */
-.photo-gallery-section {
-    background-color: #ffffff; /* ব্যাকগ্রাউন্ড কালার সাদা */
-    padding: 60px 0;           /* ওপর-নিচে ৬০ পিক্সেল ফাঁকা জায়গা */
-}
-
-/* গ্যালারির ভেতরের কন্টেইনার (যা সবকিছুকে স্ক্রিনের মাঝখানে রাখে) */
-.gallery-container {
-    max-width: 1200px;         /* সর্বোচ্চ চওড়া ১২০০ পিক্সেল হবে */
-    margin: 0 auto;            /* ডানে-বামে অটোমেটিক সমান ফাঁকা রেখে মাঝখানে বসবে */
-    padding: 0 20px;           /* মোবাইল স্ক্রিনের জন্য দুই পাশে ২০ পিক্সেল সেফটি মার্জিন */
-    /* ৩ডি অ্যানিমেশনগুলোর গভীরতা ফুটিয়ে তোলার জন্য নিচের লাইনটি জরুরি */
-    perspective: 1200px; 
-}
-
-/* ৩টি কলামের চমৎকার গ্রিড লেআউট (এটি মোবাইল ও কম্পিউটারে অটোমেটিক সাইজ ঠিক করে) */
-.gallery-grid {
-    display: grid;             /* গ্রিড সিস্টেম চালু করা হলো */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* প্রতিটি ছবির সর্বনিম্ন সাইজ ৩০০ পিক্সেল হবে */
-    gap: 25px;                 /* একটি ছবি থেকে আরেকটি ছবির দূরত্ব ২৫ পিক্সেল */
-    /* ৩ডি স্টাইল ধরে রাখার জন্য */
-    transform-style: preserve-3d;
-}
-
-/* প্রতিটি ছবির বাইরের ফ্রেম বা বক্সের স্টাইল */
-.gallery-item {
-    position: relative;        /* ভেতরের ওভারলে টেক্সটকে পজিশন করার জন্য এটি প্যারেন্ট হিসেবে কাজ করবে */
-    height: 240px;             /* প্রতিটি ছবির ফিক্সড উচ্চতা ২৪০ পিক্সেল */
-    border-radius: 12px;       /* ফ্রেমের চারকোনা কোণগুলো ১২ পিক্সেল গোল করার জন্য */
-    overflow: hidden;          /* ছবি জুম হলে যেন ফ্রেমের বাইরে চলে না যায়, তাই বাড়তি অংশ লুকিয়ে রাখা হলো */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06); /* ফ্রেমের নিচে হালকা সুন্দর ছায়া */
-    cursor: pointer;           /* মাউস নিলে কার্সারটি হাতের মতো (pointer) দেখাবে */
-    background-color: #f7fafc; /* ছবি লোড হওয়ার আগ পর্যন্ত হালকা ধূসর ব্যাকগ্রাউন্ড দেখাবে */
-    /* ৩ডি মুভমেন্ট ট্রানজিশন মসৃণ করার জন্য */
-    transform-style: preserve-3d;
-    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
-/* মাউস পয়েন্টার ছবির ওপর নিলে (3D Hover Effect) */
-.gallery-item:hover {
-    /* মাউস নিলে ছবিটি সামান্য ওপরে উঠবে, বড় হবে এবং ৩ডি কোণে বাঁকা হবে */
-    transform: translateY(-8px) scale(1.02) rotateX(6deg) rotateY(-4deg);
-    /* হোভার করলে ছায়াটি আরও স্পষ্ট ও গভীর হবে */
-    box-shadow: 0 20px 35px rgba(30, 58, 138, 0.15);
-}
-
-/* ফ্রেমের ভেতরের আসল ছবির স্টাইল */
-.gallery-item img {
-    width: 100%;               /* ছবি চওড়ায় ফ্রেমের সমান (১০০%) হবে */
-    height: 100%;              /* ছবি উচ্চতায় ফ্রেমের সমান (১০০%) হবে */
-    object-fit: cover;         /* ছবি লম্বা বা চ্যাপ্টা না হয়ে ফ্রেমের সাথে সুন্দরভাবে ফিট হবে */
-    transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1); /* মাউস নিলে জুম হওয়ার ট্রানজিশন */
-}
-
-/* মাউস পয়েন্টার ছবির ওপর নিলে ছবি ভেতরের দিকে হালকা জুম হবে */
-.gallery-item:hover img {
-    transform: scale(1.08);     
-}
-
-/* ছবির ওপরের সুন্দর নীল-কালো রঙের গর্জিয়াস পর্দা বা আস্তরণ (Overlay) */
-.gallery-overlay {
-    position: absolute;        /* ফ্রেমের একদম ওপরে ভাসিয়ে সেট করার জন্য */
-    top: 0;
-    left: 0;
-    width: 100%;               /* পর্দার সাইজ ফ্রেমের সমান চওড়া */
-    height: 100%;              /* পর্দার সাইজ ফ্রেমের সমান লম্বা */
-    /* নিচ থেকে ওপরে কালো-নীল রঙের চমৎকার মিক্সড কালার ইফেক্ট */
-    background: linear-gradient(to top, rgba(30, 58, 138, 0.9), rgba(0, 0, 0, 0.2));
-    display: flex;             /* ভেতরের টেক্সটকে সাজানোর জন্য ফ্লেক্সবক্স */
-    align-items: flex-end;     /* লেখাগুলোকে ছবির একদম নিচের দিকে রাখার জন্য */
-    padding: 20px;             /* লেখার চারপাশে ২০ পিক্সেল জায়গা */
-    opacity: 0;                /* শুরুতে এই পর্দাটি অদৃশ্য (লুকানো) থাকবে */
-    transition: opacity 0.4s ease; /* মাউস নিলে পর্দাটি ভেসে ওঠার স্মুথ ট্রানজিশন */
-}
-
-/* মাউস নিলে ছবির ওপরের পর্দাটি যেভাবে ভেসে উঠবে */
-.gallery-item:hover .gallery-overlay {
-    opacity: 1;                /* মাউস নিলে পর্দাটি পুরোপুরি দৃশ্যমান হবে */
-}
-
-/* পর্দার ভেতরের ক্যাপশন বা লেখার স্টাইল */
-.gallery-overlay p {
-    color: #ffffff;            /* লেখার রঙ সম্পূর্ণ সাদা */
-    font-size: 16px;           /* লেখার সাইজ ১৬ পিক্সেল */
-    font-weight: 600;          /* লেখাটি হালকা মোটা হবে */
-    transform: translateY(15px) translateZ(30px); /* ৩ডি স্পেসে লেখাটি একটু সামনের দিকে এগিয়ে থাকবে */
-    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* লেখাটি নিচ থেকে ওপরে ওঠার ট্রানজিশন */
-}
-
-/* মাউস নিলে পর্দার ভেতরের লেখাটি যেভাবে ওপরে উঠবে */
-.gallery-item:hover .gallery-overlay p {
-    transform: translateY(0) translateZ(30px);  /* মাউস নিলে লেখাটি সুন্দরভাবে ভেসে উঠবে */
-}
-
-
-/* ===================================================
-   নতুন ছবি লোড হওয়ার গর্জিয়াস ৩ডি ফ্লিপ অ্যানিমেশন 
-=================================================== */
-
-/* বাটনে চাপ দিলে জাভাস্ক্রিপ্ট যে ছবিগুলো যোগ করবে সেগুলোর ৩ডি অ্যানিমেশন ক্লাস */
-.gallery-item.gallery-anim {
-    /* নিচে তৈরি করা gallery3DFlip অ্যানিমেশনটি ০.৭ সেকেন্ড ধরে ৩ডি স্টাইলে চলবে */
-    animation: gallery3DFlip 0.7s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
-}
-
-/* ছবিগুলো শূন্যে ৩ডি ফ্লিপ বা ডিগবাজি খেয়ে বসার আসল অ্যানিমেশন নিয়ম (Keyframes) */
-@keyframes gallery3DFlip {
-    0% {
-        opacity: 0;            /* শুরুতে ছবি সম্পূর্ণ অদৃশ্য থাকবে */
-        /* ছবি শুরুতে এক্স-অক্ষে ৪৫ ডিগ্রি বাঁকা থাকবে, ছোট থাকবে এবং নিচে থাকবে */
-        transform: rotateX(-45deg) scale(0.85) translateY(40px); 
-    }
-    100% {
-        opacity: 1;            /* শেষে ছবি পুরোপুরি পরিষ্কার দেখা যাবে */
-        /* শেষে ছবি সোজা হয়ে তার আসল সাইজ এবং আসল জায়গায় চলে আসবে */
-        transform: rotateX(0deg) scale(1) translateY(0); 
-    }
-}
-
-
-
-/* ===================================================
-   আপনার ফুটারকে আরও ৩ডি অ্যানিমেটেড করার এক্সক্লুসিভ স্টাইল
-=================================================== */
-
-/* ১. কুইক লিঙ্কের মেনু আইটেমগুলোর অ্যানিমেশন */
-.footer-column ul li a, .quick-links a {
-    display: inline-block;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* স্মুথ ট্রানজিশন */
-}
-
-/* কুইক লিঙ্কের ওপর মাউস নিলে যা হবে */
-.footer-column ul li a:hover, .quick-links a:hover {
-    color: #e53e3e !important;    /* মাউস নিলে লেখাটি সুন্দর লাল রঙে রূপান্তর হবে */
-    transform: translateX(8px);    /* ৩ডি ইফেক্টের মতো লিঙ্কটি আলতো করে ৮ পিক্সেল ডানে সরে আসবে */
-    font-weight: bold;             /* লেখাটি হালকা একটু মোটা হবে */
-}
-
-/* ২. গুগল ম্যাপ বাটনের গর্জিয়াস ৩ডি হোভার অ্যানিমেশন */
-/* (আপনার স্ক্রিনশটের "গুগল ম্যাপে আমাদের খুঁজুন" বাটনটির জন্য) */
-.footer-column button, .map-btn, .footer-btn {
-    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15); /* শুরুতে হালকা শ্যাডো */
-}
-
-/* গুগল ম্যাপ বাটনের হোভার ইফেক্ট */
-.footer-column button:hover, .map-btn:hover, .footer-btn:hover {
-    background-color: #e53e3e !important; /* মাউস নিলে বাটনের ব্যাকগ্রাউন্ড লাল হবে */
-    color: #ffffff !important;            /* লেখা সাদা থাকবে */
-    transform: translateY(-3px) scale(1.02); /* বাটনটি ৩ পিক্সেল ওপরে উঠবে এবং ২% বড় হবে */
-    box-shadow: 0 8px 20px rgba(229, 62, 62, 0.35); /* বাটনের নিচে একটি গ্লোয়িং লাল ৩ডি ছায়া তৈরি হবে */
-}
-
-/* বাটনটি ক্লিক করার মুহূর্তের ইফেক্ট */
-.footer-column button:active, .map-btn:active, .footer-btn:active {
-    transform: translateY(-1px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-/* ===================================================
-   আপনার ফুটারকে আরও ৩ডি অ্যানিমেটেড করার এক্সক্লুসিভ স্টাইল
-=================================================== */
-
-/* ১. কুইক লিঙ্কের মেনু আইটেমগুলোর অ্যানিমেশন */
-.footer-column ul li a, .quick-links a {
-    display: inline-block;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* স্মুথ ট্রানজিশন */
-}
-
-/* কুইক লিঙ্কের ওপর মাউস নিলে যা হবে */
-.footer-column ul li a:hover, .quick-links a:hover {
-    color: #e53e3e !important;    /* মাউস নিলে লেখাটি সুন্দর লাল রঙে রূপান্তর হবে */
-    transform: translateX(8px);    /* ৩ডি ইফেক্টের মতো লিঙ্কটি আলতো করে ৮ পিক্সেল ডানে সরে আসবে */
-    font-weight: bold;             /* লেখাটি হালকা একটু মোটা হবে */
-}
-
-/* ২. গুগল ম্যাপ বাটনের গর্জিয়াস ৩ডি হোভার অ্যানিমেশন */
-/* (আপনার স্ক্রিনশটের "গুগল ম্যাপে আমাদের খুঁজুন" বাটনটির জন্য) */
-.footer-column button, .map-btn, .footer-btn {
-    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15); /* শুরুতে হালকা শ্যাডো */
-}
-
-/* গুগল ম্যাপ বাটনের হোভার ইফেক্ট */
-.footer-column button:hover, .map-btn:hover, .footer-btn:hover {
-    background-color: #e53e3e !important; /* মাউস নিলে বাটনের ব্যাকগ্রাউন্ড লাল হবে */
-    color: #ffffff !important;            /* লেখা সাদা থাকবে */
-    transform: translateY(-3px) scale(1.02); /* বাটনটি ৩ পিক্সেল ওপরে উঠবে এবং ২% বড় হবে */
-    box-shadow: 0 8px 20px rgba(229, 62, 62, 0.35); /* বাটনের নিচে একটি গ্লোয়িং লাল ৩ডি ছায়া তৈরি হবে */
-}
-
-/* বাটনটি ক্লিক করার মুহূর্তের ইফেক্ট */
-.footer-column button:active, .map-btn:active, .footer-btn:active {
-    transform: translateY(-1px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-/* ===================================================
-   আপনার ফুটারকে আরও ৩ডি অ্যানিমেটেড করার এক্সক্লুসিভ স্টাইল
-=================================================== */
-
-/* ১. কুইক লিঙ্কের মেনু আইটেমগুলোর অ্যানিমেশন */
-.footer-column ul li a, .quick-links a {
-    display: inline-block;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* স্মুথ ট্রানজিশন */
-}
-
-/* কুইক লিঙ্কের ওপর মাউস নিলে যা হবে */
-.footer-column ul li a:hover, .quick-links a:hover {
-    color: #e53e3e !important;    /* মাউস নিলে লেখাটি সুন্দর লাল রঙে রূপান্তর হবে */
-    transform: translateX(8px);    /* ৩ডি ইফেক্টের মতো লিঙ্কটি আলতো করে ৮ পিক্সেল ডানে সরে আসবে */
-    font-weight: bold;             /* লেখাটি হালকা একটু মোটা হবে */
-}
-
-/* ২. গুগল ম্যাপ বাটনের গর্জিয়াস ৩ডি হোভার অ্যানিমেশন */
-/* (আপনার স্ক্রিনশটের "গুগল ম্যাপে আমাদের খুঁজুন" বাটনটির জন্য) */
-.footer-column button, .map-btn, .footer-btn {
-    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15); /* শুরুতে হালকা শ্যাডো */
-}
-
-/* গুগল ম্যাপ বাটনের হোভার ইফেক্ট */
-.footer-column button:hover, .map-btn:hover, .footer-btn:hover {
-    background-color: #e53e3e !important; /* মাউস নিলে বাটনের ব্যাকগ্রাউন্ড লাল হবে */
-    color: #ffffff !important;            /* লেখা সাদা থাকবে */
-    transform: translateY(-3px) scale(1.02); /* বাটনটি ৩ পিক্সেল ওপরে উঠবে এবং ২% বড় হবে */
-    box-shadow: 0 8px 20px rgba(229, 62, 62, 0.35); /* বাটনের নিচে একটি গ্লোয়িং লাল ৩ডি ছায়া তৈরি হবে */
-}
-
-/* বাটনটি ক্লিক করার মুহূর্তের ইফেক্ট */
-.footer-column button:active, .map-btn:active, .footer-btn:active {
-    transform: translateY(-1px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-
-
-/* ===================================================
-   আপনার ফুটারের জন্য বিশেষ ৩ডি অ্যানিমেটেড সিএসএস স্টাইল
-=================================================== */
-
-/* ১. ফুটারের ভেতরের কুইক লিঙ্কগুলোর অ্যানিমেশন */
-.footer-column ul {
-    list-style: none; /* লিঙ্কের ডট বা বুলেট চিহ্ন মুছে ফেলার জন্য */
-    padding: 0;
-    margin: 0;
-}
-
-.footer-column ul li {
-    margin-bottom: 12px; /* প্রতিটি লিঙ্কের মাঝে সমান গ্যাপ */
-}
-
-.footer-column ul li a {
-    display: inline-block;
-    color: #e2e8f0;             /* শুরুতে লিঙ্কের হালকা সাদাটে রঙ */
-    text-decoration: none;     /* নিচের আন্ডারলাইন মুছে ফেলার জন্য */
-    /* স্মুথ অ্যানিমেশনের গতি ও মসৃণতা কন্ট্রোল করার ট্রানজিশন */
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); 
-}
-
-/* কুইক লিঙ্কের ওপর মাউস নিলে (Hover Effect) */
-.footer-column ul li a:hover {
-    color: #e53e3e !important;    /* মাউস নিলে লিঙ্কটি আপনার থিমের লাল রঙে রূপান্তর হবে */
-    transform: translateX(8px);    /* ৩ডি ইফেক্টের মতো লিঙ্কটি আলতো করে ৮ পিক্সেল ডানে সরে আসবে */
-    font-weight: 600;              /* লেখাটি হালকা একটু মোটা হবে */
-}
-
-
-/* ২. গুগল ম্যাপ বাটনের গর্জিয়াস ৩ডি হোভার ও পালস অ্যানিমেশন */
-.map-link-btn {
-    display: inline-block;
-    background-color: #1a3175;     /* শুরুতে বাটনের গাঢ় নীল ব্যাকগ্রাউন্ড */
-    color: #ffffff !important;     /* লেখার রঙ সবসময় সাদা */
-    padding: 10px 18px;            /* বাটনের ভেতরে আরামদায়ক স্পেস */
-    border-radius: 6px;            /* কোণগুলো হালকা গোল করার জন্য */
-    text-decoration: none;         /* আন্ডারলাইন রিমুভ */
-    font-weight: bold;
-    font-size: 14px;
-    margin-top: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15); /* শুরুতে হালকা নরম শ্যাডো */
-    
-    /* বাটনের কালার ও সাইজ পরিবর্তনের ট্রানজিশন */
-    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-    /* বাটনটিতে সবসময় একটি মৃদু ভাইব্রেশন বা পালস ইফেক্ট চালু রাখার জন্য */
-    animation: buttonPulse 2.5s infinite ease-in-out;
-}
-
-/* গুগল ম্যাপ বাটনের হোভার ইফেক্ট (মাউস পয়েন্টার নিলে যা হবে) */
-.map-link-btn:hover {
-    background-color: #e53e3e;     /* মাউস নিলে বাটনের ব্যাকগ্রাউন্ড লাল হবে */
-    transform: translateY(-4px) scale(1.02); /* বাটনটি ৪ পিক্সেল ওপরে উঠবে এবং ২% বড় হবে */
-    /* বাটনের নিচে একটি চমৎকার লাল রঙের লাইভ গ্লোয়িং ৩ডি ছায়া তৈরি হবে */
-    box-shadow: 0 12px 24px rgba(229, 62, 62, 0.4); 
-}
-
-/* বাটনটি ক্লিক করার মুহূর্তের ইফেক্ট (Active State) */
-.map-link-btn:active {
-    transform: translateY(-1px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
-}
-
-/* গুগল ম্যাপ বাটনের স্বয়ংক্রিয় ব্যাকগ্রাউন্ড গ্লো অ্যানিমেশন নিয়ম (Keyframes) */
-@keyframes buttonPulse {
-    0% { box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15); }
-    50% { box-shadow: 0 0 15px 4px rgba(26, 49, 117, 0.4); } /* হালকা নীল গ্লো ছড়াবে */
-    100% { box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15); }
-}
-
-
-/* ===================================================
-   কোর্স পেজের ফুটারকে ৩ কলামে পাশাপাশি সাজানোর সিএসএস
-=================================================== */
-
-/* ১. ফুটারের মূল কন্টেইনার (সব লেখা পাশাপাশি আনার জন্য ফ্লেক্সবক্স) */
-.footer-container {
-    max-width: 1200px;         /* ফুটারের সর্বোচ্চ চওড়া */
-    margin: 0 auto;            /* মাঝখানে পজিশন করার জন্য */
-    padding: 40px 20px;        /* ওপর-নিচে ও দুই পাশে ফাঁকা জায়গা */
-    display: flex;             /* ফ্লেক্সবক্স চালু (লেখা পাশাপাশি আসবে) */
-    flex-wrap: wrap;           /* মোবাইল স্ক্রিনে যেন অটো নিচে নেমে যায় */
-    gap: 40px;                 /* কলামগুলোর পারস্পরিক দূরত্ব */
-    text-align: left;          /* লেখাগুলো বাম পাশ থেকে শুরু হবে */
-}
-
-/* ২. প্রতিটি কলামের সাইজ ও স্টাইল */
-.footer-column {
-    flex: 1;                   /* ৩টি কলাম সমান জায়গা নেবে */
-    min-width: 250px;          /* সর্বনিম্ন চওড়া ২৫০ পিক্সেল */
-}
-
-/* কলামের ভেতরের শিরোনাম (যেমন: কুইক লিংক) */
-.footer-column h4 {
-    font-size: 20px;
-    color: #ffffff;
-    margin-bottom: 20px;
-    font-weight: 700;
-}
-
-/* কলামের ভেতরের সাধারণ লেখা ও প্যারাগ্রাফ */
-.footer-column p {
-    font-size: 15px;
-    line-height: 1.6;
-    color: #e2e8f0;            /* হালকা সাদাটে রঙ */
-    margin-bottom: 12px;
-}
-
-/* ৩. কুইক লিঙ্কের লিস্টের ডট ও ফাঁকা জায়গা দূর করা */
-.footer-column ul {
-    list-style: none;          /* লিঙ্কের ডট চিহ্ন মুছে ফেলার জন্য */
-    padding: 0;
-    margin: 0;
-}
-
-.footer-column ul li {
-    margin-bottom: 12px;       /* প্রতিটি লিঙ্কের মাঝে গ্যাপ */
-}
-
-.footer-column ul li a {
-    display: inline-block;
-    color: #e2e8f0;
-    text-decoration: none;     /* আন্ডারলাইন রিমুভ */
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* স্মুথ ট্রানজিশন */
-}
-
-/* লিঙ্কের হোভার অ্যানিমেশন (মাউস নিলে যা হবে) */
-.footer-column ul li a:hover {
-    color: #e53e3e !important;    /* মাউস নিলে লাল হবে */
-    transform: translateX(8px);    /* ৩ডি ইফেক্টের মতো ৮ পিক্সেল ডানে সরবে */
-    font-weight: 600;
-}
-
-/* ৪. গুগল ম্যাপ বাটনের ৩ডি হোভার ও পালস অ্যানিমেশন */
-.map-link-btn {
-    display: inline-block;
-    background-color: #1a3175;     /* গাঢ় নীল ব্যাকগ্রাউন্ড */
-    color: #ffffff !important;
-    padding: 10px 18px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 14px;
-    margin-top: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
-    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-    animation: buttonPulse 2.5s infinite ease-in-out; /* হালকা গ্লো ছড়াবে */
-}
-
-/* গুগল ম্যাপ বাটনের হোভার ইফেক্ট */
-.map-link-btn:hover {
-    background-color: #e53e3e;     /* মাউস নিলে লাল হবে */
-    transform: translateY(-4px) scale(1.02); /* ওপরে ভেসে উঠবে */
-    box-shadow: 0 12px 24px rgba(229, 62, 62, 0.4); /* লাল ৩ডি গ্লো ছায়া */
-}
-
-/* ৫. একদম নিচের কপিরাইট অংশ */
-.footer-bottom {
-    text-align: center;
-    padding: 20px 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.1); /* হালকা বর্ডার */
-    width: 100%;
-}
-
-.footer-bottom p {
-    font-size: 14px;
-    color: #cbd5e0;
-    margin: 0;
-}
-
-/* গুগল ম্যাপ বাটনের পালস অ্যানিমেশন কি-ফ্রেম */
-@keyframes buttonPulse {
-    0% { box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15); }
-    50% { box-shadow: 0 0 15px 4px rgba(26, 49, 117, 0.4); }
-    100% { box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15); }
-}
-
-
-
-/* ===================================================
-   আধুনিক ৩ডি সাইড-স্লাইড পেজ ট্রানজিশন সিএসএস
-=================================================== */
-
-/* শুরুতে পুরো পেজের বডি স্ক্রিনের বাইরে (ডান পাশে) লুকিয়ে রাখা */
-body {
-    opacity: 0;
-    /* পেজটি শুরুতে ডান পাশে ১০০ পিক্সেল দূরে থাকবে */
-    transform: translateX(100px); 
-    /* স্ক্রিনের বাইরে চলে যাওয়া অংশ যেন স্ক্রোলবার তৈরি না করে */
-    overflow-x: hidden; 
-    /* স্লাইড হওয়ার গতি ও মসৃণতা কন্ট্রোল করার ট্রানজিশন */
-    transition: opacity 0.5s cubic-bezier(0.25, 1, 0.5, 1), 
-                transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
-}
-
-/* নতুন পেজে ঢোকার সময়: ডান থেকে বামে স্লাইড হয়ে মাঝখানে আসবে (Slide In) */
-body.page-loaded {
-    opacity: 1 !important;
-    transform: translateX(0) !important;
-}
-
-/* পেজ থেকে বের হওয়ার সময়: আলতো করে বাম পাশে মাইনাস হয়ে চলে যাবে (Slide Out) */
-body.page-fade-out {
-    opacity: 0 !important;
-    transform: translateX(-100px) !important;
-
-
-            /* পিসিতে লোগো বামে এবং বাটন একদম ডানে রাখার মেইন কোড */
-        .main-navbar {
-            display: flex !important;
-            justify-content: space-between !important;
-            align-items: center !important;
-            width: 100% !important;
-            max-width: 100% !important;
-            padding: 15px 40px !important;
-            box-sizing: border-box !important;
-            background-color: #ffffff !important;
+        /* রেসপন্সিভ ডিজাইন */
+        @media screen and (max-width: 992px) {
+            .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+            .curriculum-flex { justify-content: center; gap: 30px; }
         }
-        .main-navbar .logo {
-            display: flex !important;
-            align-items: center !important;
-            gap: 10px !important;
-        }
-        .main-navbar .logo img {
-            height: 80px !important;
-        }
-        .main-navbar .logo span {
-            color: #1f2937 !important;
-            font-size: 50px !important;
-            font-weight: bold !important;
-        }
-        .main-navbar .nav-links {
-            display: flex !important;
-            align-items: center !important;
-            gap: 20px !important;
-            list-style: none !important;
-            margin: 0 !important;
-            padding: 0 !important;
-            margin-left: auto !important; /* বাটনগুলোকে পিসিতে একদম ডানে ধাক্কা দেবে */
-        }
-        .main-navbar .nav-links a {
-            text-decoration: none !important;
-            transition: all 0.3s ease-in-out !important; /* স্মুথ ট্রানজিশন অ্যানিমেশন */
-        }
-        .main-navbar .nav-links a:hover {
-            color: #e11d48 !important; /* মাউস নিলে লাল হবে */
-            transform: translateY(-2px) !important;
-        }
-
-        /* শুধুমাত্র মোবাইল ও ছোট স্ক্রিনের জন্য ফাইনাল রেসপনসিভ কোড */
-        @media (max-width: 768px) {
-            .top-bar {
-                display: flex !important;
-                flex-direction: row !important;
-                justify-content: center !important;
-                gap: 15px !important;
-                font-size: 11px !important;
-            }
-            .main-navbar {
-                flex-direction: column !important;
-                padding: 15px 5px !important;
-            }
-            .main-navbar .logo {
-                flex-direction: column !important;
-                margin-bottom: 12px !important;
-            }
-            .main-navbar .logo img {
-                height: 55px !important;
-            }
-            .main-navbar .logo span {
-                font-size: 26px !important;
-                white-space: nowrap !important;
-            }
-            .main-navbar .nav-links {
-                flex-direction: row !important; /* মোবাইলেও বাটন এক লাইনে পাশাপাশি থাকবে */
-                justify-content: center !important;
-                width: 100% !important;
-                gap: 10px !important;
-                margin-left: 0 !important;
-            }
-            .main-navbar .nav-links a {
-                font-size: 13px !important;
-                padding: 4px 6px !important;
-            }
-        }
-
-}
-
-
-
     </style>
 </head>
 <body>
+
+    <!-- ১. লাল টপ বার (পুরো স্ক্রিন জুড়ে দুই পাশে ছড়ানো থাকবে) -->
     <div class="top-bar">
-        <span>📞 01824-868389</span>
-        <span>✉️ contact@progaticoaching.com</span>
-    </div>
-                           <nav class="main-navbar">
-        <div class="logo">
-            <img src="logo.jpg" alt="Logo">
-            <span>Progati Coaching Center</span>
-        </div>
-        <ul class="nav-links">
-            <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="courses.html">Courses</a></li>
-            <li><a href="admission.html">Admission</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="admission.html" class="nav-btn">অনলাইন ভর্তিি</a></li>
-        </ul>
-    </nav>
-
-
-
-
-    <div class="hero-container">
-        <div class="hero-left">
-            <span class="tagline">✓ Unleash Your Potential</span>
-            <h1>প্রগতি কোচিং সেন্টার </h1>
-            <p>প্রগতি কোচিং সেন্টারের আধুনিক ও সৃজনশীল পাঠদান পদ্ধতির মাধ্যমে আপনার সন্তানের মেধার শতভাগ বিকাশ নিশ্চিত করুন। অভিজ্ঞ শিক্ষক ও যত্নশীল গাইডলাইনের মাধ্যমে আমরা প্রতিটি শিক্ষার্থীকে বোর্ড পরীক্ষার জন্য প্রস্তুত করি।</p>
-            <div class="hero-buttons">
-                <a href="courses.html" class="btn-primary">Browse Course</a>
-                <a href="contact.html" class="btn-secondary">যোগাযোগ করুন</a>
-            </div>
-        </div>
-        <div class="hero-right">
-            <div class="banner-box">
-                <img src="banner.jpeg" alt="Progati Coaching Center Banner" class="hero-banner-img">
-
+        <div class="header-full-container">
+            <div class="top-bar-content">
+                <div>📞 01824-868389</div>
+                <div>✉️ contact@progaticoaching.com</div>
             </div>
         </div>
     </div>
-    <div class="content-container">
-        <div class="welcome-box">
-            <h2>আমাদের পরিচিতি</h2>
-            <p>প্রগতি কোচিং সেন্টারে আমরা ৫ম থেকে দ্বাদশ শ্রেণী, এসএসসি (SSC) এবং এইচএসসি (HSC) শিক্ষার্থীদের জন্য মানসম্মত শিক্ষা নিশ্চিত করি। অভিজ্ঞ শিক্ষক মণ্ডলী ও আধুনিক যত্নশীল পাঠদানের মাধ্যমে আমরা প্রতিটি শিক্ষার্থীকে সুপ্ত মেধা বিকাশে প্রতিশ্রুতিবদ্ধ। বিগত বহু বছর ধরে ফতুল্লাহ অঞ্চলের শিক্ষার্থীদের নির্ভরযোগ্য গাইড হিসেবে প্রগতি কাজ করে যাচ্ছে।</p>
-        </div>
-        <div class="notice-box">
-            <h2>📢 লাইভ নোটিশ বোর্ড</h2>
-            <ul class="notice-list" id="notice-container">
-                <li class="loading">নোটিশ বোর্ড দেখতে সাইটটি লাইভ করুন...</li>
-            </ul>
-        </div>
-    </div>
-    <!-- পরিচালকের পরিচিতি সেকশন শুরু -->
-<section class="director-section">
-    <div class="director-container">
-        
-        <!-- বাম পাশ: পরিচালকের ছবি ও পরিচয় -->
-        <div class="director-card">
-            <div class="director-img-wrapper">
-                <!-- আপনার ছবির ফাইলের নাম এখানে দিন (যেমন: robin.jpg) -->
-                <img src="Ismail Pic.jpeg" alt="মোঃ ইসমাইল হোসেন রবিন" class="director-img">
-            </div>
-            <p class="director-title">প্রতিষ্ঠাতা ও পরিচালক</p>
-            <h3 class="director-name">মোঃ ইসমাইল হোসেন রবিন</h3>
-            <p class="director-qualification">BBA Hon's Department of Accounting</p>
-            
-        </div>
-        
-        <!-- ডান পাশ: পরিচালকের শুভেচ্ছা বাণী -->
-        <div class="director-message-box">
-            <h2 class="message-heading">পরিচালকের বার্তা</h2>
-            <div class="heading-line"></div>
-            
-            <p class="message-text">
-                "আসসালামু আলাইকুম। প্রগতি কোচিং সেন্টারের মূল লক্ষ্য কেবল চিরাচরিত মুখস্থ বিদ্যা নয়, বরং প্রতিটি শিক্ষার্থীর সুপ্ত মেধা ও সৃজনশীলতার শতভাগ বিকাশ ঘটানো। আধুনিক পাঠদান পদ্ধতি, যত্নশীল গাইডলাইন এবং অভিজ্ঞ শিক্ষক মণ্ডলীর আন্তরিক প্রচেষ্টায় আমরা প্রতিটি শিক্ষার্থীকে বোর্ড পরীক্ষার জন্য আত্মবিশ্বাসী করে গড়ে তুলি। আমরা বিশ্বাস করি, সঠিক দিকনির্দেশনা পেলে প্রতিটি শিক্ষার্থীই অনন্য উচ্চতায় পৌঁছাতে পারে। আপনার সন্তানের একটি উজ্জ্বল ও প্রগতিশীল ভবিষ্যৎ গঠনে আমরা সবসময় আপনার পাশে আছি।"
-            </p>
-            
-            <div class="director-sign">
-                <span class="sign-text">ধন্যবাদান্তে,</span>
-                <p class="sign-name">মোঃ ইসমাইল হোসেন রবিন</p>
+
+    <!-- ২. মেইন হেডার এবং নেভিগেশন বার (লোগো একদম বাম কোণায় এবং মেনু বাটন একদম ডান কোণায় ছড়ানো) -->
+    <header class="main-header">
+        <div class="header-full-container">
+            <div class="header-grid">
+                <!-- লোগো এরিয়া (স্ক্রিনের একবারে বাম কোণায় সেট করা হয়েছে) -->
+<div class="logo-box" style="display: flex; align-items: center; gap: 12px;">
+    <!-- নিচে আপনার আসল লোগো ইমেজের নাম ও পাথ ফিক্সড করা হলো (প্রয়োজনে logo.png এর জায়গায় আপনার লোগোর নাম দিন) -->
+    <img src="logo.jpg" alt="Progati Coaching Center Logo" style="height: 55px; width: auto; object-fit: contain;">
+    <h2 style="font-size: 25px; color: #1e293b; font-weight: bold; letter-spacing: -0.5px;">Progati Coaching Center</h2>
+</div>
+
+                
+                <!-- মেনু বাটনসমূহ (এগুলো স্ক্রিনের একবারে ডান কোণায় থাকবে এবং ৩ডি হোভার ট্রানজিশন কাজ করবে) -->
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href="index.html" class="menu-item active">Home</a></li>
+                        <li><a href="course.html" class="menu-item">Courses</a></li>
+                        <li><a href="admission.html" class="menu-item">Admission</a></li>
+                        <li><a href="contact.html" class="menu-item">Contact</a></li>
+                        <li><a href="admission.html" class="online-adm-btn animated-btn">অনলাইন ভর্তি</a></li>
+                    </ul>
+                </nav>
             </div>
         </div>
-
-    </div>
-</section>
-<!-- পরিচালকের পরিচিতি সেকশন শেষ -->
-
-
-<section class="admin-posts-section">
-    <div class="section-container">
-        <h2 class="main-title">সর্বশেষ আপডেট ও নোটিশ</h2>
-        <div class="title-underline"></div>
-        
-        <!-- এই গ্রিডের ভেতরে ড্যাশবোর্ডের নতুন পোস্টগুলো জাভাস্ক্রিপ্টের মাধ্যমে অটোমেটিক জমা হবে -->
-        <div class="posts-grid" id="notices-container">
-            
-            <!-- পোস্ট ১ (সবসময় দেখা যাবে) -->
-            <div class="post-card">
-                <div class="post-date"><span>০৮</span> জুলাই, ২০২৬</div>
-                <div class="post-content">
-                    <h3>২০২৬ সালের এসএসসি পরীক্ষার্থীদের বিদায় ও দোয়া অনুষ্ঠান</h3>
-                    <p>আমাদের প্রগতি কোচিং সেন্টারের ২০২৬ শিক্ষাবর্ষের এসএসসি পরীক্ষার্থীদের বিদায় ও বিশেষ দোয়া মাহফিল আগামী শুক্রবার অনুষ্ঠিত হবে।</p>
-                    <a href="#" class="read-more-btn">আরও পড়ুন ➔</a>
+    </header>
+    <!-- ৩. ১ম সেকশন (Hero সেকশন এবং আপনার অরিজিনাল ব্যানার) -->
+    <section class="hero-section">
+        <div class="content-fixed-container">
+            <div class="hero-grid">
+                
+                <!-- বাম পাশের টেক্সট এরিয়া (প্যারাগ্রাফটি এখন সুন্দরভাবে ৩ থেকে ৪ লাইনে ভাঙবে) -->
+                <div class="hero-text-area">
+                    <div class="unleash-text">✓ UNLEASH YOUR POTENTIAL</div>
+                    <h1 class="main-title">প্রগতি কোচিং সেন্টার</h1>
+                    <p class="main-desc">
+                        প্রগতি কোচিং সেন্টারের আধুনিক ও সৃজনশীল পাঠদান পদ্ধতির মাধ্যমে আপনার সন্তানের মেধার শতভাগ বিকাশ নিশ্চিত করুন। অভিজ্ঞ শিক্ষক ও যত্নশীল গাইডলাইনের মাধ্যমে আমরা প্রতিটি শিক্ষার্থীকে বোর্ড পরীক্ষার জন্য প্রস্তুত করি।
+                    </p>
+                    <!-- ৩ডি হোভার ও কালার চেঞ্জযুক্ত অ্যাকশন বাটন দুটি -->
+                    <div class="hero-btn-group">
+                        <a href="course.html" class="btn-browse animated-btn">Browse Course</a>
+                        <a href="contact.html" class="btn-contact animated-btn">যোগাযোগ করুন</a>
+                    </div>
                 </div>
-            </div>
 
-            <!-- পোস্ট ২ (সবসময় দেখা যাবে) -->
-            <div class="post-card">
-                <div class="post-date"><span>০৫</span> জুলাই, ২০২৬</div>
-                <div class="post-content">
-                    <h3>নতুন ব্যাচে ভর্তি চলছে (বিজ্ঞান ও বাণিজ্য বিভাগ)</h3>
-                    <p>নবম ও দশম শ্রেণীর নতুন ব্যাচে সীমিত আসনে ভর্তি চলছে। অভিজ্ঞ শিক্ষক মণ্ডলী দ্বারা প্রতিটি বিষয়ের যত্নশীল পাঠদান নিশ্চিত করা হয়।</p>
-                    <a href="admission.html" class="read-more-btn">ভর্তি ফরম ➔</a>
+                <!-- ডান পাশের আপনার আসল ব্যানার ইমেজ (ফরম্যাটটি .jpg এবং ৩ডি হোভারযুক্ত) -->
+                <div class="banner-image-box">
+                    <img src="banner.jpeg" alt="Progati Coaching Center Banner (SSC, HSC)">
                 </div>
+
             </div>
-
-            <!-- ড্যাশবোর্ডের নতুন পোস্টগুলো এখানে স্বয়ংক্রিয়ভাবে তৈরি হবে -->
-
         </div>
-
-        <!-- সকল পোস্ট দেখার বাটন -->
-        <div class="view-all-container">
-            <button id="toggle-posts-btn" class="view-all-btn">সকল পোস্ট দেখুন</button>
-        </div>
-    </div>
-</section>
-
-
-<!-- ফটো গ্যালারি সেকশন শুরু -->
-<section class="photo-gallery-section">
-    <div class="gallery-container">
-        <h2 class="main-title">আমাদের কার্যক্রম ও গ্যালারি</h2>
-        <div class="title-underline"></div>
-        
-        <!-- ছবির গ্রিড কন্টেইনার -->
-        <div class="gallery-grid" id="gallery-container">
-            <!-- ছবি ১ (সবসময় দেখা যাবে) -->
-            <div class="gallery-item">
-                <img src="gallery1.jpg" alt="সৃজনশীল ক্লাসরুম পাঠদান">
-                <div class="gallery-overlay">
-                    <p>সৃজনশীল ক্লাসরুম পাঠদান</p>
+    </section>
+    <!-- ৪. পরিচিতি এবং লাইভ নোটিশ বোর্ড সেকশন (দুই পাশে খালি মার্জিন বজায় রেখে মাঝখানে থাকবে) -->
+    <section class="info-section">
+        <div class="content-fixed-container">
+            <div class="info-grid">
+                
+                <!-- আমাদের পরিচিতি কার্ড -->
+                <div class="about-card">
+                    <h3 style="color: #1e293b; font-size: 22px; margin-bottom: 15px; font-weight: 700;">আমাদের পরিচিতি</h3>
+                    <p style="color: #4a5568; font-size: 15px; line-height: 1.8;">
+                        প্রগতি কোচিং সেন্টারে আমরা ৫ম থেকে দ্বাদশ শ্রেণী, এসএসসি (SSC) এবং এইচএসসি (HSC) শিক্ষার্থীদের জন্য মানসম্মত শিক্ষা নিশ্চিত করি। অভিজ্ঞ শিক্ষক মণ্ডলী ও আধুনিক যত্নশীল পাঠদানের মাধ্যমে আমরা প্রতিটি শিক্ষার্থীকে সুপ্ত মেধা বিকাশে প্রতিশ্রুতিবদ্ধ। বিগত বহু বছর ধরে ফতুল্লা অঞ্চলের শিক্ষার্থীদের নির্ভরযোগ্য গাইড হিসেবে প্রগতি কাজ করে যাচ্ছে।
+                    </p>
                 </div>
-            </div>
-            <!-- ছবি ২ (সবসময় দেখা যাবে) -->
-            <div class="gallery-item">
-                <img src="gallery2.jpg" alt="কৃতি শিক্ষার্থী সংবর্ধনা">
-                <div class="gallery-overlay">
-                    <p>কৃতি শিক্ষার্থী সংবর্ধনা অনুষ্ঠান</p>
+
+                <!-- লাইভ নোটিশ বোর্ড কার্ড -->
+                <div class="notice-card">
+                    <h3 style="color: #1e293b; font-size: 22px; margin-bottom: 15px; font-weight: 700;">📢 লাইভ নোটিশ বোর্ড</h3>
+                    <p style="color: #ef4444; font-weight: bold; font-size: 15px; margin-bottom: 10px;">নোটিশ বোর্ড দেখতে সাইটটি লাইভ করুন।</p>
+                    <p style="color: #718096; font-size: 14px;">নতুন ভর্তি ও পরীক্ষার রুটিন সংক্রান্ত তথ্য এখানে নিয়মিত আপডেট করা হয়।</p>
                 </div>
-            </div>
-            <!-- ছবি ৩ (সবসময় দেখা যাবে) -->
-            <div class="gallery-item">
-                <img src="gallery3.jpg" alt="বার্ষিক মেধা পুরস্কার বিতরণী">
-                <div class="gallery-overlay">
-                    <p>বার্ষিক মেধা পুরস্কার বিতরণী</p>
-                </div>
-            </div>
-            
-            <!-- অ্যাডমিন প্যানেলের নতুন ছবিগুলো বাটনে ক্লিক করলে এখানে স্বয়ংক্রিয়ভাবে তৈরি হবে -->
-        </div>
-
-        <!-- আরও ছবি দেখার বাটন -->
-        <div class="view-all-container">
-            <button id="toggle-gallery-btn" class="view-all-btn">আরও ছবি দেখুন</button>
-        </div>
-    </div>
-</section>
-<!-- ফটো গ্যালারি সেকশন শেষ -->
-
-
-
-
-
-    <div class="slider-section">
-        <h2 class="slider-title">আমাদের বিভাগসমূহ</h2>
-        <div class="slider-grid">
-            <div class="slide-card"><div class="slide-icon-box">🔬</div><h3>বিজ্ঞান বিভাগ<br>(Science)</h3></div>
-            <div class="slide-card"><div class="slide-icon-box">💼</div><h3>ব্যবসায় শিক্ষা<br>(Bussiness Studies)</h3></div>
-            <div class="slide-card"><div class="slide-icon-box">🎨</div><h3>মানবিক বিভাগ<br>(Humanities)</h3></div>
-        </div>
-    </div>
-    <div class="reviews-section">
-        <h2 style="text-align: center; font-size: 28px; color: #1f2937; font-weight: 700;">• শিক্ষার্থীদের সফলতার গল্প</h2>
-        <div class="reviews-grid">
-            <div class="review-card">
-                <p class="review-text">"রবিন স্যারের হিসাববিজ্ঞান ক্লাস এবং বিশেষ শর্টকাট টেকনিকগুলোর কারণে বোর্ড পরীক্ষায় আমার এ প্লাস পাওয়া অনেক সহজ হয়েছে। এখানকার মেন্টররা অনেক আন্তরিক।"</p>
-                <div class="review-author">মোঃ সালমান হোসেন <span>প্রাক্তন শিক্ষার্থী (SSC ব্যাচ)</span></div>
-            </div>
-            <div class="review-card">
-                <p class="review-text">"মিথিলা ম্যামের ফিন্যান্সের গাণিতিক ক্লাসের অধ্যায়ভিত্তিক পরীক্ষাগুলো আমার ভীতি পুরোপুরি দূর করে দিয়েছিল। প্রগতি কোচিং ফতুল্লা অঞ্চলের সেরা শিক্ষা প্রতিষ্ঠান।"</p>
-                <div class="review-author">জান্নাতুল ফেরদৌস <span>প্রাক্তন শিক্ষার্থী (HSC ব্যাচ)</span></div>
-            </div>
-        </div>
-    </div>
-    <div class="partners-bar">
-        <div class="partners-container">
-            <span>📚 NCTB সিলেবাস ভিত্তিক</span>
-            <span>🏛️ ঢাকা শিক্ষাবোর্ড কারিকুলাম</span>
-            <span>💯 শতভাগ সৃজনশীল পদ্ধতি</span>
-        </div>
-    </div>
-    <footer>
-        <div class="footer-container">
-            <div class="footer-column">
-                <h4>প্রগতি কোচিং সেন্টার</h4>
-                <p>সুশিক্ষার সিঁড়ি চাই, আদর্শ শিক্ষকের বিকল্প নাই। আমরা প্রতিটি শিক্ষার্থীকে মেধার সঠিক মূল্যায়ন ও পরিচর্যা নিশ্চিত করি.</p>
-            </div>
-            <div class="footer-column">
-                <h4>কুইক লিংক</h4>
-                <ul>
-                    <li><a href="index.html">হোম পেজ</a></li>
-                    <li><a href="courses.html">আমাদের কোর্সসমূহ</a></li>
-                    <li><a href="admission.html">অনলাইন ভর্তি ফরম</a></li>
-                    <li><a href="contact.html">যোগাযোগ</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4>যোগাযোগের তথ্য</h4>
-                <p>📍 সস্তাপুর (গাবতলার মোড়), ফতুল্লাহ, নারায়ণগঞ্জ</p>
-                <p>📞 01824-868389</p>
-                <a href="https://maps.app.goo.gl/jpoS3PFLTDaztxY48" target="_blank" class="map-link-btn">🗺️ গুগল ম্যাপে আমাদের খুঁজুন</a>
 
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Progati Coaching Center. All Rights Reserved.</p>
-        </div>
-    </footer>
+    </section>
+
     <script>
-        const sheetId = '1Z8MOoUPYzpXR3XD5xKpbUUfUjTpc7zDwVKoA6sRaLXI';
-        const base = `https://google.com{sheetId}/gviz/tq?tqx=out:json`;
-        fetch(base)
-            .then(res => res.text())
-            .then(data => {
-                const jsonData = JSON.parse(data.substring(47, data.length - 2));
-                const rows = jsonData.table.rows;
-                const container = document.getElementById('notice-container');
-                container.innerHTML = '';
-                if (rows.length <= 1) { 
-                    container.innerHTML = '<li class="loading">বর্তমানে কোনো নোটিশ নেই।</li>'; 
-                    return; 
-                }
-                for (let i = 0; i < rows.length; i++) {
-                    const row = rows[i];
-                    if (!row.c) continue;
-                    const dateVal = row.c ? row.c.v : 'No Date';
-                    const noticeVal = row.c ? row.c.v : '';
-                    if(noticeVal) {
-                        const li = document.createElement('li');
-                        li.className = 'notice-item';
-                        li.innerHTML = `<span class="notice-date">📅 ${dateVal}</span><p class="notice-text">${noticeVal}</p>`;
-                        container.insertBefore(li, container.firstChild);
-                    }
-                }
-            })
-            .catch(err => { 
-                document.getElementById('notice-container').innerHTML = '<li class="loading" style="color:red;">নোটিশ বোর্ড দেখতে সাইটটি লাইভ করুন।</li>'; 
-            });
-    </script>
-
-
-<script>
-document.getElementById('toggle-posts-btn').addEventListener('click', async function() {
-    const container = document.getElementById('notices-container');
-    const btn = this;
-
-    // যদি অলরেডি ডাইনামিক পোস্টগুলো ওপেন থাকে, তবে ক্লিক করলে সেগুলো রিমুভ হবে
-    const existingExtraNotices = container.querySelectorAll('.post-card.dynamic-post');
-    if (existingExtraNotices.length > 0) {
-        existingExtraNotices.forEach(card => card.remove());
-        btn.textContent = 'সকল পোস্ট দেখুন';
-        return;
-    }
-
-    try {
-        // অ্যাডমিন প্যানেল বা লোকাল ফোল্ডারের পাবলিশ করা পোস্টের ডেটা
-        const adminPublishedNotices = [
-            { day: "০১", month: "জুলাই", title: "অর্ধ-বার্ষিক পরীক্ষার ফলাফল প্রকাশ", text: "সকল শ্রেণীর অর্ধ-বার্ষিক পরীক্ষার ফলাফল অফিস কক্ষে টাঙিয়ে দেওয়া হয়েছে। আগামীকাল থেকে নতুন সিলেবাসে ক্লাস শুরু হবে।", url: "#" },
-            { day: "২৫", month: "জুন", title: "আসন্ন ঈদুল আজহার বিশেষ ছুটি ঘোষণা", text: "পবিত্র ঈদুল আজহা উপলক্ষে কোচিং সেন্টারের সকল কার্যক্রম আগামী ১০ দিন বন্ধ থাকবে। ছুটি শেষে যথাসময়ে ক্লাস শুরু হবে।", url: "#" }
-        ];
-
-        // প্রতিটি পোস্টকে লুপের মাধ্যমে HTML কার্ডে রূপান্তর
-        adminPublishedNotices.forEach((notice, index) => {
-            const postCard = document.createElement('div');
-            
-            // অ্যানিমেশন ক্লাস (show-active) এবং ট্র্যাকিং ক্লাস (dynamic-post) যোগ করা হলো
-            postCard.className = 'post-card show-active dynamic-post';
-            postCard.style.animationDelay = `${index * 0.15}s`;
-
-            postCard.innerHTML = `
-                <div class="post-date"><span>${notice.day}</span> ${notice.month}, ২০২৬</div>
-                <div class="post-content">
-                    <h3>${notice.title}</h3>
-                    <p>${notice.text}</p>
-                    <a href="${notice.url}" class="read-more-btn">আরও পড়ুন ➔</a>
-                </div>
-            `;
-
-            container.appendChild(postCard);
+        document.addEventListener("DOMContentLoaded", function() {
+            console.log("প্রগতি কোচিং সেন্টার হোম পেজ অল-ডিভাইস রেসপন্সিভ মোডে সফলভাবে রেন্ডার হয়েছে।");
         });
+    </script>
+        <!-- ২য় সেকশন: পরিচালকের বার্তা এরিয়া (আপনার ২য় স্ক্রিনশট অনুযায়ী হুবহু ডিজাইন) -->
+    <section class="director-section">
+        <!-- এটি দুই পাশে আপনার আসল মার্জিন খালি জায়গা বজায় রেখে মাঝখানে লক করে রাখবে -->
+        <div class="content-fixed-container">
+            <div class="director-grid">
+                
+                <!-- বাম পাশের ৩ডি অ্যানিমেশনযুক্ত পরিচালকের প্রোফাইল কার্ড -->
+                <div class="director-card">
+                    <div class="director-img-box">
+                        <!-- নিচে আপনার আসল পরিচালকের ছবির নাম ও পাথ দিন (যেমন: director.jpg বা .png) -->
+                        <img src="Ismail Pic.jpeg" alt="মো: ইসমাইল হোসেন রবিন">
+                    </div>
+                    <!-- পদবি (আপনার স্ক্রিনশটের মতো লাল কালার থিমে) -->
+                    <h4 style="color: #e51e44; font-size: 15px; font-weight: 700; margin-bottom: 8px; letter-spacing: 0.5px;">প্রতিষ্ঠাতা ও পরিচালক</h4>
+                    <!-- পরিচালকের নাম (বোল্ড ডার্ক কালার) -->
+                    <h3 style="color: #1e293b; font-size: 20px; font-weight: 800; margin-bottom: 6px;">মো: ইসমাইল হোসেন রবিন</h3>
+                    <!-- শিক্ষাগত যোগ্যতা (হালকা ধূসর ছোট ফন্ট) -->
+                    <p style="color: #718096; font-size: 13px; font-weight: 500;">BBA (Hons) Department of Accounting</p>
+                </div>
+                <!-- ডান পাশের পরিচালকের বার্তা কন্টেন্ট বক্স -->
+                <div class="director-message-box">
+                    <h2 class="director-title">পরিচালকের বার্তা</h2>
+                    
+                    <p class="director-text">
+                        আসসালামু আলাইকুম। প্রগতি কোচিং সেন্টারের মূল লক্ষ্য কেবল চিরাচরিত মুখস্থ বিদ্যা নয়, বরং প্রতিটি শিক্ষার্থীর সুপ্ত মেধা ও সৃজনশীলতার শতভাগ বিকাশ ঘটানো। আধুনিক পাঠদান পদ্ধতি, যত্নশীল গাইডলাইন এবং অভিজ্ঞ শিক্ষক মণ্ডলীর আন্তরিক প্রচেষ্টায় আমরা প্রতিটি শিক্ষার্থীকে বোর্ড পরীক্ষার জন্য আত্মবিশ্বাসী করে গড়ে তুলি। আমরা বিশ্বাস করি, সঠিক দিকনির্দেশনা পেলে প্রতিটি শিক্ষার্থীই অনন্য উচ্চতায় পৌঁছাতে পারে। আপনার সন্তানের একটি উজ্জ্বল ও প্রগতিশীল ভবিষ্যৎ গঠনে আমরা সবসময় আপনার পাশে আছি।
+                    </p>
+                    <!-- ধন্যবাদান্তে লেখার বাম পাশের সেই বিশেষ লাল বর্ডার ইন্ডিকেটরযুক্ত বক্স -->
+                    <div class="director-footer-note">
+                        <span style="color: #718096; font-size: 14px; display: block; margin-bottom: 4px;">ধন্যবাদান্তে,</span>
+                        <strong style="color: #1e293b; font-size: 16px; font-weight: 700;">মো: ইসমাইল হোসেন রবিন</strong>
+                    </div>
+                </div> <!-- director-message-box শেষ -->
 
-        // বাটনের লেখা পরিবর্তন
-        btn.textContent = 'পোস্ট লুকান';
-
-    } catch (error) {
-        console.error("অ্যাডমিন প্যানেল থেকে নোটিশ লোড করতে সমস্যা হয়েছে:", error);
-    }
-});
-</script>
-
-
-<script>
-document.getElementById('toggle-gallery-btn').addEventListener('click', function() {
-    const galleryContainer = document.getElementById('gallery-container');
-    const btn = this;
-
-    // যদি অতিরিক্ত ছবিগুলো অলরেডি স্ক্রিনে থাকে, তবে আবার ক্লিক করলে সেগুলো রিমুভ হবে
-    const dynamicItems = galleryContainer.querySelectorAll('.gallery-item.dynamic-photo');
-    if (dynamicItems.length > 0) {
-        dynamicItems.forEach(item => item.remove());
-        btn.textContent = 'আরও ছবি দেখুন';
-        return;
-    }
-
-    // অ্যাডমিন প্যানেল থেকে আপলোড করা নতুন ছবির ডেমো ডেটাবেজ
-    const adminUploadedPhotos = [
-        { imgUrl: "gallery4.jpg", caption: "ইনডোর স্পোর্টস ও গেমস প্রতিযোগিতা" },
-        { imgUrl: "gallery5.jpg", caption: "অভিভাবক সমাবেশ ও মতবিনিময়" },
-        { imgUrl: "gallery6.jpg", caption: "বিশেষ কুইজ প্রতিযোগিতা ও পুরস্কার" }
-    ];
-
-    // লুপের মাধ্যমে প্রতিটি ছবিকে অ্যানিমেশন সহ গ্রিডে যোগ করা
-    adminUploadedPhotos.forEach((photo, index) => {
-        const item = document.createElement('div');
-        item.className = 'gallery-item gallery-anim dynamic-photo';
-        item.style.animationDelay = `${index * 0.15}s`; // একটির পর আরেকটি ছবি আসার চমৎকার ডিলে
-
-        item.innerHTML = `
-            <img src="${photo.imgUrl}" alt="${photo.caption}">
-            <div class="gallery-overlay">
-                <p>${photo.caption}</p>
+            </div> <!-- director-grid শেষ -->
+        </div> <!-- content-fixed-container শেষ -->
+    </section> <!-- director-section শেষ -->
+    <!-- ৩য় সেকশন: সর্বশেষ আপডেট ও নোটিশ (আপনার ৩য় স্ক্রিনশট অনুযায়ী হুবহু ডিজাইন) -->
+    <section class="notice-section">
+        <div class="content-fixed-container">
+            
+            <!-- শিরোনাম ও নিচের লাল দাগ -->
+            <div class="section-title-wrapper">
+                <h2 class="section-title">সর্বশেষ আপডেট ও নোটিশ</h2>
             </div>
-        `;
 
-        galleryContainer.appendChild(item);
-    });
+            <!-- নোটিশ গ্রিড লেআউট -->
+            <div class="notice-grid">
+                
+                <!-- নোটিশ কার্ড ১ -->
+                <div class="notice-post-card">
+                    <div class="notice-date-badge">০৮ জুলাই ২০২৬</div>
+                    <h3 class="notice-post-title">২০২৬ সালের এসএসসি পরীক্ষার্থীদের বিদায় ও দোয়া অনুষ্ঠান</h3>
+                    <p class="notice-post-desc">
+                        আমাদের প্রগতি কোচিং সেন্টারের ২০২৬ শিক্ষাবর্ষের এসএসসি পরীক্ষার্থীদের বিদায় ও বিশেষ দোয়া মাহফিল আগামী শুক্রবার অনুষ্ঠিত হবে।
+                    </p>
+                    <a href="javascript:void(0);" class="notice-action-link">আরও পড়ুন →</a>
+                </div>
 
-    // বাটনের টেক্সট পরিবর্তন
-    btn.textContent = 'ছবিগুলো লুকান';
-});
-</script>
+                <!-- নোটিশ কার্ড ২ -->
+                <div class="notice-post-card">
+                    <div class="notice-date-badge">০৫ জুলাই ২০২৬</div>
+                    <h3 class="notice-post-title">নতুন ব্যাচে ভর্তি চলছে (বিজ্ঞান ও বাণিজ্য বিভাগ)</h3>
+                    <p class="notice-post-desc">
+                        নবম ও দশম শ্রেণীর নতুন ব্যাচে সীমিত আসনে ভর্তি চলছে। অভিজ্ঞ শিক্ষক মণ্ডলী দ্বারা প্রতিটি বিষয়ের যত্নশীল পাঠদান নিশ্চিত করা হয়।
+                    </p>
+                    <a href="javascript:void(0);" class="notice-action-link">ভর্তি ফরম →</a>
+                </div>
 
+                <!-- নোটিশ কার্ড ৩ (এটি আপনার সেই লুকানো নোটিশ যা বাটন ক্লিক করলে বের হবে) -->
+                <div class="notice-post-card hidden-item" id="hidden-notice-1">
+                    <div class="notice-date-badge">০১ জুলাই ২০২৬</div>
+                    <h3 class="notice-post-title">অর্ধ-বার্ষিক পরীক্ষার ফলাফল ও অগ্রগতি রিপোর্ট প্রকাশ</h3>
+                    <p class="notice-post-desc">
+                        সকল শ্রেণীর অর্ধ-বার্ষিক মূল্যায়নের ফলাফল এবং প্রোগ্রেস রিপোর্ট আগামী রবিবার অফিস কক্ষ থেকে প্রদান করা হবে। অভিভাবক সমাবেশ বাধ্যতামূলক।
+                    </p>
+                    <a href="javascript:void(0);" class="notice-action-link">আরও পড়ুন →</a>
+                </div>
 
-<script>
-// ১. পেজ ওপেন হওয়ার সাথে সাথে ডান দিক থেকে বামে স্লাইড করার ক্লাস যোগ করা
-document.addEventListener("DOMContentLoaded", function() {
-    setTimeout(function() {
-        document.body.classList.add("page-loaded");
-    }, 50); // সামান্য ডিলে যাতে স্লাইড অ্যানিমেশনটি নিখুঁতভাবে চোখে পড়ে
-});
+            </div> <!-- notice-grid শেষ -->
 
-// ২. মেনুর লিঙ্কে ক্লিক করলে বর্তমান পেজটি বামে স্লাইড হয়ে চলে যাবে
-document.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', function(e) {
-        const href = this.getAttribute('href');
-        
-        // শুধু নিজস্ব পেজের লোকাল লিঙ্ক বাদে অন্য সব পেজ লিঙ্কের জন্য এটি কাজ করবে
-        if (href && href !== '#' && !href.startsWith('#') && !this.getAttribute('target')) {
-            e.preventDefault(); // ডিফল্ট ধপ করে পেজ চেঞ্জ হওয়া বন্ধ
+            <!-- ৩ডি হোভার অ্যানিমেশনযুক্ত "সকল পোস্ট দেখুন" মেইন বাটন -->
+            <div class="center-btn-wrapper">
+                <button class="btn-blue-main animated-btn" id="load-more-notices-btn" style="border-radius: 6px; font-weight: bold;">সকল পোস্ট দেখুন</button>
+            </div>
+
+        </div> <!-- content-fixed-container শেষ -->
+    </section> <!-- notice-section শেষ -->
+    <!-- ৪র্থ সেকশন: আমাদের কার্যক্রম ও গ্যালারি (আপনার ২য় স্ক্রিনশট অনুযায়ী হুবহু ডিজাইন) -->
+    <section class="gallery-section">
+        <div class="content-fixed-container">
             
-            document.body.classList.add('page-fade-out'); // বামে স্লাইড আউট চালু
-            
-            // অ্যানিমেশন চলাকালীন (০.৪ সেকেন্ড) অপেক্ষা করে নতুন পেজে পাঠানো
-            setTimeout(function() {
-                window.location.href = href;
-            }, 450);
-        }
-    });
-});
-</script>
+            <!-- শিরোনাম ও নিচের লাল দাগ -->
+            <div class="section-title-wrapper" style="text-align: center;">
+                <h2 class="section-title" style="padding-bottom: 12px;">আমাদের কার্যক্রম ও গ্যালারি</h2>
+                <!-- শিরোনাম সেন্টারে থাকায় লাল দাগটিও মাঝখানে রাখার জন্য স্টাইল ফিক্সড -->
+                <style>
+                    .gallery-section .section-title::after { left: 50% !important; transform: translateX(-50%); }
+                </style>
+            </div>
 
+            <!-- গ্যালারি গ্রিড লেআউট (৩টি ছবি পাশাপাশি থাকবে) -->
+            <div class="gallery-grid">
+                
+                <!-- গ্যালারি কার্ড ১ -->
+                <div class="gallery-item-card">
+                    <div class="gallery-img-box">
+                        <!-- আপনার সংশোধন অনুযায়ী ইমেজ ফরম্যাটটি .jpg রাখা হয়েছে -->
+                        <img src="gallery1.jpg" alt="সৃজনশীল ক্লাসরুম পাঠদান">
+                    </div>
+                    <div class="gallery-item-title">সৃজনশীল ক্লাসরুম পাঠদান</div>
+                </div>
+
+                <!-- গ্যালারি কার্ড ২ -->
+                <div class="gallery-item-card">
+                    <div class="gallery-img-box">
+                        <img src="gallery2.jpg" alt="কৃতি শিক্ষার্থী সংবর্ধনা">
+                    </div>
+                    <div class="gallery-item-title">কৃতি শিক্ষার্থী সংবর্ধনা</div>
+                </div>
+
+                <!-- গ্যালারি কার্ড ৩ -->
+                <div class="gallery-item-card">
+                    <div class="gallery-img-box">
+                        <img src="gallery3.jpg" alt="বার্ষিক মেগা পুরস্কার বিতরণী">
+                    </div>
+                    <div class="gallery-item-title">বার্ষিক মেগা পুরস্কার বিতরণী</div>
+                </div>
+
+                <!-- গ্যালারি কার্ড ৪ (এটি আপনার সেই লুকানো ছবি যা বাটন ক্লিক করলে বের হবে) -->
+                <div class="gallery-item-card hidden-item" id="hidden-gallery-1">
+                    <div class="gallery-img-box">
+                        <img src="gallery4.jpg" alt="অভিভাবক ও শিক্ষক সমাবেশ">
+                    </div>
+                    <div class="gallery-item-title">অভিভাবক ও শিক্ষক সমাবেশ</div>
+                </div>
+
+            </div> <!-- gallery-grid শেষ -->
+
+            <!-- ৩ডি হোভার অ্যানিমেশনযুক্ত "আরও ছবি দেখুন" মেইন বাটন -->
+            <div class="center-btn-wrapper">
+                <button class="btn-blue-main animated-btn" id="load-more-gallery-btn" style="border-radius: 6px; font-weight: bold;">আরও ছবি দেখুন</button>
+            </div>
+
+        </div> <!-- content-fixed-container শেষ -->
+    </section> <!-- gallery-section শেষ -->
+    <!-- ৫ম সেকশন: আমাদের বিভাগসমূহ (আপনার ৩য় স্ক্রিনশট অনুযায়ী হুবহু ডিজাইন) -->
+    <section class="departments-section">
+        <div class="content-fixed-container">
+            
+            <!-- শিরোনাম ও নিচের লাল দাগ -->
+            <div class="section-title-wrapper" style="text-align: center;">
+                <h2 class="section-title" style="padding-bottom: 12px;">আমাদের বিভাগসমূহ</h2>
+                <style>
+                    .departments-section .section-title::after { left: 50% !important; transform: translateX(-50%); }
+                </style>
+            </div>
+
+            <!-- ৩টি বিভাগের গ্রিড লেআউট -->
+            <div class="dept-grid">
+                
+                <!-- বিজ্ঞান বিভাগ -->
+                <div class="dept-card">
+                    <div class="dept-icon-box">🔬</div>
+                    <h3 class="dept-name-bn">বিজ্ঞান বিভাগ</h3>
+                    <p class="dept-name-en">(Science)</p>
+                </div>
+
+                <!-- ব্যবসায় শিক্ষা বিভাগ -->
+                <div class="dept-card">
+                    <div class="dept-icon-box">💼</div>
+                    <h3 class="dept-name-bn">ব্যবসায় শিক্ষা</h3>
+                    <p class="dept-name-en">(Business Studies)</p>
+                </div>
+
+                <!-- মানবিক বিভাগ -->
+                <div class="dept-card">
+                    <div class="dept-icon-box">🎨</div>
+                    <h3 class="dept-name-bn">মানবিক বিভাগ</h3>
+                    <p class="dept-name-en">(Humanities)</p>
+                </div>
+
+            </div> <!-- dept-grid শেষ -->
+        </div> <!-- content-fixed-container শেষ -->
+    </section> <!-- departments-section শেষ -->
+    <!-- ৬ষ্ঠ সেকশন: শিক্ষার্থীদের সফলতার গল্প (আপনার ৩য় ও ৪র্থ স্ক্রিনশট অনুযায়ী হুবহু ডিজাইন) -->
+    <section class="testimonials-section">
+        <div class="content-fixed-container">
+            
+            <!-- শিরোনাম ও নিচের লাল দাগ (শিরোনামের বামে ডট/বুলিটসহ আপনার স্ক্রিনশটের স্টাইল) -->
+            <div class="section-title-wrapper" style="text-align: center;">
+                <h2 class="section-title" style="padding-bottom: 12px;"><span style="color: #e51e44; margin-right: 5px;">•</span> শিক্ষার্থীদের সফলতার গল্প</h2>
+                <style>
+                    .testimonials-section .section-title::after { left: 50% !important; transform: translateX(-50%); }
+                </style>
+            </div>
+
+            <!-- সফলতার গল্পের গ্রিড লেআউট -->
+            <div class="testimonial-grid">
+                
+                <!-- রিভিউ বক্স ১ -->
+                <div class="testimonial-box">
+                    <p class="testimonial-quote">
+                        "রবিন স্যারের হিসাববিজ্ঞান ক্লাস এবং বিশেষ শর্টকাট টেকনিকগুলোর কারণে বোর্ড পরীক্ষায় আমার এ প্লাস পাওয়া অনেক সহজ হয়েছে। এখানকার মেন্টরিং অনেক আন্তরিক!"
+                    </p>
+                    <h4 class="testimonial-student-name">মো: সালমান হোসেন</h4>
+                    <p class="testimonial-student-batch">প্রাক্তন শিক্ষার্থী (এসএসসি ব্যাচ)</p>
+                </div>
+
+                <!-- রিভিউ বক্স ২ -->
+                <div class="testimonial-box">
+                    <p class="testimonial-quote">
+                        "মিথিলা ম্যামের ফিন্যান্সের গাণিতিক ক্লাসের অধ্যায়ভিত্তিক পরীক্ষাগুলো আমার ভীতি পুরোপুরি দূর করে দিয়েছিল। প্রগতি ফতুল্লা অঞ্চলের সেরা শিক্ষা প্রতিষ্ঠান।"
+                    </p>
+                    <h4 class="testimonial-student-name">আশরাফুল ফেরদৌস</h4>
+                    <p class="testimonial-student-batch">প্রাক্তন শিক্ষার্থী (এইচএসসি ব্যাচ)</p>
+                </div>
+
+            </div> <!-- testimonial-grid শেষ -->
+        </div> <!-- content-fixed-container শেষ -->
+    </section> <!-- testimonials-section শেষ -->
+    <!-- ৭ম সেকশন: কারিকুলাম ইন্ডিকেটর বার (ফুটারের ঠিক ওপরের ৩টি নোটিশ এক লাইনে) -->
+    <section class="curriculum-bar">
+        <div class="content-fixed-container">
+            <div class="curriculum-flex">
+                <div class="curriculum-item">📄 NCTB সিলেবাস ভিত্তিক</div>
+                <div class="curriculum-item">🏫 ঢাকা শিক্ষাবোর্ড কারিকুলাম</div>
+                <div class="curriculum-item">🎯 শতভাগ সৃজনশীল পদ্ধতি</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ৮ম সেকশন: মেইন ডার্ক ফুটার এরিয়া (৩টি কলামের প্রফেশনাল লেআউট) -->
+    <footer class="main-dark-footer">
+        <div class="content-fixed-container">
+            <div class="footer-grid">
+                
+                <!-- ১ম কলাম: প্রগতি কোচিং সেন্টার বর্ণনা -->
+                <div class="footer-column">
+                    <h3 class="footer-col-title">প্রগতি কোচিং সেন্টার</h3>
+                    <p class="footer-desc">
+                        সুশৃঙ্খল পরিবেশ আর আদর্শ শিক্ষকের বিকল্প নাই। আমরা প্রতিটি শিক্ষার্থীকে মেধার সঠিক মূল্যায়ন ও পরিচর্যা নিশ্চিত করি। দীর্ঘ সময় ধরে ফতুল্লা অঞ্চলের শিক্ষার্থীদের ভরসার প্রতীক প্রগতি।
+                    </p>
+                </div>
+
+                <!-- ২য় কলাম: কুইক লিংক তালিকা -->
+                <div class="footer-column">
+                    <h3 class="footer-col-title">কুইক লিংক</h3>
+                    <ul class="footer-links-list">
+                        <li><a href="index.html" class="footer-link-item">হোম পেজ</a></li>
+                        <li><a href="course.html" class="footer-link-item">আমাদের কোর্সসমূহ</a></li>
+                        <li><a href="admission.html" class="footer-link-item">অনলাইন ভর্তি ফরম</a></li>
+                        <li><a href="contact.html" class="footer-link-item">যোগাযোগ</a></li>
+                    </ul>
+                </div>
+
+                <!-- ৩য় কলাম: যোগাযোগের তথ্য ও গুগল ম্যাপ বাটন -->
+                <div class="footer-column">
+                    <h3 class="footer-col-title">যোগাযোগের তথ্য</h3>
+                    <p class="footer-info-text">📍 সস্তাপুর (কোতালের মোড়), ফতুল্লা, নারায়ণগঞ্জ।</p>
+                    <p class="footer-info-text">📞 01824-858389</p>
+                    <!-- ৩ডি অ্যানিমেশনযুক্ত গুগল ম্যাপ বাটন -->
+                    <a href="https://google.com" target="_blank" class="footer-info-text btn-google-map animated-btn" style="display: inline-block; text-decoration: none; font-weight: bold;">
+                        🗺️ গুগল ম্যাপে আমাদের খুঁজুন
+                    </a>
+                </div>
+
+            </div> <!-- footer-grid শেষ -->
+            <!-- ফুটারের একদম নিচের কপিরাইট টেক্সট এরিয়া -->
+            <div class="footer-bottom-bar">
+                <p>&copy; 2026 Progati Coaching Center. All Rights Reserved.</p>
+            </div>
+
+        </div> <!-- content-fixed-container শেষ -->
+    </footer> <!-- main-dark-footer শেষ -->
 
 
 </body>
 </html>
-
-
-
-
