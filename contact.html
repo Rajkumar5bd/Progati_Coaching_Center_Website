@@ -3,583 +3,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Progati Coaching Center - Admission</title>
-    
+    <title>PROGATI HEADQUARTER - Luxury Contact Portal</title>
     <style>
-        /* পুরো ওয়েবসাইটের বেসিক রিসেট */
-        * { 
-            margin: 0; 
-            padding: 0; 
-            box-sizing: border-box; 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-        }
-
-        /* বডি সেকশন - জাস্টিফাই এবং ব্যাকগ্রাউন্ড এক সাথে */
-        body {
-            background-color: #f4f6f9; 
-            color: #333;
-            text-align: justify; 
-        }
-
-        /* ইমেজের রেসপনসিভ সাইজ */
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { background-color: #f4f6f9; color: #333; }
-        /* Navigation Bar */
-        nav { background-color: #1e3a8a; padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
-        nav .logo { color: #fff; font-size: 24px; font-weight: bold; }
-        nav ul { display: flex; list-style: none; }
-        nav ul li { margin-left: 20px; }
-        nav ul li a { color: #fff; text-decoration: none; font-size: 16px; transition: color 0.3s; }
-        nav ul li a:hover, nav ul li a.active { color: #38bdf8; }
-        /* Container */
-        .container { max-width: 800px; margin: 60px auto; padding: 40px 30px; background: white; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: center; }
-        h1 { color: #1e3a8a; margin-bottom: 25px; font-size: 32px; }
-        /* Info Box */
-        .info-box { margin: 30px 0; font-size: 18px; line-height: 2; color: #4b5563; text-align: left; max-width: 500px; margin-left: auto; margin-right: auto; }
-        .info-item { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 20px; }
-        .info-item strong { color: #1e3a8a; min-width: 100px; display: inline-block; }
-        /* Button */
-        .btn-fb { display: inline-block; background-color: #1877f2; color: white; padding: 12px 30px; text-decoration: none; border-radius: 6px; font-weight: bold; margin-top: 20px; transition: background 0.2s; }
-        .btn-fb:hover { background-color: #145dbf; }
-        /* Footer */
-        footer { background-color: #0f172a; color: #94a3b8; text-align: center; padding: 20px; margin-top: 60px; font-size: 14px; }
-    
-    
-    /* অনলাইন ভর্তি বাটনের মূল স্টাইল */
-.nav-btn {
-    display: inline-block;
-    background-color: #e53e3e; /* লাল ব্যাকগ্রাউন্ড */
-    color: #ffffff !important; /* লেখার রঙ সাদা */
-    padding: 8px 18px; 
-    font-size: 15px;
-    font-weight: bold;
-    text-decoration: none; /* আন্ডারলাইন রিমুভ */
-    border-radius: 6px; 
-    /* স্মুথ অ্যানিমেশনের ট্রানজিশন */
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
-/* বাটনের হোভার অ্যানিমেশন */
-.nav-btn:hover {
-    background-color: #1e3a8a; /* মাউস নিলে রাজকীয় নীল হবে */
-    color: #ffffff !important;
-    transform: translateY(-2px); /* হালকা ওপরে ভাসবে */
-    box-shadow: 0 4px 10px rgba(30, 58, 138, 0.25); /* নীলচে ছায়া */
-}
-
-
-
-/* ===================================================
-   কোর্স পেজের ফুটার ৩ কলামে পাশাপাশি আনার ফ্রেশ কোড
-=================================================== */
-
-/* ১. মূল ফুটার ব্যাকগ্রাউন্ড এবং টেক্সট অ্যালাইন */
-footer {
-    background-color: #0b1530 !important; /* গাঢ় নীল ব্যাকগ্রাউন্ড */
-    padding: 50px 0 0 0 !important;
-    text-align: left !important;         /* সব লেখা বামে নেওয়ার জন্য */
-    width: 100% !important;
-    display: block !important;
-}
-
-/* ২. ৩টি কলামকে পাশাপাশি সাজানোর আসল ফ্লেক্সবক্স ম্যাজিক */
-footer .footer-container {
-    max-width: 1200px !important;
-    margin: 0 auto !important;
-    padding: 0 20px 40px 20px !important;
-    display: flex !important;             /* এটি লেখাগুলোকে পাশাপাশি নিয়ে আসবে */
-    flex-direction: row !important;       /* কলামগুলো পাশাপাশি সারিবদ্ধ থাকবে */
-    flex-wrap: wrap !important;           /* মোবাইল স্ক্রিনে যেন নিচে নামে */
-    gap: 50px !important;                 /* কলামগুলোর মাঝখানের গ্যাপ */
-    justify-content: space-between !important;
-}
-
-/* ৩. প্রতিটি কলামের নিখুঁত সাইজ */
-footer .footer-column {
-    flex: 1 !important;                   /* ৩টি বক্স সমান জায়গা পাবে */
-    min-width: 250px !important;          /* সর্বনিম্ন চওড়া */
-    text-align: left !important;
-}
-
-/* কলামের ভেতরের শিরোনাম */
-/* কলামের শিরোনাম এবং তার বাম পাশের লাল দাগ বা ৩ডি বর্ডার */
-footer .footer-column h4 {
-    font-size: 20px !important;
-    color: #ffffff !important;
-    margin-top: 0 !important;
-    margin-bottom: 20px !important;
-    font-weight: 700 !important;
-    
-    /* ---- লাল দাগ নিয়ে আসার আসল ম্যাজিক লাইনসমূহ ---- */
-    border-left: 4px solid #e53e3e !important; /* ৪ পিক্সেল মোটা লাল বর্ডার */
-    padding-left: 12px !important;              /* লাল দাগ থেকে লেখার মাঝখানের দূরত্ব */
-    line-height: 1.2 !important;                /* দাগটির উচ্চতা লেখার সমান করার জন্য */
-}
-
-
-/* কলামের সাধারণ বিবরণী লেখা */
-footer .footer-column p {
-    font-size: 15px !important;
-    line-height: 1.6 !important;
-    color: #cbd5e0 !important;
-    margin-bottom: 12px !important;
-    text-align: left !important;
-}
-
-/* ৪. কুইক লিঙ্কের লিস্টের ডট ও মার্জিন রিমুভ */
-footer .footer-column ul {
-    list-style: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
-}
-
-footer .footer-column ul li {
-    margin-bottom: 12px !important;
-}
-
-footer .footer-column ul li a {
-    display: inline-block !important;
-    color: #cbd5e0 !important;
-    text-decoration: none !important;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
-}
-
-/* কুইক লিঙ্কের হোভার ৩ডি অ্যানিমেশন */
-footer .footer-column ul li a:hover {
-    color: #e53e3e !important;            /* মাউস নিলে লাল হবে */
-    transform: translateX(8px) !important; /* আলতো করে ডানে সরবে */
-}
-
-/* ৫. গুগল ম্যাপ বাটন ৩ডি স্টাইল ও পালস অ্যানিমেশন */
-footer .map-link-btn {
-    display: inline-block !important;
-    background-color: #1a3175 !important;
-    color: #ffffff !important;
-    padding: 10px 18px !important;
-    border-radius: 6px !important;
-    text-decoration: none !important;
-    font-weight: bold !important;
-    font-size: 14px !important;
-    margin-top: 10px !important;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15) !important;
-    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
-    animation: buttonPulse 2.5s infinite ease-in-out !important;
-}
-
-footer .map-link-btn:hover {
-    background-color: #e53e3e !important;
-    transform: translateY(-4px) scale(1.02) !important; /* ওপরে ভেসে উঠবে */
-    box-shadow: 0 12px 24px rgba(229, 62, 62, 0.4) !important; /* লাল গ্লো ছায়া */
-}
-
-/* ৬. একদম নিচের কপিরাইট অংশ */
-footer .footer-bottom {
-    text-align: center !important;
-    padding: 20px 0 !important;
-    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
-    width: 100% !important;
-    background-color: rgba(0, 0, 0, 0.2) !important;
-}
-
-footer .footer-bottom p {
-    font-size: 14px !important;
-    color: #a0aec0 !important;
-    margin: 0 !important;
-    text-align: center !important;
-}
-
-/* গুগল ম্যাপ বাটনের গ্লো কি-ফ্রেম */
-@keyframes buttonPulse {
-    0% { box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15); }
-    50% { box-shadow: 0 0 15px 4px rgba(26, 49, 117, 0.4); }
-    100% { box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15); }
-}
-
-
-  
-
-/* ===================================================
-   আধুনিক ৩ডি সাইড-স্লাইড পেজ ট্রানজিশন সিএসএস
-=================================================== */
-
-/* শুরুতে পুরো পেজের বডি স্ক্রিনের বাইরে (ডান পাশে) লুকিয়ে রাখা */
-body {
-    opacity: 0;
-    /* পেজটি শুরুতে ডান পাশে ১০০ পিক্সেল দূরে থাকবে */
-    transform: translateX(100px); 
-    /* স্ক্রিনের বাইরে চলে যাওয়া অংশ যেন স্ক্রোলবার তৈরি না করে */
-    overflow-x: hidden; 
-    /* স্লাইড হওয়ার গতি ও মসৃণতা কন্ট্রোল করার ট্রানজিশন */
-    transition: opacity 0.5s cubic-bezier(0.25, 1, 0.5, 1), 
-                transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
-}
-
-/* নতুন পেজে ঢোকার সময়: ডান থেকে বামে স্লাইড হয়ে মাঝখানে আসবে (Slide In) */
-body.page-loaded {
-    opacity: 1 !important;
-    transform: translateX(0) !important;
-}
-
-/* পেজ থেকে বের হওয়ার সময়: আলতো করে বাম পাশে মাইনাস হয়ে চলে যাবে (Slide Out) */
-body.page-fade-out {
-    opacity: 0 !important;
-    transform: translateX(-100px) !important;
-}
-
-
-
-
-/* ===================================================
-   যোগাযোগ পেজের ২-কলাম লেআউট ও ৩ডি মেসেজ ফরম সিএসএস
-=================================================== */
-
-/* মূল কন্টেইনার */
-.contact-page-container {
-    max-width: 1200px !important;
-    margin: 40px auto !important;
-    padding: 0 20px !important;
-}
-
-/* প্রধান শিরোনাম */
-.contact-main-heading {
-    text-align: center !important;
-    color: #1e3a8a !important; /* আপনার থিমের নীল রঙ */
-    font-size: 32px !important;
-    font-weight: bold !important;
-    margin-bottom: 40px !important;
-}
-
-/* ২টি কলাম পাশাপাশি বসানোর ফ্লেক্সবক্স ম্যাজিক */
-.contact-wrapper {
-    display: flex !important;
-    flex-wrap: wrap !important; /* মোবাইল স্ক্রিনে যেন একটির নিচে আরেকটি চলে যায় */
-    gap: 40px !important;       /* দুই কলামের মাঝখানের দূরত্ব */
-}
-
-/* বাম ও ডান কলামের সমান অনুপাত */
-.contact-left-col, .contact-right-col {
-    flex: 1 !important;
-    min-width: 320px !important; /* মোবাইল রেসপনসিভ সর্বনিম্ন সাইজ */
-}
-
-/* --- বাম পাশ: তথ্য বক্সের ৩ডি স্টাইল --- */
-.info-box {
-    background: #ffffff !important;
-    border-radius: 16px !important;
-    padding: 30px !important;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05) !important; /* সফট শ্যাডো */
-    border: 1px solid #e2e8f0 !important;
-    transition: all 0.4s ease !important;
-}
-
-.info-box:hover {
-    transform: translateY(-5px) !important; /* মাউস নিলে ওপরে ভাসবে */
-    box-shadow: 0 20px 40px rgba(30, 58, 138, 0.08) !important;
-}
-
-.info-item {
-    display: flex !important;
-    align-items: center !important;
-    gap: 15px !important;
-    margin-bottom: 20px !important;
-    border-bottom: 1px dashed #f1f5f9 !important; /* আইটেমগুলোর মাঝে হালকা দাগ */
-    padding-bottom: 12px !important;
-}
-.info-item:last-child {
-    border-bottom: none !important;
-    margin-bottom: 0 !important;
-    padding-bottom: 0 !important;
-}
-
-.info-icon {
-    font-size: 20px !important;
-}
-
-.info-item p {
-    margin: 0 !important;
-    font-size: 16px !important;
-    color: #334155 !important;
-}
-
-/* ফেসবুক বাটন ৩ডি স্টাইল */
-.btn-fb {
-    display: block !important;
-    text-align: center !important;
-    background-color: #1877f2 !important; /* অফিশিয়াল ফেসবুক ব্লু */
-    color: #ffffff !important;
-    padding: 14px 0 !important;
-    font-size: 16px !important;
-    font-weight: bold !important;
-    border-radius: 10px !important;
-    text-decoration: none !important;
-    margin-top: 25px !important;
-    box-shadow: 0 4px 12px rgba(24, 119, 242, 0.2) !important;
-    transition: all 0.3s ease !important;
-}
-.btn-fb:hover {
-    background-color: #166fe5 !important;
-    transform: translateY(-3px) !important;
-    box-shadow: 0 8px 20px rgba(24, 119, 242, 0.35) !important; /* ৩ডি ব্লু গ্লো ছায়া */
-}
-
-/* --- ডান পাশ: ৩ডি মেসেজ ফরম স্টাইল --- */
-.contact-message-form {
-    background: #ffffff !important;
-    border-radius: 16px !important;
-    padding: 35px !important;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05) !important;
-    border: 1px solid #e2e8f0 !important;
-    transition: all 0.4s ease !important;
-}
-.contact-message-form:hover {
-    transform: translateY(-5px) !important;
-    box-shadow: 0 20px 40px rgba(30, 58, 138, 0.08) !important;
-}
-
-.contact-message-form h3 {
-    font-size: 22px !important;
-    color: #1e3a8a !important;
-    margin: 0 0 8px 0 !important;
-}
-
-.form-underline {
-    width: 50px;
-    height: 4px;
-    background-color: #e53e3e; /* আপনার থিমের লাল বর্ডার দাগ */
-    margin-bottom: 25px;
-    border-radius: 2px;
-}
-
-.contact-input-group {
-    margin-bottom: 20px !important;
-}
-.contact-input-group label {
-    display: block !important;
-    font-weight: 600 !important;
-    color: #475569 !important;
-    margin-bottom: 8px !important;
-    font-size: 14px !important;
-}
-
-/* ইনপুট ফিল্ড ও মেসেজ বক্স ৩ডি অ্যানিমেশন */
-.contact-input-group input, .contact-input-group textarea {
-    width: 100% !important;
-    padding: 12px 16px !important;
-    border: 2px solid #e2e8f0 !important;
-    border-radius: 8px !important;
-    background-color: #f8fafc !important;
-    outline: none !important;
-    font-size: 15px !important;
-    box-sizing: border-box !important;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
-}
-.contact-input-group input:focus, .contact-input-group textarea:focus {
-    background-color: #ffffff !important;
-    border-color: #1e3a8a !important;
-    box-shadow: 0 0 0 4px rgba(30, 58, 138, 0.15) !important; /* গ্লোয়িং বর্ডার */
-    transform: translateY(-2px) !important; /* টাইপ করার সময় হালকা ওপরে পপ-আপ হবে */
-}
-
-/* মেসেজ পাঠান বাটন */
-.btn-msg-submit {
-    width: 100% !important;
-    background-color: #1e3a8a !important;
-    color: #ffffff !important;
-    padding: 14px 0 !important;
-    font-size: 16px !important;
-    font-weight: bold !important;
-    border: none !important;
-    border-radius: 10px !important;
-    cursor: pointer !important;
-    box-shadow: 0 4px 12px rgba(30, 58, 138, 0.2) !important;
-    transition: all 0.3s ease !important;
-}
-.btn-msg-submit:hover {
-    background-color: #e53e3e !important; /* মাউস নিলে লাল হবে */
-    transform: translateY(-3px) !important;
-    box-shadow: 0 8px 20px rgba(229, 62, 62, 0.35) !important;
-}
-
-
-
-    
+        @import url('https://googleapis.com');
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Hind Siliguri', sans-serif; }
+        body { min-height: 100vh; background: linear-gradient(135deg, #0f172a 0%, #020617 100%); display: flex; align-items: center; justify-content: center; padding: 20px; }
+        .luxury-container { max-width: 1100px; width: 100%; background: #ffffff; border-radius: 24px; box-shadow: 0 25px 70px -15px rgba(0, 0, 0, 0.7); overflow: hidden; display: grid; grid-template-columns: 5fr 7fr; border: 1px solid rgba(255, 255, 255, 0.1); }
+        .info-panel { background: linear-gradient(135deg, #090d16 0%, #0f172a 50%, #070a12 100%); color: #ffffff; padding: 45px; display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden; border-right: 1px solid rgba(255, 255, 255, 0.05); }
+        .brand-badge { background: linear-gradient(90deg, #dc2626, #b91c1c); font-size: 11px; font-weight: 700; padding: 8px 14px; border-radius: 10px; display: inline-flex; width: fit-content; }
+        .main-title-section { margin-top: 30px; margin-bottom: 35px; }
+        .main-title-section h1 { font-size: 32px; font-weight: 700; line-height: 1.3; background: linear-gradient(90deg, #ffffff, #f87171); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 12px; }
+        .main-title-section p { color: #94a3b8; font-size: 14px; line-height: 1.6; }
+        .info-cards-stack { display: flex; flex-direction: column; gap: 20px; }
+        .info-card { display: flex; align-items: flex-start; gap: 16px; background: rgba(255, 255, 255, 0.02); padding: 18px; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.04); }
+        .icon-box { width: 42px; height: 42px; position: relative; border-radius: 50%; flex-shrink: 0; }
+        .icon-box.red { background: rgba(239, 68, 68, 0.15); } .icon-box.indigo { background: rgba(99, 102, 241, 0.15); } .icon-box.amber { background: rgba(245, 158, 11, 0.15); }
+        .icon-box::after { content: ''; position: absolute; width: 8px; height: 8px; border-radius: 50%; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .icon-box.red::after { background-color: #ef4444; box-shadow: 0 0 10px #ef4444; } .icon-box.indigo::after { background-color: #818cf8; box-shadow: 0 0 10px #818cf8; } .icon-box.amber::after { background-color: #fbbf24; box-shadow: 0 0 10px #fbbf24; }
+        .card-content h4 { font-size: 11px; font-weight: 700; text-transform: uppercase; margin-bottom: 4px; }
+        .card-red h4 { color: #ef4444; } .card-indigo h4 { color: #818cf8; } .card-amber h4 { color: #fbbf24; }
+        .card-content p { font-size: 14px; font-weight: 600; color: #e2e8f0; line-height: 1.5; }
+        .alert-badge { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 700; background: rgba(239, 68, 68, 0.1); color: #f87171; padding: 4px 10px; border-radius: 6px; margin-top: 8px; }
+        .director-quote { margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.08); }
+        .director-quote p { font-size: 12px; color: #94a3b8; font-style: italic; line-height: 1.6; }
+        .director-name { font-size: 12px; font-weight: 700; color: #f59e0b; margin-top: 8px; display: flex; align-items: center; gap: 6px; }
+        .dot-marker { width: 6px; height: 6px; background: #f59e0b; border-radius: 50%; }
+        .form-panel { padding: 45px; display: flex; flex-direction: column; justify-content: center; }
+        .form-header { margin-bottom: 30px; } .form-header h2 { font-size: 24px; font-weight: 700; color: #0f172a; } .form-header p { font-size: 13px; color: #64748b; margin-top: 4px; font-weight: 500; }
+        .form-group { margin-bottom: 20px; display: flex; flex-direction: column; gap: 8px; } .form-group label { font-size: 14px; font-weight: 700; color: #334155; } .form-group label span { color: #ef4444; }
+        .form-control { width: 100%; padding: 13px 16px !important; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; font-size: 14px; font-weight: 500; color: #1e293b; outline: none; transition: all 0.2s ease; }
+        .form-control:focus { background: #ffffff; border-color: #4f46e5; box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1); }
+        select.form-control { cursor: pointer; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://w3.org' fill='none' viewBox='0 0 24 24' stroke='%2394a3b8'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 16px center; background-size: 16px; }
+        textarea.form-control { resize: none; }
+        .submit-btn { width: 100%; background: linear-gradient(90deg, #10b981, #059669); color: #ffffff; border: none; padding: 15px; font-size: 16px; font-weight: 700; border-radius: 12px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; box-shadow: 0 10px 25px rgba(16, 185, 129, 0.25); transition: all 0.2s ease; margin-top: 10px; }
+        .submit-btn:hover { background: linear-gradient(90deg, #059669, #047857); }
+        @media (max-width: 850px) { body { padding: 10px; } .luxury-container { grid-template-columns: 1fr; } .info-panel { padding: 30px 24px; border-right: none; border-bottom: 1px solid rgba(255, 255, 255, 0.08); } .form-panel { padding: 35px 24px; } }
     </style>
 </head>
 <body>
-
-    <!-- Navigation Menu -->
-    <nav>
-                <div class="logo" style="display: flex; align-items: center; gap: 10px;">
-            <img src="logo.jpg" alt="Logo" style="height: 60px; vertical-align: middle;">
-            <span style="color: #fff; font-size: 35px; font-weight: bold;">Progati Coaching Center</span>
-        </div>
-
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="courses.html">Courses</a></li>
-            <li><a href="admission.html">Admission</a></li>
-            <li><a href="contact.html" class="active">Contact</a></li>
-        </ul>
-    </nav>
-
-       <!-- Main Content (২টি কলামে সাজানো হলো) -->
-    <div class="contact-page-container">
-        <h1 class="contact-main-heading">যোগাযোগ করুন</h1>
-        
-        <div class="contact-wrapper">
-            
-            <!-- বাম কলাম: যোগাযোগের তথ্যসমূহ -->
-            <div class="contact-left-col">
-                <div class="info-box">
-                    <div class="info-item">
-                        <span class="info-icon">📍</span>
-                        <p><strong>ঠিকানা:</strong> সস্তাপুর (গাবতলার মোড়), ফতুল্লাহ, নারায়ণগঞ্জ</p>
+    <div class="luxury-container">
+        <div class="info-panel">
+            <div>
+                <div class="brand-badge">PROGATI HEADQUARTER</div>
+                <div class="main-title-section">
+                    <h1>সরাসরি আমাদের ক্যাম্পাসে চলে আসুন</h1>
+                    <p>যেকোনো কোর্স, ব্যাচ শিডিউল অথবা ভর্তি সংক্রান্ত যেকোনো জরুরি আলোচনার জন্য আমাদের অফিশিয়াল ঠিকানায় সরাসরি যোগাযোগের আমন্ত্রণ রইল।</p>
+                </div>
+                <div class="info-cards-stack">
+                    <div class="info-card card-red">
+                        <div class="icon-box red"></div>
+                        <div class="card-content">
+                            <h4>প্রধান campus শাখা</h4>
+                            <p>সস্তাপুর (গাবতলার মোড়), ফতুল্লা, নারায়ণগঞ্জ।</p>
+                        </div>
                     </div>
-                    <div class="info-item">
-                        <span class="info-icon">📞</span>
-                        <p><strong>মোবাইল ১:</strong> 01824-868389 (প্রধান শাখা)</p>
+                    <div class="info-card card-indigo">
+                        <div class="icon-box indigo"></div>
+                        <div class="card-content">
+                            <h4>জরুরি হটলাইন নম্বর</h4>
+                            <p style="margin-top:2px;">01824-868389</p>
+                            <p>01516-532819</p>
+                        </div>
                     </div>
-                    <div class="info-item">
-                        <span class="info-icon">📞</span>
-                        <p><strong>মোবাইল ২:</strong> 01516-532819 (জরুরী যোগাযোগ)</p>
-                    </div>
-                    <div class="info-item">
-                        <span class="info-icon">🕒</span>
-                        <p><strong>যোগাযোগের সময়:</strong> সকাল ৯টা থেকে বিকাল ৪টা</p>
-                    </div>
-                    <div class="info-item">
-                        <span class="info-icon">🚫</span>
-                        <p><strong>সাপ্তাহিক ছুটির দিন:</strong> শুক্রবার</p>
+                    <div class="info-card card-amber">
+                        <div class="icon-box amber"></div>
+                        <div class="card-content">
+                            <h4>অফিসিয়াল সময়সূচী</h4>
+                            <p>সকাল ৯:০০ টা থেকে বিকাল ৪:০০ টা পর্যন্ত।</p>
+                            <div class="alert-badge">⚠️ সাপ্তাহিক ছুটির দিন: শুক্রবার</div>
+                        </div>
                     </div>
                 </div>
-                <!-- ফেসবুক পেজের বাটন -->
-                <a href="https://facebook.com" target="_blank" class="btn-fb">🌐 Facebook পেজে যুক্ত হোন</a>
+            </div>
+            <div class="director-quote">
+                <p>"প্রগতির অফিশিয়াল পোর্টালে আপনার যেকোনো জিজ্ঞাসা বা মতামত আমাদের জানান। আমরা দ্রুততম সময়ে আপনার সাথে যোগাযোগ করব।"</p>
+                <div class="director-name"><div class="dot-marker"></div> — মোঃ ইসমাইল হোসেন রবিন (পরিচালক)</div>
+            </div>
+        </div>
+
+        <div class="form-panel">
+            <div class="form-header">
+                <h2>আপনার পরিচয় ও বার্তা প্রদান করুন</h2>
+                <p>ফর্মটি সঠিকভাবে পূরণ করে নিচের বাটনে চাপ দিলে তথ্যগুলো সরাসরি আমাদের অফিশিয়াল হোয়াটসঅ্যাপ নম্বরে চলে যাবে।</p>
             </div>
 
-            <!-- ডান কলাম: নতুন ৩ডি মেসেজ ফরম (অ্যাড করা হলো) -->
-            <div class="contact-right-col">
-                <form class="contact-message-form" onsubmit="event.preventDefault(); alert('আপনার মেসেজটি সফলভাবে পাঠানো হয়েছে!');">
-                    <h3>সরাসরি মেসেজ পাঠান</h3>
-                    <div class="form-underline"></div>
-                    
-                    <div class="contact-input-group">
-                        <label>আপনার নাম</label>
-                        <input type="text" placeholder="যেমন: মোঃ সাকিব হাসান" required>
-                    </div>
-                    
-                    <div class="contact-input-group">
-                        <label>মোবাইল নম্বর</label>
-                        <input type="tel" placeholder="যেমন: 017XXXXXXXX" required>
-                    </div>
-                    
-                    <div class="contact-input-group">
-                        <label>আপনার বার্তা বা জিজ্ঞাসা</label>
-                        <textarea rows="4" placeholder="আপনার প্রশ্নটি এখানে বিস্তারিত লিখুন..." required></textarea>
-                    </div>
-                    
-                    <button type="submit" class="btn-msg-submit">মেসেজ পাঠান ➔</button>
-                </form>
-            </div>
-
+            <form id="whatsappForm" onsubmit="return false;">
+                <div class="form-group">
+                    <label>আপনার সম্পূর্ণ নাম <span>*</span></label>
+                    <input type="text" id="fullName" placeholder="যেমন: মোঃ আবদুল্লাহ" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label>আপনার সচল মোবাইল নম্বর <span>*</span></label>
+                    <input type="tel" id="mobileNumber" placeholder="যেমন: 017XXXXXXXX" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label>স্কুল বা কলেজের নাম <span>(ঐচ্ছিক)</span></label>
+                    <input type="text" id="instituteName" placeholder="যেমন: ফতুল্লা পাইলট হাই স্কুল" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>আপনার শ্রেণী বা পরিচয় <span>*</span></label>
+                    <select id="userRole" class="form-control" required>
+                        <option value="" disabled selected>আপনার পরিচয় নির্বাচন করুন</option>
+                        <option value="শিক্ষার্থী">আমি একজন শিক্ষার্থী (Student)</option>
+                        <option value="অভিভাবক">আমি একজন অভিভাবক (Guardian)</option>
+                        <option value="শুভাকাঙ্ক্ষী">অন্যান্য / শুভাকাঙ্ক্ষী (Other)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>আপনার বিস্তারিত বার্তা বা জিজ্ঞাসা <span>*</span></label>
+                    <textarea id="userMessage" rows="4" placeholder="আপনার প্রশ্ন বা মতামতটি এখানে বিস্তারিত লিখুন..." class="form-control" required></textarea>
+                </div>
+                <button type="button" onclick="handleWhatsAppSubmit()" class="submit-btn">
+                    হোয়াটসঅ্যাপে বার্তা পাঠান
+                </button>
+            </form>
         </div>
     </div>
 
-    <!-- Footer -->
-    <!-- কোর্সেস পেজের প্রফেশনাল ৩ডি ফুটার -->
-<footer>
-    <div class="footer-container">
-        <div class="footer-column">
-            <h4>প্রগতি কোচিং সেন্টার</h4>
-            <p>সুশিক্ষার সিঁড়ি চাই, আদর্শ শিক্ষকের বিকল্প নাই। আমরা প্রতিটি শিক্ষার্থীকে মেধার সঠিক মূল্যায়ন ও পরিচর্যা নিশ্চিত করি.</p>
-        </div>
-        <div class="footer-column">
-            <h4>কুইক লিংক</h4>
-            <ul>
-                <li><a href="index.html">হোম পেজ</a></li>
-                <li><a href="courses.html">আমাদের কোর্সসমূহ</a></li>
-                <li><a href="admission.html">অনলাইন ভর্তি ফরম</a></li>
-                <li><a href="contact.html">যোগাযোগ</a></li>
-            </ul>
-        </div>
-        <div class="footer-column">
-            <h4>যোগাযোগের তথ্য</h4>
-            <p>📍 সস্তাপুর (গাবতলার মোড়), ফতুল্লাহ, নারায়ণগঞ্জ</p>
-            <p>📞 01824-868389</p>
-            <a href="https://maps.app.goo.gl/jpoS3PFLTDaztxY48" target="_blank" class="map-link-btn">🗺️ গুগল ম্যাপে আমাদের খুঁজুন</a>
+    <script>
+        function handleWhatsAppSubmit() {
+            var name = document.getElementById('fullName').value.trim();
+            var mobile = document.getElementById('mobileNumber').value.trim();
+            var institute = document.getElementById('instituteName').value.trim() || 'উল্লেখ নেই';
+            var role = document.getElementById('userRole').value;
+            var msg = document.getElementById('userMessage').value.trim();
 
-        </div>
-    </div>
-    <div class="footer-bottom">
-        <p>&copy; 2026 Progati Coaching Center. All Rights Reserved.</p>
-    </div>
-</footer>
+            if (!name || !mobile || !role || !msg) {
+                alert('⚠️ দয়া করে সবকটি প্রয়োজনীয় (*) ফিল্ড সঠিকভাবে পূরণ করুন।');
+                return;
+            }
 
+            if (mobile.length < 10) {
+                alert('⚠️ দয়া করে একটি সঠিক মোবাইল নম্বর প্রদান করুন।');
+                return;
+            }
 
-<script>
-// ১. পেজ ওপেন হওয়ার সাথে সাথে ডান দিক থেকে বামে স্লাইড করার ক্লাস যোগ করা
-document.addEventListener("DOMContentLoaded", function() {
-    setTimeout(function() {
-        document.body.classList.add("page-loaded");
-    }, 50); // সামান্য ডিলে যাতে স্লাইড অ্যানিমেশনটি নিখুঁতভাবে চোখে পড়ে
-});
+            var targetWhatsApp = "8801824868389";
+            var textReport = "*নতুন যোগাযোগ বার্তা (Progati Portal)*\n" +
+                               "━━━━━━━━━━━━━━━━━━━━\n" +
+                               "👤 *নাম:* " + name + "\n" +
+                               "📱 *মোবাইল:* " + mobile + "\n" +
+                               "🏫 *প্রতিষ্ঠান:* " + institute + "\n" +
+                               "🎖️ *পরিচয়:* " + role + "\n" +
+                               "💬 *বার্তা:* " + msg + "\n" +
+                               "━━━━━━━━━━━━━━━━━━━━\n" +
+                               "⏳ _সময়: " + new Date().toLocaleString('bn-BD') + "_";
 
-// ২. মেনুর লিঙ্কে ক্লিক করলে বর্তমান পেজটি বামে স্লাইড হয়ে চলে যাবে
-document.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', function(e) {
-        const href = this.getAttribute('href');
-        
-        // শুধু নিজস্ব পেজের লোকাল লিঙ্ক বাদে অন্য সব পেজ লিঙ্কের জন্য এটি কাজ করবে
-        if (href && href !== '#' && !href.startsWith('#') && !this.getAttribute('target')) {
-            e.preventDefault(); // ডিফল্ট ধপ করে পেজ চেঞ্জ হওয়া বন্ধ
-            
-            document.body.classList.add('page-fade-out'); // বামে স্লাইড আউট চালু
-            
-            // অ্যানিমেশন চলাকালীন (০.৪ সেকেন্ড) অপেক্ষা করে নতুন পেজে পাঠানো
-            setTimeout(function() {
-                window.location.href = href;
-            }, 450);
+            var finalURL = "https://whatsapp.com" + targetWhatsApp + "&text=" + encodeURIComponent(textReport);
+            window.location.href = finalURL;
         }
-    });
-});
-</script>
-
-
-
-<script>
-// হোয়াটসঅ্যাপে মেসেজ পাঠানোর আসল ম্যাজিক ফাংশন
-document.querySelector('.contact-message-form').addEventListener('submit', function(e) {
-    e.preventDefault(); // পেজ রিফ্রেশ হওয়া বন্ধ করার জন্য
-
-    // ফরমের ভেতরের ইনপুট বক্স থেকে ডেটা সংগ্রহ করা
-    const name = this.querySelector('input[type="text"]').value;
-    const phone = this.querySelector('input[type="tel"]').value;
-    const message = this.querySelector('textarea').value;
-
-    // আপনার হোয়াটসঅ্যাপ নম্বর (এখানে আপনার আসল নম্বরটি বসিয়ে দিন)
-    // দেশের কোড (88) সহ দিতে হবে, কোনো স্পেস বা ড্যাশ (-) দেওয়া যাবে না
-    const whatsappNumber = "8801824868389"; 
-
-    // সুন্দরভাবে সাজানো মেসেজের টেক্সট
-    const text = `*নতুন মেসেজ (প্রগতি ওয়েবসাইট)*%0A` +
-                 `---------------------------%0A` +
-                 `👤 *নাম:* ${name}%0A` +
-                 `📞 *মোবাইল:* ${phone}%0A` +
-                 `💬 *বার্তা:* ${message}`;
-
-    // হোয়াটসঅ্যাপের অফিশিয়াল লিঙ্ক তৈরি করা
-    const whatsappUrl = `https://wa.me{whatsappNumber}?text=${text}`;
-
-    // নতুন ট্যাবে হোয়াটসঅ্যাপ ওপেন করে মেসেজটি পাঠিয়ে দেওয়া
-    window.open(whatsappUrl, '_blank');
-});
-</script>
-
-
-
+    </script>
 </body>
 </html>
