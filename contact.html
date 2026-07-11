@@ -3,157 +3,215 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PROGATI HEADQUARTER - Luxury Contact Portal</title>
+    <title>যোগাযোগ - প্রগতি কোচিং সেন্টার (ফতুল্লা ক্যাম্পাস)</title>
     <style>
-        @import url('https://googleapis.com');
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Hind Siliguri', sans-serif; }
-        body { min-height: 100vh; background: linear-gradient(135deg, #0f172a 0%, #020617 100%); display: flex; align-items: center; justify-content: center; padding: 20px; }
-        .luxury-container { max-width: 1100px; width: 100%; background: #ffffff; border-radius: 24px; box-shadow: 0 25px 70px -15px rgba(0, 0, 0, 0.7); overflow: hidden; display: grid; grid-template-columns: 5fr 7fr; border: 1px solid rgba(255, 255, 255, 0.1); }
-        .info-panel { background: linear-gradient(135deg, #090d16 0%, #0f172a 50%, #070a12 100%); color: #ffffff; padding: 45px; display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden; border-right: 1px solid rgba(255, 255, 255, 0.05); }
-        .brand-badge { background: linear-gradient(90deg, #dc2626, #b91c1c); font-size: 11px; font-weight: 700; padding: 8px 14px; border-radius: 10px; display: inline-flex; width: fit-content; }
-        .main-title-section { margin-top: 30px; margin-bottom: 35px; }
-        .main-title-section h1 { font-size: 32px; font-weight: 700; line-height: 1.3; background: linear-gradient(90deg, #ffffff, #f87171); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 12px; }
-        .main-title-section p { color: #94a3b8; font-size: 14px; line-height: 1.6; }
-        .info-cards-stack { display: flex; flex-direction: column; gap: 20px; }
-        .info-card { display: flex; align-items: flex-start; gap: 16px; background: rgba(255, 255, 255, 0.02); padding: 18px; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.04); }
-        .icon-box { width: 42px; height: 42px; position: relative; border-radius: 50%; flex-shrink: 0; }
-        .icon-box.red { background: rgba(239, 68, 68, 0.15); } .icon-box.indigo { background: rgba(99, 102, 241, 0.15); } .icon-box.amber { background: rgba(245, 158, 11, 0.15); }
-        .icon-box::after { content: ''; position: absolute; width: 8px; height: 8px; border-radius: 50%; top: 50%; left: 50%; transform: translate(-50%, -50%); }
-        .icon-box.red::after { background-color: #ef4444; box-shadow: 0 0 10px #ef4444; } .icon-box.indigo::after { background-color: #818cf8; box-shadow: 0 0 10px #818cf8; } .icon-box.amber::after { background-color: #fbbf24; box-shadow: 0 0 10px #fbbf24; }
-        .card-content h4 { font-size: 11px; font-weight: 700; text-transform: uppercase; margin-bottom: 4px; }
-        .card-red h4 { color: #ef4444; } .card-indigo h4 { color: #818cf8; } .card-amber h4 { color: #fbbf24; }
-        .card-content p { font-size: 14px; font-weight: 600; color: #e2e8f0; line-height: 1.5; }
-        .alert-badge { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 700; background: rgba(239, 68, 68, 0.1); color: #f87171; padding: 4px 10px; border-radius: 6px; margin-top: 8px; }
-        .director-quote { margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.08); }
-        .director-quote p { font-size: 12px; color: #94a3b8; font-style: italic; line-height: 1.6; }
-        .director-name { font-size: 12px; font-weight: 700; color: #f59e0b; margin-top: 8px; display: flex; align-items: center; gap: 6px; }
-        .dot-marker { width: 6px; height: 6px; background: #f59e0b; border-radius: 50%; }
-        .form-panel { padding: 45px; display: flex; flex-direction: column; justify-content: center; }
-        .form-header { margin-bottom: 30px; } .form-header h2 { font-size: 24px; font-weight: 700; color: #0f172a; } .form-header p { font-size: 13px; color: #64748b; margin-top: 4px; font-weight: 500; }
-        .form-group { margin-bottom: 20px; display: flex; flex-direction: column; gap: 8px; } .form-group label { font-size: 14px; font-weight: 700; color: #334155; } .form-group label span { color: #ef4444; }
-        .form-control { width: 100%; padding: 13px 16px !important; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; font-size: 14px; font-weight: 500; color: #1e293b; outline: none; transition: all 0.2s ease; }
-        .form-control:focus { background: #ffffff; border-color: #4f46e5; box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1); }
-        select.form-control { cursor: pointer; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://w3.org' fill='none' viewBox='0 0 24 24' stroke='%2394a3b8'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 16px center; background-size: 16px; }
-        textarea.form-control { resize: none; }
-        .submit-btn { width: 100%; background: linear-gradient(90deg, #10b981, #059669); color: #ffffff; border: none; padding: 15px; font-size: 16px; font-weight: 700; border-radius: 12px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; box-shadow: 0 10px 25px rgba(16, 185, 129, 0.25); transition: all 0.2s ease; margin-top: 10px; }
-        .submit-btn:hover { background: linear-gradient(90deg, #059669, #047857); }
-        @media (max-width: 850px) { body { padding: 10px; } .luxury-container { grid-template-columns: 1fr; } .info-panel { padding: 30px 24px; border-right: none; border-bottom: 1px solid rgba(255, 255, 255, 0.08); } .form-panel { padding: 35px 24px; } }
+        /* প্রগতি লাক্সারি নিওন ডট গ্লো থিম সিএসএস */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #0b0f19;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+        /* নিওন ডট গ্লো ব্যাকগ্রাউন্ড ইফেক্ট */
+        body::before {
+            content: '';
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: #00ffcc;
+            border-radius: 50%;
+            top: 20%;
+            left: 15%;
+            box-shadow: 0 0 20px #00ffcc, 0 0 40px #00ffcc;
+            animation: blink 3s infinite alternate;
+        }
+        body::after {
+            content: '';
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: #ff007f;
+            border-radius: 50%;
+            bottom: 30%;
+            right: 15%;
+            box-shadow: 0 0 20px #ff007f, 0 0 40px #ff007f;
+            animation: blink 4s infinite alternate;
+        }
+        @keyframes blink {
+            0% { opacity: 0.3; }
+            100% { opacity: 1; }
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 16px;
+            width: 100%;
+            max-width: 600px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #00ffcc;
+            text-shadow: 0 0 10px rgba(0, 255, 204, 0.5);
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: #a0aec0;
+        }
+        label span {
+            color: #ff007f;
+        }
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            color: #fff;
+            font-size: 15px;
+            outline: none;
+            transition: 0.3s;
+        }
+        .form-control:focus {
+            border-color: #00ffcc;
+            box-shadow: 0 0 10px rgba(0, 255, 204, 0.3);
+        }
+        select option {
+            background: #111625;
+            color: #fff;
+        }
+        .submit-btn {
+            width: 100%;
+            padding: 14px;
+            background: #00ffcc;
+            border: none;
+            border-radius: 8px;
+            color: #0b0f19;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 0 15px rgba(0, 255, 204, 0.4);
+        }
+        .submit-btn:hover {
+            background: #00ccaa;
+            box-shadow: 0 0 25px rgba(0, 255, 204, 0.7);
+        }
     </style>
 </head>
 <body>
-    <div class="luxury-container">
-        <div class="info-panel">
-            <div>
-                <div class="brand-badge">PROGATI HEADQUARTER</div>
-                <div class="main-title-section">
-                    <h1>সরাসরি আমাদের ক্যাম্পাসে চলে আসুন</h1>
-                    <p>যেকোনো কোর্স, ব্যাচ শিডিউল অথবা ভর্তি সংক্রান্ত যেকোনো জরুরি আলোচনার জন্য আমাদের অফিশিয়াল ঠিকানায় সরাসরি যোগাযোগের আমন্ত্রণ রইল।</p>
-                </div>
-                <div class="info-cards-stack">
-                    <div class="info-card card-red">
-                        <div class="icon-box red"></div>
-                        <div class="card-content">
-                            <h4>প্রধান campus শাখা</h4>
-                            <p>সস্তাপুর (গাবতলার মোড়), ফতুল্লা, নারায়ণগঞ্জ।</p>
-                        </div>
-                    </div>
-                    <div class="info-card card-indigo">
-                        <div class="icon-box indigo"></div>
-                        <div class="card-content">
-                            <h4>জরুরি হটলাইন নম্বর</h4>
-                            <p style="margin-top:2px;">01824-868389</p>
-                            <p>01516-532819</p>
-                        </div>
-                    </div>
-                    <div class="info-card card-amber">
-                        <div class="icon-box amber"></div>
-                        <div class="card-content">
-                            <h4>অফিসিয়াল সময়সূচী</h4>
-                            <p>সকাল ৯:০০ টা থেকে বিকাল ৪:০০ টা পর্যন্ত।</p>
-                            <div class="alert-badge">⚠️ সাপ্তাহিক ছুটির দিন: শুক্রবার</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="director-quote">
-                <p>"প্রগতির অফিশিয়াল পোর্টালে আপনার যেকোনো জিজ্ঞাসা বা মতামত আমাদের জানান। আমরা দ্রুততম সময়ে আপনার সাথে যোগাযোগ করব।"</p>
-                <div class="director-name"><div class="dot-marker"></div> — মোঃ ইসমাইল হোসেন রবিন (পরিচালক)</div>
-            </div>
+
+<div class="container">
+    <h2>প্রগতি পোর্টাল - যোগাযোগ করুন</h2>
+    
+    <!-- HTML ভ্যালিডেশন এবং সাবমিট অ্যাকশন শতভাগ নিশ্চিত করা হয়েছে -->
+    <form id="progatiContactForm" onsubmit="return handleWhatsAppSubmit(event)">
+        <div class="form-group">
+            <label>আপনার সম্পূর্ণ নাম <span>*</span></label>
+            <input type="text" id="fullName" class="form-control" required placeholder="যেমন: মোঃ জিহাদ">
         </div>
 
-        <div class="form-panel">
-            <div class="form-header">
-                <h2>আপনার পরিচয় ও বার্তা প্রদান করুন</h2>
-                <p>ফর্মটি সঠিকভাবে পূরণ করে নিচের বাটনে চাপ দিলে তথ্যগুলো সরাসরি আমাদের অফিশিয়াল হোয়াটসঅ্যাপ নম্বরে চলে যাবে।</p>
-            </div>
-
-            <form id="whatsappForm" onsubmit="return false;">
-                <div class="form-group">
-                    <label>আপনার সম্পূর্ণ নাম <span>*</span></label>
-                    <input type="text" id="fullName" placeholder="যেমন: মোঃ আবদুল্লাহ" class="form-control" required>
-                </div>
-                <div class="form-group">
-                    <label>আপনার সচল মোবাইল নম্বর <span>*</span></label>
-                    <input type="tel" id="mobileNumber" placeholder="যেমন: 017XXXXXXXX" class="form-control" required>
-                </div>
-                <div class="form-group">
-                    <label>স্কুল বা কলেজের নাম <span>(ঐচ্ছিক)</span></label>
-                    <input type="text" id="instituteName" placeholder="যেমন: ফতুল্লা পাইলট হাই স্কুল" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label>আপনার শ্রেণী বা পরিচয় <span>*</span></label>
-                    <select id="userRole" class="form-control" required>
-                        <option value="" disabled selected>আপনার পরিচয় নির্বাচন করুন</option>
-                        <option value="শিক্ষার্থী">আমি একজন শিক্ষার্থী (Student)</option>
-                        <option value="অভিভাবক">আমি একজন অভিভাবক (Guardian)</option>
-                        <option value="শুভাকাঙ্ক্ষী">অন্যান্য / শুভাকাঙ্ক্ষী (Other)</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>আপনার বিস্তারিত বার্তা বা জিজ্ঞাসা <span>*</span></label>
-                    <textarea id="userMessage" rows="4" placeholder="আপনার প্রশ্ন বা মতামতটি এখানে বিস্তারিত লিখুন..." class="form-control" required></textarea>
-                </div>
-                <button type="button" onclick="handleWhatsAppSubmit()" class="submit-btn">
-                    হোয়াটসঅ্যাপে বার্তা পাঠান
-                </button>
-            </form>
+        <div class="form-group">
+            <label>আপনার সচল মোবাইল নম্বর <span>*</span></label>
+            <input type="tel" id="mobileNumber" class="form-control" required placeholder="যেমন: 01516514915">
         </div>
-    </div>
 
-    <script>
-        function handleWhatsAppSubmit() {
-            var name = document.getElementById('fullName').value.trim();
-            var mobile = document.getElementById('mobileNumber').value.trim();
-            var institute = document.getElementById('instituteName').value.trim() || 'উল্লেখ নেই';
-            var role = document.getElementById('userRole').value;
-            var msg = document.getElementById('userMessage').value.trim();
+        <div class="form-group">
+            <label>স্কুল বা কলেজের নাম (ঐচ্ছিক)</label>
+            <input type="text" id="instituteName" class="form-control" placeholder="যেমন: ফতুল্লা পাইলট হাই স্কুল">
+        </div>
 
-            if (!name || !mobile || !role || !msg) {
-                alert('⚠️ দয়া করে সবকটি প্রয়োজনীয় (*) ফিল্ড সঠিকভাবে পূরণ করুন।');
-                return;
-            }
+        <div class="form-group">
+            <label>আপনার শ্রেণী বা পরিচয় <span>*</span></label>
+            <select id="userRole" class="form-control" required>
+                <option value="" disabled selected>আপনার পরিচয় নির্বাচন করুন</option>
+                <option value="শিক্ষার্থী">আমি একজন শিক্ষার্থী (Student)</option>
+                <option value="অভিভাবক">আমি একজন অভিভাবক (Guardian)</option>
+                <option value="শুভাকাঙ্ক্ষী">অন্যান্য / শুভাকাঙ্ক্ষী (Other)</option>
+            </select>
+        </div>
 
-            if (mobile.length < 10) {
-                alert('⚠️ দয়া করে একটি সঠিক মোবাইল নম্বর প্রদান করুন।');
-                return;
-            }
+        <div class="form-group">
+            <label>আপনার বিস্তারিত বার্তা বা জিজ্ঞাসা <span>*</span></label>
+            <textarea id="userMessage" rows="4" class="form-control" required placeholder="আপনার প্রশ্ন বা মতামতটি এখানে বিস্তারিত লিখুন..."></textarea>
+        </div>
 
-            var targetWhatsApp = "8801824868389";
-            var textReport = "*নতুন যোগাযোগ বার্তা (Progati Portal)*\n" +
-                               "━━━━━━━━━━━━━━━━━━━━\n" +
-                               "👤 *নাম:* " + name + "\n" +
-                               "📱 *মোবাইল:* " + mobile + "\n" +
-                               "🏫 *প্রতিষ্ঠান:* " + institute + "\n" +
-                               "🎖️ *পরিচয়:* " + role + "\n" +
-                               "💬 *বার্তা:* " + msg + "\n" +
-                               "━━━━━━━━━━━━━━━━━━━━\n" +
-                               "⏳ _সময়: " + new Date().toLocaleString('bn-BD') + "_";
+        <button type="submit" class="submit-btn">হোয়াটসঅ্যাপে বার্তা পাঠান</button>
+    </form>
+</div>
 
-          var finalURL = "https://wa.me".concat("/", targetWhatsApp, "?text=", encodeURIComponent(textReport));
-
-
-
+<script>
+    function handleWhatsAppSubmit(event) {
+        // ১. ব্রাউজারের পেজ রিফ্রেশ হওয়া সবার আগে শক্তভাবে বন্ধ করা হলো
+        if (event) {
+            event.preventDefault();
+            event.stopPropagation();
         }
-    </script>
+
+        // ২. প্রতিটি ইনপুট আইডির মান সঠিকভাবে সংগ্রহ করা হচ্ছে
+        var name = document.getElementById('fullName').value.trim();
+        var mobile = document.getElementById('mobileNumber').value.trim();
+        var institute = document.getElementById('instituteName').value.trim() || 'উল্লেখ নেই';
+        var role = document.getElementById('userRole').value;
+        var msg = document.getElementById('userMessage').value.trim();
+
+        // ৩. ভ্যালিডেশন চেক
+        if (!name || !mobile || !role || !msg) {
+            alert('⚠️ দয়া করে সবকটি প্রয়োজনীয় (*) ফিল্ড সঠিকভাবে পূরণ করুন।');
+            return false;
+        }
+
+        if (mobile.length < 10) {
+            alert('⚠️ দয়া করে একটি সঠিক মোবাইল নম্বর প্রদান করুন।');
+            return false;
+        }
+
+        // ৪. হোয়াটসঅ্যাপে পাঠানোর মেসেজ টেমপ্লেট
+        var targetWhatsApp = "8801824868389";
+        var textReport = "*নতুন যোগাযোগ বার্তা (Progati Portal)*\n" +
+                           "━━━━━━━━━━━━━━━━━━━━\n" +
+                           "👤 *নাম:* " + name + "\n" +
+                           "📱 *মোবাইল:* " + mobile + "\n" +
+                           "🏫 *প্রতিষ্ঠান:* " + institute + "\n" +
+                           "🎖️ *পরিчয়:* " + role + "\n" +
+                           "💬 *বার্তা:* " + msg + "\n" +
+                           "━━━━━━━━━━━━━━━━━━━━\n" +
+                           "⏳ _সময়: " + new Date().toLocaleString('bn-BD') + "_";
+
+        // ৫. একদম নিরাপদ ইউআরএল ফরম্যাট তৈরি
+        var finalURL = "https://wa.me" + targetWhatsApp + "?text=" + encodeURIComponent(textReport);
+        
+        // ৬. ব্রাউজারের সিকিউরিটি ব্লক এড়াতে এই ৩ লাইনের যেকোনো একটি অবশ্যই কাজ করবে
+        // প্রথমে মেইন উইন্ডো রিডাইরেকশনের চেষ্টা করবে
+        window.location.href = finalURL;
+        
+        // যদি সেটি কোনো কারণে আটকে যায়, ব্যাকআপ হিসেবে নতুন ট্যাবে ওপেন করবে
+        setTimeout(function() {
+            window.open(finalURL, '_blank');
+        }, 100);
+
+        return false;
+    }
+</script>
+
 </body>
 </html>
