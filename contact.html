@@ -149,8 +149,10 @@
                                "━━━━━━━━━━━━━━━━━━━━\n" +
                                "⏳ _সময়: " + new Date().toLocaleString('bn-BD') + "_";
 
-            var finalURL = "https://whatsapp.com" + targetWhatsApp + "&text=" + encodeURIComponent(textReport);
-            window.location.href = finalURL;
+          var finalURL = "https://wa.me".concat("/", targetWhatsApp, "?text=", encodeURIComponent(textReport));
+
+
+
         }
     </script>
 </body>
