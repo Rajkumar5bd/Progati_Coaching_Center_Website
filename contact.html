@@ -198,7 +198,7 @@
                            "⏳ _সময়: " + new Date().toLocaleString('bn-BD') + "_";
 
         // ৫. একদম নিরাপদ ইউআরএল ফরম্যাট তৈরি
-        var finalURL = "https://wa.me" + targetWhatsApp + "?text=" + encodeURIComponent(textReport);
+        var finalURL = "https://wa.me/" + targetWhatsApp + "?text=" + encodeURIComponent(textReport);
         
         // ৬. ব্রাউজারের সিকিউরিটি ব্লক এড়াতে এই ৩ লাইনের যেকোনো একটি অবশ্যই কাজ করবে
         // প্রথমে মেইন উইন্ডো রিডাইরেকশনের চেষ্টা করবে
